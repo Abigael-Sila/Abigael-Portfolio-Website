@@ -177,4 +177,4 @@ response = requests.post('http://localhost:8000/api/alerts/trigger/', json=data)
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License.# Abigael-Portfolio-Website
