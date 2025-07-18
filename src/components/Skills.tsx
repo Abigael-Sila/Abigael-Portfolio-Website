@@ -18,20 +18,7 @@ const Skills = () => {
         { name: "Electrical Machines", level: 80, description: "Motors, generators, and transformers" }
       ]
     },
-    {
-      title: "Embedded & IoT",
-      icon: <Cpu className="w-6 h-6" />,
-      color: "blue",
-      skills: [
-        { name: "ESP32/ESP8266", level: 90, description: "Micro-controller programming and IoT applications" },
-        { name: "Arduino", level: 85, description: "Rapid prototyping and embedded development" },
-        { name: "C/C++", level: 80, description: "Low-level programming and system optimization" },
-        { name: "PCB Design", level: 75, description: "Circuit design and hardware prototyping" },
-        { name: "Sensors & Actuators", level: 85, description: "Integration of various hardware components" },
-        { name: "RTOS", level: 70, description: "Real-time operating systems for embedded devices" }
-      ]
-    },
-    {
+        {
       title: "Software Development & Design",
       icon: <Code className="w-6 h-6" />,
       color: "purple",
@@ -45,6 +32,19 @@ const Skills = () => {
         { name: "HTML/CSS", level: 90, description: "Frontend markup and styling" },
         { name: "JavaScript", level: 85, description: "Dynamic web programming" },
         { name: "Python", level: 70, description: "Data analysis and automation scripts" },
+      ]
+    },
+    {
+      title: "Embedded Systems & IoT",
+      icon: <Cpu className="w-6 h-6" />,
+      color: "blue",
+      skills: [
+        { name: "ESP32/ESP8266", level: 90, description: "Microcontroller programming and IoT applications" },
+        { name: "Arduino", level: 85, description: "Rapid prototyping and embedded development" },
+        { name: "C/C++", level: 80, description: "Low-level programming and system optimization" },
+        { name: "PCB Design", level: 75, description: "Circuit design and hardware prototyping" },
+        { name: "Sensors & Actuators", level: 85, description: "Integration of various hardware components" },
+        { name: "RTOS", level: 70, description: "Real-time operating systems for embedded devices" }
       ]
     },
     {

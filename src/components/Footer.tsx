@@ -22,7 +22,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, href: 'https://github.com', label: 'GitHub' },
+    { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Abigael-Sila', label: 'GitHub' },
     { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com', label: 'LinkedIn' },
     { icon: <Mail className="w-5 h-5" />, href: 'mailto:abigaelkalundesila@gmail.com', label: 'Email' }
   ];
@@ -50,7 +50,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Passionate electrical & electronics engineer also skilled in embedded systems, IoT, full-stack development, and UI/UX Design. Creating innovative solutions that bridge hardware and software.
+              Electrical & Electronics Engineer with extra skills in embedded systems, IoT solutions, web and mobile app development and ui/ux design. Creator of innovative projects like Symphion wearable SOS device.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -123,8 +123,8 @@ const Footer = () => {
               <Heart className="w-4 h-4 text-red-500 fill-current" />
               <span>by Abigael Kalunde Sila</span>
             </div>
-            <div className="flex items-center space-x-4 text-sm text-gray-400">
-              <span>© {currentYear} Abigael Kalunde Sila. All rights reserved.</span>
+            <div className="text-sm text-gray-400">
+              © {currentYear} Abigael Kalunde Sila. All rights reserved.
             </div>
           </div>
         </div>

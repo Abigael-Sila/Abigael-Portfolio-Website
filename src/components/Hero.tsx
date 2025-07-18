@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, Zap, Sparkles, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
@@ -6,10 +6,9 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const rotatingTexts = [
-    "Electrical and Electronics Engineer",
-    "IoT and Embedded Systems Innovator", 
-    "Web Developer",
-    "Mobile Apps Developer",
+    "Electrical Engineer",
+    "IoT Innovator", 
+    "Full-Stack Developer",
     "UI/UX Designer",
     "Problem Solver"
   ];
@@ -152,7 +151,7 @@ const Hero = () => {
             { number: '5+', label: 'Projects', color: 'text-blue-400' },
             { number: '2+', label: 'Years Experience', color: 'text-purple-400' },
             { number: '10+', label: 'Technologies', color: 'text-green-400' },
-            { number: '1', label: 'Innovations', color: 'text-yellow-400' }
+            { number: '1', label: 'Innovation Award', color: 'text-yellow-400' }
           ].map((stat, index) => (
             <div key={index} className="group">
               <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">

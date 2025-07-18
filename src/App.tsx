@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -10,7 +10,7 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
-import VisitorCounter from './components/VisitorCounter'; // Import VisitorCounter
+import VisitorsCounter from './components/VisitorsCounter';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,9 +57,9 @@ function App() {
         <Contact />
       </main>
       <Footer />
-      <div className="bg-gray-900 border-t border-gray-800 py-4">
-        <VisitorCounter /> {/* Place VisitorCounter below Footer */}
-      </div>
+      
+      {/* Visitors Counter */}
+      <VisitorsCounter />
       
       {/* Scroll to Top Button */}
       {showScrollTop && (

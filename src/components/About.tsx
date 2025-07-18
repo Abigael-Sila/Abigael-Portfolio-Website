@@ -1,3 +1,4 @@
+import React from 'react';
 import { GraduationCap, Award, Users, Code } from 'lucide-react';
 
 const About = () => {
@@ -5,7 +6,7 @@ const About = () => {
     {
       icon: <GraduationCap className="w-8 h-8 text-blue-500" />,
       title: "Education",
-      description: "Bachelors of Engineering, Electrical & Electronics Engineering at Moi University"
+      description: "Electrical & Electronics Engineering at Moi University"
     },
     {
       icon: <Award className="w-8 h-8 text-purple-500" />,
@@ -67,11 +68,11 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg text-gray-300">
               <p className="text-lg leading-relaxed">
-                I'm an <span className="text-blue-400 font-semibold">Electrical & Electronics Engineer</span> with a passion for creating innovative solutions that bridge the physical and digital worlds.
+                I'm an <span className="text-blue-400 font-semibold">Electrical & Electronics Engineering</span> student at Moi University with a passion for creating innovative solutions that bridge the physical and digital worlds.
               </p>
               
               <p className="leading-relaxed">
-                My expertise spans across <span className="text-purple-400 font-semibold">embedded systems</span>, <span className="text-green-400 font-semibold">IoT</span>, <span className="text-yellow-400 font-semibold">full-stack Web & Mobile App Development</span>, and <span className="text-blue-400 font-semibold">UI/UX Design</span>. I believe in the power of technology to solve real-world problems and improve lives.
+                My expertise spans across <span className="text-purple-400 font-semibold">embedded systems</span>, <span className="text-green-400 font-semibold">IoT development</span>, <span className="text-yellow-400 font-semibold">full-stack software development</span>, and <span className="text-blue-400 font-semibold">UI/UX Design</span>. I believe in the power of technology to solve real-world problems and improve lives.
               </p>
 
               <div className="bg-gray-700/30 p-6 rounded-lg border-l-4 border-blue-500 my-6">
