@@ -113,18 +113,24 @@ const Projects = () => {
                 {/* Overlay on Hover */}
                 <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="flex gap-4">
-                    <a
-                      href={project.links.github}
-                      className="bg-gray-900/80 backdrop-blur-sm p-3 rounded-full hover:bg-gray-800 transition-colors"
-                    >
-                      <Github size={20} />
-                    </a>
-                    <a
-                      href={project.links.live}
-                      className="bg-gray-900/80 backdrop-blur-sm p-3 rounded-full hover:bg-gray-800 transition-colors"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
+                   <a 
+  href={project.links.github} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  aria-label={`View ${project.title} on GitHub`} // ADD THIS
+  className="text-gray-400 hover:text-white"
+>
+  <Github size={20} /> {/* Assuming you have a Github icon */}
+</a>
+                    <a 
+  href={project.links.live} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  aria-label={`Live Demo of ${project.title}`} // ADD THIS
+  className="text-gray-400 hover:text-white ml-3"
+>
+  <ExternalLink size={20} /> {/* Assuming ExternalLink icon */}
+</a>
                   </div>
                 </div>
               </div>
