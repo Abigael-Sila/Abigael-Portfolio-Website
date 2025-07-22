@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
 
 const Blog = () => {

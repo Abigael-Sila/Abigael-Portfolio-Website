@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+import AbigaelLogo from '../assets/abigael_logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,9 +41,12 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="bg-blue-500 p-2 rounded-lg">
-              <Zap className="h-6 w-6 text-white" />
-            </div>
+            {/* Removed the wrapping div with blue background and padding */}
+            <img 
+                src={AbigaelLogo} 
+                alt="Abigael Kalunde Sila Logo" 
+                className="w-10 h-10 rounded-full object-cover" // Adjusted size slightly for better visibility without the padding
+              />
             <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Abigael Kalunde Sila
             </span>

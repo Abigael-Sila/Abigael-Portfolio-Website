@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronDown, Zap, Sparkles, ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ChevronDown, Sparkles, ArrowRight } from 'lucide-react';
+
+import AbigaelLogo from '../assets/abigael_logo.png';
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -77,7 +79,11 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-spin-slow"></div>
             <div className="absolute inset-1 bg-gray-900 rounded-full flex items-center justify-center">
               <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center">
-                <Zap className="w-12 h-12 sm:w-16 sm:h-16 text-blue-400" />
+                <img 
+                  src={AbigaelLogo} 
+                  alt="Abigael Kalunde Sila Logo" 
+                  className="w-full h-full rounded-full object-cover" // Key changes here
+                />
               </div>
             </div>
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl animate-pulse"></div>

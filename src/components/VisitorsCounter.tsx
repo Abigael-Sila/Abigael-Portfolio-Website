@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Eye, Heart, Sparkles, Users } from 'lucide-react';
 
 const VisitorsCounter = () => {
@@ -6,26 +6,51 @@ const VisitorsCounter = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [showHearts, setShowHearts] = useState(false);
 
+  // Define your backend API URL
+  const API_URL = 'http://localhost:3001/api/increment-view'; // <-- IMPORTANT: Change this to your deployed backend URL
+
   useEffect(() => {
-    // Get visitor count from localStorage or initialize
-    const storedCount = localStorage.getItem('digitalFootprints');
-    const currentCount = storedCount ? parseInt(storedCount) : 0;
-    
-    // Increment count for new visit
-    const newCount = currentCount + 1;
-    setVisitorCount(newCount);
-    localStorage.setItem('digitalFootprints', newCount.toString());
+    const incrementAndFetchCount = async () => {
+      try {
+        // Send a request to your backend to increment the view count
+        const response = await fetch(API_URL, {
+          method: 'POST', // Use POST to signify an action (incrementing)
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          // You might send a unique identifier here if you want to track unique users (e.g., IP address hash),
+          // but for simple "views" like YouTube, just making the request is enough.
+        });
 
-    // Trigger animation
-    setIsAnimating(true);
-    setTimeout(() => setIsAnimating(false), 1000);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-    // Show hearts animation for milestone visits
-    if (newCount % 10 === 0) {
-      setShowHearts(true);
-      setTimeout(() => setShowHearts(false), 2000);
-    }
-  }, []);
+        const data = await response.json();
+        const newCount = data.count; // Assuming your API returns the updated count
+        
+        setVisitorCount(newCount);
+
+        // Trigger animation
+        setIsAnimating(true);
+        setTimeout(() => setIsAnimating(false), 1000);
+
+        // Show hearts animation for milestone visits
+        // Note: Milestones will now be based on the global count
+        if (newCount % 10 === 0 && newCount > 0) {
+          setShowHearts(true);
+          setTimeout(() => setShowHearts(false), 2000);
+        }
+
+      } catch (error) {
+        console.error("Failed to fetch or increment visitor count:", error);
+        // Optionally, you could try fetching the current count without incrementing
+        // if the increment failed, or just display a default count.
+      }
+    };
+
+    incrementAndFetchCount();
+  }, []); // Empty dependency array means this runs once on mount
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';

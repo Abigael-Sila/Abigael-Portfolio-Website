@@ -1,4 +1,3 @@
-import React from 'react';
 import { MapPin, Calendar, Award, Users, Wrench } from 'lucide-react';
 
 const Experience = () => {

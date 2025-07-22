@@ -1,4 +1,5 @@
-import { Zap, Heart, Github, Linkedin, Mail } from 'lucide-react';
+import {Heart, Github, Linkedin, Mail } from 'lucide-react';
+import AbigaelLogo from '../assets/abigael_logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -42,9 +43,12 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="bg-blue-500 p-2 rounded-lg">
-                <Zap className="h-6 w-6 text-white" />
-              </div>
+              {/* Removed the wrapping div with blue background and padding */}
+              <img 
+                  src={AbigaelLogo} 
+                  alt="Abigael Kalunde Sila Logo" 
+                  className="w-10 h-10 rounded-full object-cover" // Adjusted size here
+                />
               <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Abigael Kalunde Sila
               </span>
