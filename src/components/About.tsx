@@ -1,4 +1,5 @@
 import { GraduationCap, Award, Users, Code } from 'lucide-react';
+import myProfilePic from '../assets/beautifulme.jpg'; // Adjust path if necessary
 
 const About = () => {
   const highlights = [
@@ -40,8 +41,12 @@ const About = () => {
           {/* Left Side - Image and Stats */}
           <div className="space-y-8">
             <div className="relative">
-              <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center">
-                <div className="text-6xl text-blue-500/50">👨‍💻</div>
+              <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center overflow-hidden">
+                <img
+                  src={myProfilePic}
+                  alt="Abigael Kalunde Sila" // Important for accessibility
+                  className="w-full object-contain rounded-2xl" // TailWind CSS for styling
+                />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-4 rounded-lg shadow-xl">
                 <div className="text-2xl font-bold">5+</div>
