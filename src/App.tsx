@@ -64,11 +64,12 @@ function App() {
       {/* Scroll to Top Button */}
       {showScrollTop && (
         <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50"
-        >
-          <ChevronUp size={24} />
-        </button>
+    onClick={scrollToTop}
+    className="fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50"
+    aria-label="Scroll to top" // <-- Add this attribute
+  >
+    <ChevronUp size={24} />
+  </button>
       )}
     </div>
   );
