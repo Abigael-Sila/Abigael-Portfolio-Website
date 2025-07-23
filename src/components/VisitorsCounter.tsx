@@ -19,7 +19,7 @@ const VisitorsCounter = () => {
       try {
         // Step 1: Increment the count via POST request
         // The endpoint is /api/count/increment as defined in server.js
-        const incrementResponse = await fetch(`${API_BASE_URL}/api/count/increment`, {
+        const incrementResponse = await fetch(`${API_BASE_URL}/api/increment-view`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
