@@ -4,42 +4,39 @@ import { useState, useEffect } from 'react';
 import { Eye, Heart, Sparkles, Users } from 'lucide-react';
 
 const VisitorsCounter = () => {
-  const [visitorCount, setVisitorCount] = useState(0);
+  const [visitorCount, setVisitorCount] = useState<number | null>(null); // Initialize as null to show loading state
   const [isAnimating, setIsAnimating] = useState(false);
   const [showHearts, setShowHearts] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Define your backend API URL
   // IMPORTANT: You MUST replace this with the actual URL of your deployed Render backend.
-  // Example: 'https://your-backend-app-name.onrender.com/api/increment-view'
-  const API_URL = 'https://abigael-counter-backend.onrender.com/api/increment-view'; 
+  // This should be the root URL of your Render service.
+  const API_BASE_URL = 'https://abigael-counter-backend.onrender.com'; // YOUR_RENDER_BACKEND_URL_HERE
 
   useEffect(() => {
-    const incrementAndFetchCount = async () => {
+    const fetchAndIncrementCount = async () => {
       try {
-        // Send a request to your backend to increment the view count
-        const response = await fetch(API_URL, {
-          method: 'POST', // Use POST to signify an action (incrementing)
+        // Step 1: Increment the count via POST request
+        // The endpoint is /api/count/increment as defined in server.js
+        const incrementResponse = await fetch(`${API_BASE_URL}/api/count/increment`, {
+          method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          // For a simple view counter, no specific body is usually needed,
-          // but you could send { page: 'home' } if you had multiple pages.
         });
 
-        // Check if the network request was successful
-        if (!response.ok) {
-          // If response is not OK, throw an error with the status
-          throw new Error(`HTTP error! status: ${response.status}`);
+        if (!incrementResponse.ok) {
+          throw new Error(`HTTP error! Status: ${incrementResponse.status}`);
         }
 
-        // Parse the JSON response from the backend
-        const data = await response.json();
-        const newCount = data.count; // Assuming your API returns the updated count (e.g., { success: true, count: 5 })
-        
-        // Update the local state with the new count
-        setVisitorCount(newCount);
+        const incrementData = await incrementResponse.json();
+        const newCount = incrementData.count;
 
-        // Trigger animation for a brief period
+        setVisitorCount(newCount);
+        setError(null); // Clear any previous errors
+
+        // Trigger scale animation for a brief period
         setIsAnimating(true);
         setTimeout(() => setIsAnimating(false), 1000); // Animation lasts 1 second
 
@@ -50,15 +47,15 @@ const VisitorsCounter = () => {
           setTimeout(() => setShowHearts(false), 2000); // Hearts animation lasts 2 seconds
         }
 
-      } catch (error) {
-        // Log any errors that occur during the fetch operation
-        console.error("Failed to fetch or increment visitor count:", error);
-        // In a production app, you might set visitorCount to a default or error state here.
+      } catch (err: any) {
+        console.error("Failed to fetch or increment visitor count:", err);
+        setError("Failed to load visitor count. Please try again later.");
+        setVisitorCount(null); // Reset count to null on error
       }
     };
 
     // Call the async function when the component mounts
-    incrementAndFetchCount();
+    fetchAndIncrementCount();
   }, []); // Empty dependency array ensures this effect runs only once after the initial render
 
   // Helper function to format large numbers (e.g., 1200 becomes 1.2K)
@@ -67,6 +64,33 @@ const VisitorsCounter = () => {
     if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
     return num.toString();
   };
+
+  // Render logic based on state
+  if (error) {
+    return (
+      <div className="fixed bottom-4 left-4 z-50">
+        <div className="relative bg-red-800/20 backdrop-blur-sm border border-red-500/30 rounded-2xl p-4">
+          <div className="flex items-center gap-3 text-red-400">
+            <Eye className="w-5 h-5" />
+            <span>{error}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (visitorCount === null) {
+    return (
+      <div className="fixed bottom-4 left-4 z-50">
+        <div className="relative bg-gray-800/20 backdrop-blur-sm border border-gray-500/30 rounded-2xl p-4">
+          <div className="flex items-center gap-3 text-gray-400">
+            <Eye className="w-5 h-5 animate-pulse" />
+            <span>Loading Footprints...</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="fixed bottom-4 left-4 z-50">
@@ -83,8 +107,8 @@ const VisitorsCounter = () => {
                 style={{
                   left: `${20 + Math.random() * 60}%`, // Random horizontal position
                   top: `${20 + Math.random() * 60}%`,   // Random vertical position
-                  animationDelay: `${i * 0.2}s`,       // Stagger animation start
-                  animationDuration: '2s'              // Duration of float animation
+                  animationDelay: `${i * 0.2}s`,        // Stagger animation start
+                  animationDuration: '2s'               // Duration of float animation
                 }}
               />
             ))}
@@ -100,7 +124,7 @@ const VisitorsCounter = () => {
                 isAnimating ? 'scale-125' : 'scale-100' // Scale up during animation
               }`} />
             </div>
-            
+
             {/* Sparkle Effect for the icon */}
             <Sparkles className="absolute -top-1 -right-1 w-3 h-3 text-yellow-400 animate-ping" />
           </div>
@@ -111,14 +135,14 @@ const VisitorsCounter = () => {
               <span className="text-xs font-medium text-pink-400">Digital Footprints</span>
               <Users className="w-3 h-3 text-pink-400" />
             </div>
-            
+
             <div className="flex items-center gap-2">
               <span className={`text-lg font-bold text-white transition-all duration-500 ${
                 isAnimating ? 'text-pink-300' : 'text-white' // Change color during animation
               }`}>
-                {formatNumber(visitorCount)} {/* Display formatted count */}
+                {visitorCount !== null ? formatNumber(visitorCount) : '...'} {/* Display formatted count or ellipsis */}
               </span>
-              
+
               {/* Dynamic Cute Messages based on visitor count */}
               <div className="text-xs text-gray-300">
                 {visitorCount === 1 && "👋 First visit!"}
@@ -132,7 +156,7 @@ const VisitorsCounter = () => {
         </div>
 
         {/* Milestone Celebration Message (conditionally rendered) */}
-        {visitorCount % 100 === 0 && visitorCount > 0 && (
+        {visitorCount !== null && visitorCount % 100 === 0 && visitorCount > 0 && (
           <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-bounce">
             🎊 {visitorCount} Milestone! 🎊
           </div>
@@ -140,7 +164,7 @@ const VisitorsCounter = () => {
 
         {/* Decorative Border Animation */}
         <div className="absolute inset-0 rounded-2xl border-2 border-pink-500/20 animate-pulse"></div>
-        
+
         {/* Decorative Glow Effect */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-pink-500/10 to-purple-500/10 blur-xl -z-10 animate-pulse"></div>
       </div>
