@@ -34,14 +34,6 @@ const AllProjectsPage = () => {
   };
 
   // Variants for the hover effect on each card
-  const cardHoverVariants: Variants = { // Explicitly type cardHoverVariants
-    rest: { scale: 1, boxShadow: '0 0px 0px rgba(0, 0, 0, 0)' },
-    hover: {
-      scale: 1.03,
-      boxShadow: '0 8px 30px rgba(71, 140, 255, 0.2)', // Subtle blue glow
-      transition: { duration: 0.3 }
-    }
-  };
 
   // Variants for the play icon appearing on hover
   const playIconVariants: Variants = { // Explicitly type playIconVariants

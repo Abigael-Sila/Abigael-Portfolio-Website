@@ -90,7 +90,7 @@ export const allProjects: Project[] = [
       "Contact integration"
     ],
     image: "https://images.pexels.com/photos/1036647/pexels-photo-1036647.jpeg?auto=compress&cs=tinysrgb&w=800",
-    icon: <Globe className="w-6 h-6" />,
+    icon: <Smartphone className="w-6 h-6" />,
     status: "Completed",
     links: {
       github: "https://github.com/lucas-kunkuru/portfolio-v2",
