@@ -1,6 +1,7 @@
+// src/App.tsx
 import { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Keep this import
 
 // Import all your components
 import Header from './components/Header';
@@ -52,7 +53,10 @@ function App() {
   }
 
   return (
-    <Router basename={process.env.NODE_ENV === 'production' ? '/Abigael-Portfolio-Website' : ''}> {/* REMOVED trailing slash here */}
+    // *** CHANGE THIS LINE ***
+    // Set basename directly to the repository name for production
+    // For local development, it can be an empty string if Vite's base is '/'
+    <Router basename="/Abigael-Portfolio-Website">
       <div className="bg-gray-900 text-white min-h-screen">
         {/* Header (will be visible on all routes) */}
         <Header />
