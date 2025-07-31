@@ -52,7 +52,7 @@ function App() {
   }
 
   return (
-    <Router basename={process.env.NODE_ENV === 'production' ? '/Abigael-Portfolio-Website/' : ''}> {/* Changed '/' to '' */}
+    <Router basename={process.env.NODE_ENV === 'production' ? '/Abigael-Portfolio-Website' : ''}> {/* REMOVED trailing slash here */}
       <div className="bg-gray-900 text-white min-h-screen">
         {/* Header (will be visible on all routes) */}
         <Header />
