@@ -41,25 +41,6 @@ export const allProjects: Project[] = [
     }
   },
   {
-    title: "Chris Maina's Portfolio",
-    category: "Web Development",
-    description: "A sleek and modern personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["React", "Tailwind CSS", "JavaScript", "HTML", "CSS"],
-    features: [
-      "Responsive design",
-      "Project showcase",
-      "Interactive UI elements",
-      "Contact form"
-    ],
-    image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800",
-    icon: <Globe className="w-6 h-6" />,
-    status: "Completed",
-    links: {
-      github: "https://github.com/chris-maina-dev/portfolio-website",
-      live: "https://chris-maina-dev.github.io/portfolio-website/"
-    }
-  },
-  {
     title: "Chrispus Kiptoo's Portfolio",
     category: "Web Development",
     description: "A dynamic portfolio highlighting web development projects with a focus on clean code and user experience.",
