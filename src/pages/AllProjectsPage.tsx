@@ -187,7 +187,7 @@ const AllProjectsPage = () => {
           transition={{ delay: allProjects.length * 0.1 + 0.5, duration: 0.5 }}
         >
           <a
-            href="/"
+            href="/Abigael-Portfolio-Website"
             className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-block"
           >
             Back to Home
