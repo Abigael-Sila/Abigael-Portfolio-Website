@@ -1,7 +1,7 @@
 // src/App.tsx
 import { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Keep this import
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Import all your components
 import Header from './components/Header';
@@ -15,7 +15,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
 import VisitorsCounter from './components/VisitorsCounter';
-import AllProjectsPage from './pages/AllProjectsPage'; // Your new AllProjectsPage
+import AllProjectsPage from './pages/AllProjectsPage';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -53,10 +53,8 @@ function App() {
   }
 
   return (
-    // *** CHANGE THIS LINE ***
-    // Set basename directly to the repository name for production
-    // For local development, it can be an empty string if Vite's base is '/'
-    <Router basename="/Abigael-Portfolio-Website">
+    // Corrected Router with conditional basename
+    <Router basename={process.env.NODE_ENV === 'production' ? '/Abigael-Portfolio-Website' : ''}>
       <div className="bg-gray-900 text-white min-h-screen">
         {/* Header (will be visible on all routes) */}
         <Header />
