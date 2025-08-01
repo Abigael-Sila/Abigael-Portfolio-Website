@@ -8,11 +8,11 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const rotatingTexts = [
-    "Electrical Engineer",
-    "IoT Innovator", 
-    "Full-Stack Developer",
+    "Electrical and Electronics Engineer",
+    "Front-End Web Developer",
+    "Mobile App Developer",
     "UI/UX Designer",
-    "Problem Solver"
+    "Embedded Systems and IoT Enthusiast",
   ];
 
   useEffect(() => {
@@ -122,9 +122,9 @@ const Hero = () => {
         {/* Tagline */}
         <p className={`text-lg sm:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed transform transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-semibold">
-            From Silicon to Screen:
+            Coded with Passion. 
           </span>{' '}
-          Crafting Intelligent, Connected Devices that Bridge the Physical and Digital Worlds
+          Built for People.
         </p>
 
         {/* CTA Buttons */}
