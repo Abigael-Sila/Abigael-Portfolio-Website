@@ -77,6 +77,7 @@ const Contact = () => {
             Ready to collaborate on your next project? Let's discuss how we can bring your ideas to life
           </p>
         </div>
+      </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
@@ -125,18 +126,21 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Resume Download */}
-            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
-              <h4 className="text-lg font-semibold mb-3 text-blue-400">Resume</h4>
-              <p className="text-gray-300 mb-4">
-                Download my resume to learn more about my experience and qualifications.
-              </p>
-              <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
-                <Download size={18} />
-                Download Resume
-              </button>
-            </div>
-          </div>
+                {/* Resume Download */}
+<div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
+  <h4 className="text-lg font-semibold mb-3 text-blue-400">Resume</h4>
+  <p className="text-gray-300 mb-4">
+    Download my resume to learn more about my experience and qualifications.
+  </p>
+  <a
+    href="/Abigael_Sila_Resume.pdf"
+    download="Abigael_Sila_Resume.pdf"
+    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+  >
+    <Download size={18} />
+    Download Resume
+  </a>
+</div>
 
           {/* Contact Form */}
           <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700/50">

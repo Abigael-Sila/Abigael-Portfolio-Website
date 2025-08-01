@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: <Users className="w-8 h-8 text-green-500" />,
       title: "Experience",
-      description: "Internships at Kenya Railways Corporation | Kenya Space Agency" 
+      description: "Internships at Kenya Railways Corporation, Kenya Space Agency" 
     },
     {
       icon: <Award className="w-8 h-8 text-purple-500" />,
@@ -49,7 +49,7 @@ const About = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-4 rounded-lg shadow-xl">
-                <div className="text-2xl font-bold">5+</div>
+                <div className="text-2xl font-bold">3+</div>
                 <div className="text-sm">Projects</div>
               </div>
             </div>
