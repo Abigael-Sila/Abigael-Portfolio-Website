@@ -34,7 +34,7 @@ export const allProjects: Project[] = [
     ],
     image: "https://images.pexels.com/photos/163100/circuit-circuit-board-resistor-computer-163100.jpeg?auto=compress&cs=tinysrgb&w=800",
     icon: <Wifi className="w-6 h-6" />, // This syntax is correct for React.ReactNode
-    status: "Completed",
+    status: "In Progress",
     links: {
       github: "https://github.com/Abigael-Sila/Symphion-Wearable-SOS-Device",
       live: "https://example.com/symphion-demo"
@@ -53,7 +53,7 @@ export const allProjects: Project[] = [
     ],
     image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800",
     icon: <Globe className="w-6 h-6" />,
-    status: "Completed",
+    status: "In Progress",
     links: {
       github: "https://github.com/chrispus-kiptoo/portfolio",
       live: "https://chrispus-kiptoo.netlify.app/"
@@ -72,7 +72,7 @@ export const allProjects: Project[] = [
     ],
     image: "https://images.pexels.com/photos/1036647/pexels-photo-1036647.jpeg?auto=compress&cs=tinysrgb&w=800",
     icon: <Smartphone className="w-6 h-6" />,
-    status: "Completed",
+    status: "In Progress",
     links: {
       github: "https://github.com/lucas-kunkuru/portfolio-v2",
       live: "https://lucas-kunkuru.vercel.app/"

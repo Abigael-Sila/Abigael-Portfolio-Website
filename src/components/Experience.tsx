@@ -147,7 +147,7 @@ const Experience = () => {
             <div className="bg-purple-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Users className="w-8 h-8 text-purple-400" />
             </div>
-            <h3 className="text-2xl font-bold text-purple-400 mb-2">10+</h3>
+            <h3 className="text-2xl font-bold text-purple-400 mb-2">3+</h3>
             <p className="text-gray-400">Projects Completed</p>
           </div>
           
@@ -155,7 +155,7 @@ const Experience = () => {
             <div className="bg-green-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Wrench className="w-8 h-8 text-green-400" />
             </div>
-            <h3 className="text-2xl font-bold text-green-400 mb-2">5+</h3>
+            <h3 className="text-2xl font-bold text-green-400 mb-2">10+</h3>
             <p className="text-gray-400">Technologies Mastered</p>
           </div>
         </div>
