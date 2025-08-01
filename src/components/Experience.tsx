@@ -3,10 +3,27 @@ import { MapPin, Calendar, Award, Users, Wrench } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
+      "title": "Electrical Engineering Intern",
+      "company": "Kenya Space Agency",
+      "location": "Nairobi, Kenya",
+      "duration": "August 2025 - Present",
+      "type": "Internship",
+      "description": "Engaged in projects related to satellite systems, ground station operations, and power systems for space technology. Gained exposure to the technical infrastructure supporting space science and Earth observation.",
+      "responsibilities": [
+        "Assisted in the maintenance and testing of ground station electrical systems",
+        "Participated in data acquisition from satellite monitoring systems",
+        "Conducted routine inspections of power supply infrastructure for mission-critical equipment",
+        "Collaborated with senior engineers on telecommunications and satellite technology projects",
+        "Documented system specifications and contributed to technical reports on ongoing missions"
+      ],
+      "skills": ["Satellite Systems", "Ground Station Operations", "Power Systems", "Technical Documentation", "Team Collaboration"],
+      "icon": <Wrench className="w-6 h-6" />
+  },
+    {
       title: "Electrical Engineering Intern",
       company: "Kenya Railways Corporation",
       location: "Nairobi, Kenya",
-      duration: "June 2023 - August 2023",
+      duration: "May 2024 - August 2024",
       type: "Internship",
       description: "Gained hands-on experience in railway signaling systems, industrial automation, and maintenance procedures.",
       responsibilities: [
