@@ -133,7 +133,7 @@ const Contact = () => {
     View my resume to learn more about my experience and qualifications.
   </p>
   <a
-    href="/Abigael_Sila_Resume.pdf" // Correct path to the file in the public directory
+    href="Abigael_Sila_Resume.pdf" // Correct path to the file in the public directory
     target="_blank" // Opens the link in a new tab
     rel="noopener noreferrer" // Recommended for security when using target="_blank"
     className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
