@@ -126,21 +126,22 @@ const Contact = () => {
               </div>
             </div>
 
-                {/* Resume Download */}
-                <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
-                  <h4 className="text-lg font-semibold mb-3 text-blue-400">Resume</h4>
-                  <p className="text-gray-300 mb-4">
-                    Download my resume to learn more about my experience and qualifications.
-                  </p>
-                  <a
-                    href="/Abigael_Sila_Resume.pdf"
-                    download="Abigael_Sila_Resume.pdf"
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-                  >
-                  <Download size={18} />
-                    Download Resume
-                  </a>
-                </div>
+                {/* Resume View */}
+<div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
+  <h4 className="text-lg font-semibold mb-3 text-blue-400">Resume</h4>
+  <p className="text-gray-300 mb-4">
+    View my resume to learn more about my experience and qualifications.
+  </p>
+  <a
+    href="/Abigael_Sila_Resume.pdf" // Correct path to the file in the public directory
+    target="_blank" // Opens the link in a new tab
+    rel="noopener noreferrer" // Recommended for security when using target="_blank"
+    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+  >
+    <Download size={18} />
+    View Resume
+  </a>
+</div>
               </div>
 
           {/* Contact Form */}
