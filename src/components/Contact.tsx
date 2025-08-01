@@ -133,7 +133,7 @@ const Contact = () => {
                     Download my resume to learn more about my experience and qualifications.
                   </p>
                   <a
-                    href="public/Abigael_Sila_Resume.pdf"
+                    href="/Abigael_Sila_Resume.pdf"
                     download="Abigael_Sila_Resume.pdf"
                     className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
                   >
