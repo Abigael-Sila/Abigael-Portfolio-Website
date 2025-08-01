@@ -6,7 +6,7 @@ const About = () => {
     {
       icon: <GraduationCap className="w-8 h-8 text-blue-500" />,
       title: "Education",
-      description: "Electrical & Electronics Engineering at Moi University"
+      description: "Bachelors of Engineering, Electrical & Electronics Engineering at Moi University"
     },
     {
       icon: <Users className="w-8 h-8 text-green-500" />,
@@ -71,7 +71,7 @@ const About = () => {
           {/* Right Side - Content */}
           <div className="space-y-6">
             <div className="prose prose-lg text-gray-300">
-              <p className="text-lg leading-relaxed">
+              <p className="text-md leading-relaxed">
                 Hi, I’m Abigael Kalunde Sila an  <span className="text-blue-400 font-semibold">Engineer and Digital Creative</span> shaping the future through both circuitry and code. My academic foundation spans control systems, power systems, electrical machines, digital and analogue electronics, power distribution and transmission, energy audits, and renewable energy.
               </p>
               
