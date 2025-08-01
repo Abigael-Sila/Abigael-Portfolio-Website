@@ -77,7 +77,7 @@ const Contact = () => {
             Ready to collaborate on your next project? Let's discuss how we can bring your ideas to life
           </p>
         </div>
-      </div>
+      
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
