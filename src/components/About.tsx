@@ -1,5 +1,5 @@
 import { GraduationCap, Award, Users, Code } from 'lucide-react';
-import myProfilePic from '../assets/beautifulme.jpg'; // Adjust path if necessary
+import myProfilePic from '../assets/beautifulme.jpg'; 
 
 const About = () => {
   const highlights = [
@@ -9,19 +9,19 @@ const About = () => {
       description: "Electrical & Electronics Engineering at Moi University"
     },
     {
+      icon: <Users className="w-8 h-8 text-green-500" />,
+      title: "Experience",
+      description: "Internships at Kenya Railways Corporation | Kenya Space Agency" 
+    },
+    {
       icon: <Award className="w-8 h-8 text-purple-500" />,
       title: "Innovation",
       description: "Creator of Symphion - Wearable SOS Device"
     },
     {
-      icon: <Users className="w-8 h-8 text-green-500" />,
-      title: "Experience",
-      description: "Internship at Kenya Railways Corporation"
-    },
-    {
       icon: <Code className="w-8 h-8 text-yellow-500" />,
       title: "Development",
-      description: "Full-Stack, Mobile App Development & UI/UX Design"
+      description: "Web Development, Mobile App Development & UI/UX Design"
     }
   ];
 
@@ -72,17 +72,17 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg text-gray-300">
               <p className="text-lg leading-relaxed">
-                I'm an <span className="text-blue-400 font-semibold">Electrical & Electronics Engineering</span> student at Moi University with a passion for creating innovative solutions that bridge the physical and digital worlds.
+                Hi, I’m Abigael Kalunde Sila an  <span className="text-blue-400 font-semibold">Engineer and Digital Creative</span> shaping the future through both circuitry and code. My academic foundation spans control systems, power systems, electrical machines, digital and analogue electronics, power distribution and transmission, energy audits, and renewable energy.
               </p>
               
               <p className="leading-relaxed">
-                My expertise spans across <span className="text-purple-400 font-semibold">embedded systems</span>, <span className="text-green-400 font-semibold">IoT development</span>, <span className="text-yellow-400 font-semibold">full-stack software development</span>, and <span className="text-blue-400 font-semibold">UI/UX Design</span>. I believe in the power of technology to solve real-world problems and improve lives.
+                Beyond the classroom, I’ve cultivated self-taught skills in <span className="text-purple-400 font-semibold">Front-End Web Development</span>, <span className="text-green-400 font-semibold">Mobile App Development</span>, <span className="text-yellow-400 font-semibold">UI/UX Design</span>, and <span className="text-blue-400 font-semibold">Embedded Systems and IoT</span>. My work is rooted in solving real-world problems with creativity and technical precision. I invite you to explore my projects and connect with me to discover how we can turn your ideas into a reality.
               </p>
 
               <div className="bg-gray-700/30 p-6 rounded-lg border-l-4 border-blue-500 my-6">
-                <h3 className="text-xl font-semibold text-blue-400 mb-3">Featured Project: Symphion</h3>
+                <h3 className="text-xl font-semibold text-blue-400 mb-3">Capstone Project: Symphion</h3>
                 <p className="text-gray-300">
-                  Developed a wearable SOS device using <span className="text-blue-400">ESP32</span> and <span className="text-green-400">A9G GSM/GPS modules</span>. This life-saving device provides real-time location tracking and emergency communication capabilities, showcasing my ability to integrate hardware and software for practical applications.
+                  Developed a wearable SOS Prototype using <span className="text-blue-400">ESP32</span> and <span className="text-green-400">A9G GSM/GPS modules</span>. This life-saving device provides real-time location tracking and emergency communication capabilities, showcasing my ability to integrate hardware and software for practical applications.
                 </p>
               </div>
 
