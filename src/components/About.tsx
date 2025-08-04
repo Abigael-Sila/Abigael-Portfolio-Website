@@ -49,8 +49,8 @@ const About = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-4 rounded-lg shadow-xl">
-                <div className="text-2xl font-bold">3+</div>
-                <div className="text-sm">Projects</div>
+                <div className="text-2xl font-bold">Available</div>
+                <div className="text-sm">for hire</div>
               </div>
             </div>
 

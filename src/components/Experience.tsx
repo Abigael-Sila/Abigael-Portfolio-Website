@@ -149,33 +149,6 @@ const Experience = () => {
             ))}
           </div>
         </div>
-
-        {/* Achievement Summary */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="bg-blue-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Award className="w-8 h-8 text-blue-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-blue-400 mb-2">2+</h3>
-            <p className="text-gray-400">Years of Experience</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="bg-purple-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-8 h-8 text-purple-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-purple-400 mb-2">3+</h3>
-            <p className="text-gray-400">Projects Completed</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="bg-green-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Wrench className="w-8 h-8 text-green-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-green-400 mb-2">10+</h3>
-            <p className="text-gray-400">Technologies Mastered</p>
-          </div>
-        </div>
       </div>
     </section>
   );
