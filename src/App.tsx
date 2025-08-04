@@ -10,7 +10,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
-import Blog from './components/Blog';
+import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
@@ -69,7 +69,7 @@ function App() {
               <Projects />
               <Experience />
               <Skills />
-              <Blog />
+              <Certificates />
               <Contact />
               {/* Visitors Counter - typically on the main landing page */}
               <VisitorsCounter />

@@ -41,7 +41,7 @@ export const allProjects: Project[] = [
     }
   },
   {
-    title: "Chrispus Kiptoo's Portfolio",
+    title: "Web Portfolio",
     category: "Web Development",
     description: "A dynamic portfolio highlighting web development projects with a focus on clean code and user experience.",
     technologies: ["Next.js", "TypeScript", "SCSS", "GSAP"],
@@ -60,7 +60,7 @@ export const allProjects: Project[] = [
     }
   },
   {
-    title: "Lucas Kunkuru's Portfolio",
+    title: "Web Portfolio",
     category: "Web Development",
     description: "A creative and minimalist portfolio site showcasing design sensibilities and front-end development skills.",
     technologies: ["Vue.js", "Nuxt.js", "CSS Modules", "Firebase"],
@@ -79,7 +79,7 @@ export const allProjects: Project[] = [
     }
   },
   {
-    title: "Emmanuel Ngetich's Portfolio",
+    title: "Web Portfolio",
     category: "Full-stack Development",
     description: "A robust portfolio demonstrating expertise in full-stack applications with an emphasis on scalability and backend logic.",
     technologies: ["Django", "React", "PostgreSQL", "Docker", "AWS"],
