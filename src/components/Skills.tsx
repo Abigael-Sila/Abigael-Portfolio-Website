@@ -105,6 +105,23 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-20 bg-gray-900">
+      <style jsx global>{`
+        .swiper-pagination-bullet {
+          background-color: rgba(255, 255, 255, 0.3); /* Lighter, less obtrusive dots */
+          width: 10px;
+          height: 10px;
+          opacity: 1;
+          transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+          background-color: #8b5cf6; /* Vibrant purple for active dot */
+          width: 12px;
+          height: 12px;
+          transform: scale(1.2);
+          opacity: 1;
+        }
+      `}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -118,8 +135,7 @@ const Skills = () => {
         {/* Carousel controls and swipe indicator moved to the top */}
         <div className="relative flex justify-center items-center gap-4 text-white mb-8">
           <button className="swiper-button-prev p-2 rounded-full bg-gray-700/50 hover:bg-gray-700 transition-colors hidden sm:block" aria-label="Previous Slide"></button>
-          {/* Hide pagination dots on large screens */}
-          <div className="swiper-pagination lg:hidden"></div>
+          <div className="swiper-pagination"></div>
           <button className="swiper-button-next p-2 rounded-full bg-gray-700/50 hover:bg-gray-700 transition-colors hidden sm:block" aria-label="Next Slide"></button>
 
           {/* Swipe text hint for mobile, now positioned relative to this block */}
