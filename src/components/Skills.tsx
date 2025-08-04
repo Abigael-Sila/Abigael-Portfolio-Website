@@ -1,11 +1,13 @@
 // src/components/Skills.tsx
 import { Cpu, Code, Wrench, Users, Star } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y } from 'swiper/modules';
+import { Pagination, Navigation, A11y } from 'swiper/modules';
+import { motion } from 'framer-motion';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const Skills = () => {
   const skillCategories = [
@@ -113,57 +115,75 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* The Swiper component acts as the carousel container */}
-        <Swiper
-          modules={[Pagination, A11y]}
-          spaceBetween={30}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          className="pb-16" // Add bottom padding for pagination dots
-        >
-          {skillCategories.map((category, index) => (
-            <SwiperSlide key={index}>
-              {/* This is the content for each slide */}
-              <div className="p-6 md:p-8 bg-gray-800 rounded-xl mb-8">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className={`p-3 rounded-lg ${getColorClasses(category.color)}`}>
-                    {category.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold">{category.title}</h3>
-                </div>
-
-                {/* Skills Grid for the current category */}
-                <div className="grid lg:grid-cols-2 gap-8">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-white mb-2">{skill.name}</h3>
-                          <p className="text-sm text-gray-400">{skill.description}</p>
-                        </div>
-                        <div className="flex items-center gap-1 ml-4">
-                          <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                          <span className="text-sm font-semibold text-white">{skill.level}%</span>
-                        </div>
-                      </div>
-                      
-                      {/* Progress Bar */}
-                      <div className="relative">
-                        <div className="w-full bg-gray-700 rounded-full h-2">
-                          <div
-                            className={`h-2 rounded-full ${getProgressColor(category.color)} transition-all duration-1000 ease-out`}
-                            style={{ width: `${skill.level}%` }}
-                          ></div>
-                        </div>
-                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
-                      </div>
+        <div className="relative">
+          <Swiper
+            modules={[Pagination, Navigation, A11y]}
+            spaceBetween={30}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            navigation={{
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }}
+            className="pb-10"
+          >
+            {skillCategories.map((category, index) => (
+              <SwiperSlide key={index}>
+                <div className="p-6 md:p-8 bg-gray-800 rounded-xl">
+                  <div className="flex items-center justify-center gap-4 mb-8">
+                    <div className={`p-3 rounded-lg ${getColorClasses(category.color)}`}>
+                      {category.icon}
                     </div>
-                  ))}
+                    <h3 className="text-2xl font-bold">{category.title}</h3>
+                  </div>
+
+                  <div className="grid lg:grid-cols-2 gap-8">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div key={skillIndex} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300">
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="flex-1">
+                            <h3 className="text-lg font-semibold text-white mb-2">{skill.name}</h3>
+                            <p className="text-sm text-gray-400">{skill.description}</p>
+                          </div>
+                          <div className="flex items-center gap-1 ml-4">
+                            <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                            <span className="text-sm font-semibold text-white">{skill.level}%</span>
+                          </div>
+                        </div>
+                        
+                        <div className="relative">
+                          <div className="w-full bg-gray-700 rounded-full h-2">
+                            <div
+                              className={`h-2 rounded-full ${getProgressColor(category.color)} transition-all duration-1000 ease-out`}
+                              style={{ width: `${skill.level}%` }}
+                            ></div>
+                          </div>
+                          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Custom Navigation Arrows and Swipe Prompt */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-4 text-white">
+            <button className="swiper-button-prev p-2 rounded-full bg-gray-700/50 hover:bg-gray-700 transition-colors hidden sm:block" aria-label="Previous Slide"></button>
+            <div className="swiper-pagination"></div>
+            <button className="swiper-button-next p-2 rounded-full bg-gray-700/50 hover:bg-gray-700 transition-colors hidden sm:block" aria-label="Next Slide"></button>
+          </div>
+
+          {/* Swipe text hint for mobile */}
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 10, transition: { repeat: Infinity, repeatType: "reverse", duration: 1 } }}
+            className="absolute bottom-2 right-4 text-sm text-gray-400 italic pointer-events-none sm:hidden"
+          >
+            Swipe →
+          </motion.div>
+        </div>
       </div>
     </section>
   );
