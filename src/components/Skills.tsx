@@ -18,7 +18,7 @@ const Skills = () => {
         { name: "Electrical Machines", level: 80, description: "Motors, generators, and transformers" }
       ]
     },
-        {
+    {
       title: "Software Development & Design",
       icon: <Code className="w-6 h-6" />,
       color: "purple",
@@ -154,41 +154,6 @@ const Skills = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Skills Summary */}
-        <div className="mt-16 grid md:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="bg-blue-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Cpu className="w-8 h-8 text-blue-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-blue-400 mb-2">6+</h3>
-            <p className="text-gray-400">Embedded Systems</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="bg-purple-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Code className="w-8 h-8 text-purple-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-purple-400 mb-2">8+</h3>
-            <p className="text-gray-400">Programming Languages</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="bg-green-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Wrench className="w-8 h-8 text-green-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-green-400 mb-2">12+</h3>
-            <p className="text-gray-400">Development Tools</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="bg-yellow-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-8 h-8 text-yellow-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-yellow-400 mb-2">5+</h3>
-            <p className="text-gray-400">Soft Skills</p>
-          </div>
         </div>
       </div>
     </section>
