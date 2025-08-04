@@ -1,6 +1,11 @@
-import { MapPin, Calendar, Award, Users, Wrench } from 'lucide-react';
+// src/components/Experience.tsx
+import { useState } from 'react';
+import { Award, Users, Wrench, ChevronDown, ChevronUp } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Experience = () => {
+  const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+
   const experiences = [
     {
       "title": "Electrical Engineering Intern",
@@ -18,7 +23,7 @@ const Experience = () => {
       ],
       "skills": ["Satellite Systems", "Ground Station Operations", "Power Systems", "Technical Documentation", "Team Collaboration"],
       "icon": <Wrench className="w-6 h-6" />
-  },
+    },
     {
       title: "Electrical Engineering Intern",
       company: "Kenya Railways Corporation",
@@ -55,6 +60,10 @@ const Experience = () => {
     }
   ];
 
+  const toggleAccordion = (index: number) => {
+    setActiveAccordion(activeAccordion === index ? null : index);
+  };
+
   return (
     <section id="experience" className="py-20 bg-gray-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,68 +76,57 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+        <div className="space-y-6 max-w-3xl mx-auto">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="bg-gray-700/30 rounded-xl border border-gray-600/50 hover:border-blue-500/50 transition-all duration-300 overflow-hidden cursor-pointer"
+            >
+              {/* Accordion Header */}
+              <button
+                onClick={() => toggleAccordion(index)}
+                className="w-full flex items-center justify-between p-6 text-left"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="bg-blue-500/20 p-2 rounded-lg text-blue-400">
+                    {exp.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-blue-400">{exp.title}</h3>
+                    <p className="text-lg font-semibold text-gray-200">{exp.company}</p>
+                    <p className="text-sm text-gray-400 mt-1">{exp.duration}</p>
+                  </div>
+                </div>
+                {activeAccordion === index ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+              </button>
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative">
-                {/* Timeline Node */}
-                <div className="absolute left-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900 z-10"></div>
-
-                {/* Content Card */}
-                <div className="ml-16 bg-gray-700/30 rounded-xl p-6 border border-gray-600/50 hover:border-blue-500/50 transition-all duration-300">
-                  <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                    {/* Left Side - Basic Info */}
-                    <div className="lg:w-1/3">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="bg-blue-500/20 p-2 rounded-lg">
-                          {exp.icon}
-                        </div>
-                        <div>
-                          <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                            exp.type === 'Internship' ? 'bg-green-500/20 text-green-400' : 'bg-purple-500/20 text-purple-400'
-                          }`}>
-                            {exp.type}
-                          </span>
-                        </div>
-                      </div>
-                      
-                      <h3 className="text-xl font-bold text-blue-400 mb-2">{exp.title}</h3>
-                      <p className="text-lg font-semibold text-gray-200 mb-3">{exp.company}</p>
-                      
-                      <div className="space-y-2 text-sm text-gray-400">
-                        <div className="flex items-center gap-2">
-                          <MapPin size={16} />
-                          <span>{exp.location}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Calendar size={16} />
-                          <span>{exp.duration}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right Side - Detailed Info */}
-                    <div className="lg:w-2/3">
+              {/* Accordion Content */}
+              <AnimatePresence initial={false}>
+                {activeAccordion === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden px-6 pb-6"
+                  >
+                    <div className="border-t border-gray-600/50 pt-4 mt-4">
                       <p className="text-gray-300 mb-4">{exp.description}</p>
                       
                       <div className="mb-6">
                         <h4 className="text-sm font-semibold text-blue-400 mb-3 flex items-center gap-2">
-                          <Award size={16} />
-                          Key Responsibilities
+                          <Award size={16} /> Key Responsibilities
                         </h4>
-                        <ul className="space-y-2">
+                        <ul className="space-y-2 text-sm text-gray-300">
                           {exp.responsibilities.map((resp, respIndex) => (
-                            <li key={respIndex} className="flex items-start gap-2 text-sm text-gray-300">
+                            <li key={respIndex} className="flex items-start gap-2">
                               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                               <span>{resp}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
-
+    
                       <div>
                         <h4 className="text-sm font-semibold text-purple-400 mb-3">Skills Developed</h4>
                         <div className="flex flex-wrap gap-2">
@@ -143,11 +141,11 @@ const Experience = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
         </div>
       </div>
     </section>

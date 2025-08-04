@@ -1,9 +1,13 @@
-import { useState } from 'react';
+// src/components/Skills.tsx
 import { Cpu, Code, Wrench, Users, Star } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, A11y } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState(0);
-
   const skillCategories = [
     {
       title: "Electrical & Electronics Engineering",
@@ -109,52 +113,57 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* The Swiper component acts as the carousel container */}
+        <Swiper
+          modules={[Pagination, A11y]}
+          spaceBetween={30}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          className="pb-16" // Add bottom padding for pagination dots
+        >
           {skillCategories.map((category, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveCategory(index)}
-              className={`flex items-center gap-3 px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                activeCategory === index
-                  ? `${getColorClasses(category.color)} border`
-                  : 'bg-gray-800 text-gray-400 hover:text-white border border-gray-600'
-              }`}
-            >
-              {category.icon}
-              <span>{category.title}</span>
-            </button>
-          ))}
-        </div>
+            <SwiperSlide key={index}>
+              {/* This is the content for each slide */}
+              <div className="p-6 md:p-8 bg-gray-800 rounded-xl mb-8">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className={`p-3 rounded-lg ${getColorClasses(category.color)}`}>
+                    {category.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold">{category.title}</h3>
+                </div>
 
-        {/* Skills Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
-          {skillCategories[activeCategory].skills.map((skill, index) => (
-            <div key={index} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300">
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-white mb-2">{skill.name}</h3>
-                  <p className="text-sm text-gray-400">{skill.description}</p>
-                </div>
-                <div className="flex items-center gap-1 ml-4">
-                  <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                  <span className="text-sm font-semibold text-white">{skill.level}%</span>
+                {/* Skills Grid for the current category */}
+                <div className="grid lg:grid-cols-2 gap-8">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-white mb-2">{skill.name}</h3>
+                          <p className="text-sm text-gray-400">{skill.description}</p>
+                        </div>
+                        <div className="flex items-center gap-1 ml-4">
+                          <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                          <span className="text-sm font-semibold text-white">{skill.level}%</span>
+                        </div>
+                      </div>
+                      
+                      {/* Progress Bar */}
+                      <div className="relative">
+                        <div className="w-full bg-gray-700 rounded-full h-2">
+                          <div
+                            className={`h-2 rounded-full ${getProgressColor(category.color)} transition-all duration-1000 ease-out`}
+                            style={{ width: `${skill.level}%` }}
+                          ></div>
+                        </div>
+                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              
-              {/* Progress Bar */}
-              <div className="relative">
-                <div className="w-full bg-gray-700 rounded-full h-2">
-                  <div
-                    className={`h-2 rounded-full ${getProgressColor(skillCategories[activeCategory].color)} transition-all duration-1000 ease-out`}
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
-              </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
