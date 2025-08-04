@@ -1,0 +1,16 @@
+/* Custom styles for Swiper pagination */
+.swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.3); /* Lighter, less obtrusive dots */
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #8b5cf6; /* Vibrant purple for active dot */
+    width: 12px;
+    height: 12px;
+    transform: scale(1.2);
+    opacity: 1;
+}
