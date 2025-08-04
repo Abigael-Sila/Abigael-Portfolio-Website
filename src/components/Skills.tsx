@@ -110,9 +110,25 @@ const Skills = () => {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Technical <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Skills</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto mb-8">
             A comprehensive overview of my technical expertise and capabilities
           </p>
+        </div>
+
+        {/* Carousel controls and swipe indicator moved to the top */}
+        <div className="relative flex justify-center items-center gap-4 text-white mb-8">
+          <button className="swiper-button-prev p-2 rounded-full bg-gray-700/50 hover:bg-gray-700 transition-colors hidden sm:block" aria-label="Previous Slide"></button>
+          <div className="swiper-pagination"></div>
+          <button className="swiper-button-next p-2 rounded-full bg-gray-700/50 hover:bg-gray-700 transition-colors hidden sm:block" aria-label="Next Slide"></button>
+
+          {/* Swipe text hint for mobile, now positioned relative to this block */}
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 10, transition: { repeat: Infinity, repeatType: "reverse", duration: 1 } }}
+            className="absolute right-4 text-sm text-gray-400 italic pointer-events-none sm:hidden"
+          >
+            Swipe →
+          </motion.div>
         </div>
 
         <div className="relative">
@@ -125,7 +141,7 @@ const Skills = () => {
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             }}
-            className="pb-10"
+            // pb-10 class removed to fix the space
           >
             {skillCategories.map((category, index) => (
               <SwiperSlide key={index}>
@@ -167,22 +183,6 @@ const Skills = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* Custom Navigation Arrows and Swipe Prompt */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-4 text-white">
-            <button className="swiper-button-prev p-2 rounded-full bg-gray-700/50 hover:bg-gray-700 transition-colors hidden sm:block" aria-label="Previous Slide"></button>
-            <div className="swiper-pagination"></div>
-            <button className="swiper-button-next p-2 rounded-full bg-gray-700/50 hover:bg-gray-700 transition-colors hidden sm:block" aria-label="Next Slide"></button>
-          </div>
-
-          {/* Swipe text hint for mobile */}
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 10, transition: { repeat: Infinity, repeatType: "reverse", duration: 1 } }}
-            className="absolute bottom-2 right-4 text-sm text-gray-400 italic pointer-events-none sm:hidden"
-          >
-            Swipe →
-          </motion.div>
         </div>
       </div>
     </section>
