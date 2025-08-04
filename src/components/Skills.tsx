@@ -118,7 +118,8 @@ const Skills = () => {
         {/* Carousel controls and swipe indicator moved to the top */}
         <div className="relative flex justify-center items-center gap-4 text-white mb-8">
           <button className="swiper-button-prev p-2 rounded-full bg-gray-700/50 hover:bg-gray-700 transition-colors hidden sm:block" aria-label="Previous Slide"></button>
-          <div className="swiper-pagination"></div>
+          {/* Hide pagination dots on large screens */}
+          <div className="swiper-pagination lg:hidden"></div>
           <button className="swiper-button-next p-2 rounded-full bg-gray-700/50 hover:bg-gray-700 transition-colors hidden sm:block" aria-label="Next Slide"></button>
 
           {/* Swipe text hint for mobile, now positioned relative to this block */}
