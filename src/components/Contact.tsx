@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Github, Linkedin, Send, Download, MapPin, Phone } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, Download, MapPin, Phone, X, Instagram, Facebook, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -46,25 +46,49 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    {
-      icon: <Github className="w-6 h-6" />,
-      label: "GitHub",
-      link: "https://github.com/Abigael-Sila",
-      color: "hover:text-gray-400"
-    },
-    {
-      icon: <Linkedin className="w-6 h-6" />,
-      label: "LinkedIn",
-      link: "https://linkedin.com/in/yourprofile",
-      color: "hover:text-blue-400"
-    },
-    {
-      icon: <Mail className="w-6 h-6" />,
-      label: "Email",
-      link: "mailto:abigaelkalundesila@gmail.com",
-      color: "hover:text-green-400"
-    }
-  ];
+  {
+    icon: <Github className="w-6 h-6" />,
+    label: "GitHub",
+    link: "https://github.com/Abigael-Sila",
+    color: "hover:text-gray-400"
+  },
+  {
+    icon: <Linkedin className="w-6 h-6" />,
+    label: "LinkedIn",
+    link: "https://www.linkedin.com/in/abigael-sila-542a36350/",
+    color: "hover:text-blue-400"
+  },
+  {
+    icon: <X className="w-6 h-6" />,
+    label: "Twitter",
+    link: "https://x.com/AbbieSila",
+    color: "hover:text-blue-400"
+  },
+  {
+    icon: <Instagram className="w-6 h-6" />,
+    label: "Instagram",
+    link: "https://www.instagram.com/abigael_sila/?hl=en",
+    color: "hover:text-pink-400"
+  },
+  {
+    icon: <Facebook className="w-6 h-6" />,
+    label: "Facebook",
+    link: "https://www.facebook.com/abigael.sillah.1",
+    color: "hover:text-blue-600"
+  },
+  {
+    icon: <MessageCircle className="w-6 h-6" />,
+    label: "WhatsApp",
+    link: "https://wa.me/254707321345",
+    color: "hover:text-green-500"
+  },
+  {
+    icon: <Mail className="w-6 h-6" />,
+    label: "Email",
+    link: "mailto:abigaelkalundesila@gmail.com",
+    color: "hover:text-green-400"
+  }
+];
 
   return (
     <section id="contact" className="py-20 bg-gray-900">
