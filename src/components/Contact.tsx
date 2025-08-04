@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Github, Linkedin, Send, Download, MapPin, Phone, X, Instagram, MessageCircle } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, Download, MapPin, Phone, X, Instagram, MessageCircle, BookOpen } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -75,6 +75,12 @@ const Contact = () => {
     label: "WhatsApp",
     link: "https://wa.me/254707321345", 
     color: "hover:text-green-500"
+  },
+  {
+    icon: <BookOpen className="w-6 h-6" />,
+    label: "Blog",
+    link: "https://abbieunfiltered.blogspot.com/",
+    color: "hover:text-orange-400"
   }
 ];
 

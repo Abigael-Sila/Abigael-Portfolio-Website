@@ -1,40 +1,18 @@
-import { Award, ExternalLink } from 'lucide-react';
+// src/components/Certificates.tsx
+import { ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { allCertificates } from '../data/certificatesData.tsx';
 
 const Certificates = () => {
-  const certificates = [
-    // Replace this with your actual certificate data
-    {
-      name: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services (AWS)",
-      date: "February 2024",
-      link: "https://www.credly.com/badges/your-certificate-id",
-      image: "https://images.credly.com/size/340x340/images/0063490f-0261-4c68-aa98-316279f06a0e/AWS-Cloud-Practitioner-2020.png",
-      description: "Validated a foundational understanding of AWS Cloud concepts, services, security, and economics."
-    },
-    {
-      name: "React - The Complete Guide",
-      issuer: "Udemy",
-      date: "January 2024",
-      link: "https://www.udemy.com/certificate/your-certificate-id/",
-      image: "https://image.shutterstock.com/image-vector/certificate-of-completion-template-vintage-600w-128913346.jpg",
-      description: "Mastered React.js fundamentals, hooks, state management (Redux), and building scalable web applications."
-    },
-    {
-      name: "Embedded Systems Development",
-      issuer: "Coursera",
-      date: "December 2023",
-      link: "https://coursera.org/verify/your-certificate-id",
-      image: "https://images.unsplash.com/photo-1549692520-acc6669e2230?w=500&auto=format&fit=crop",
-      description: "Gained expertise in microcontroller programming, sensor integration, and real-time operating systems."
-    },
-  ];
+  // Certificates to display (first three)
+  const certificatesToDisplay = allCertificates.slice(0, 3);
 
   return (
     <section id="certificates" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            My <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Certificates</span>
+            Featured <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Certificates</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             A showcase of my professional development and acquired expertise
@@ -42,13 +20,13 @@ const Certificates = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {certificates.map((cert, index) => (
+          {certificatesToDisplay.map((cert, index) => (
             <div
               key={index}
               className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 flex flex-col items-center text-center hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105"
             >
               <div className="bg-blue-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-blue-400" />
+                {cert.icon}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">{cert.name}</h3>
               <p className="text-gray-400 mb-2">{cert.issuer}</p>
@@ -64,6 +42,16 @@ const Certificates = () => {
               </a>
             </div>
           ))}
+        </div>
+        
+        {/* View All Certificates Button */}
+        <div className="mt-12 text-center">
+          <Link
+            to="/all-certificates" // This is the new route for your All Certificates page
+            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-block"
+          >
+            View All Certificates
+          </Link>
         </div>
       </div>
     </section>

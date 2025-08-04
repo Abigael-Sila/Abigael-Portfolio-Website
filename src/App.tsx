@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
 import VisitorsCounter from './components/VisitorsCounter';
 import AllProjectsPage from './pages/AllProjectsPage';
+import AllCertificatesPage from './pages/AllCertificatesPage'; // Import the new Certificates page
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -78,6 +79,9 @@ function App() {
 
           {/* Route for the All Projects page */}
           <Route path="/all-projects" element={<AllProjectsPage />} />
+
+          {/* Add a route for the All Certificates page */}
+          <Route path="/all-certificates" element={<AllCertificatesPage />} />
 
           {/* Add any other routes for future pages here if needed */}
         </Routes>
