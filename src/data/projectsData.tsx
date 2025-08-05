@@ -1,6 +1,6 @@
 // src/data/projectsData.ts
 
-import { Wifi, Globe, Smartphone, Lightbulb, HardHat } from 'lucide-react';
+import { Wifi, Globe, Smartphone } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -11,7 +11,7 @@ interface Project {
   image: string;
   icon: React.ReactNode;
   status: "Completed" | "In Progress";
-  isFeatured: boolean; // Added a new field to highlight key projects
+  isFeatured: boolean;
   links: {
     github: string;
     live?: string;
@@ -19,27 +19,6 @@ interface Project {
 }
 
 export const allProjects: Project[] = [
-  {
-    title: "Symphion - Wearable SOS Device",
-    category: "Embedded Systems & IoT",
-    description: "A life-saving wearable device that provides real-time location tracking and emergency communication capabilities using ESP32 and A9G GSM/GPS modules.",
-    technologies: ["ESP32", "A9G GSM/GPS", "C++", "Arduino IDE", "GPS Tracking", "GSM Communication"],
-    features: [
-      "Real-time GPS location tracking",
-      "Emergency SOS communication",
-      "Low power consumption design",
-      "Wearable form factor",
-      "Mobile app integration"
-    ],
-    image: "https://images.pexels.com/photos/163100/circuit-circuit-board-resistor-computer-163100.jpeg?auto=compress&cs=tinysrgb&w=800",
-    icon: <Wifi className="w-6 h-6" />,
-    status: "In Progress",
-    isFeatured: true,
-    links: {
-      github: "https://github.com/Abigael-Sila/Symphion-Wearable-SOS-Device",
-      live: "https://example.com/symphion-demo"
-    }
-  },
   {
     title: "Portfolio Website",
     category: "Web Development",
@@ -61,81 +40,104 @@ export const allProjects: Project[] = [
     }
   },
   {
-    title: "Smart Home Hub",
-    category: "IoT & Embedded Systems",
-    description: "A centralized hub to control and monitor smart home devices using MQTT protocol.",
-    technologies: ["Raspberry Pi", "Python", "Node-RED", "MQTT"],
+    title: "Symphion - Wearable SOS Device",
+    category: "Embedded Systems & IoT",
+    description: "A life-saving wearable device that provides real-time location tracking and emergency communication capabilities using ESP32 and A9G GSM/GPS modules.",
+    technologies: ["ESP32", "A9G GSM/GPS", "C++", "Arduino IDE", "GPS Tracking", "GSM Communication"],
     features: [
-      "Centralized device control",
-      "Real-time sensor data visualization",
-      "Automated routines",
-      "Cross-platform compatibility"
+      "Real-time GPS location tracking",
+      "Emergency SOS communication",
+      "Low power consumption design",
+      "Wearable form factor",
+      "Mobile app integration"
     ],
-    image: "https://images.pexels.com/photos/3760065/pexels-photo-3760065.jpeg?auto=compress&cs=tinysrgb&w=800",
-    icon: <Lightbulb className="w-6 h-6" />,
+    image: "https://images.pexels.com/photos/163100/circuit-circuit-board-resistor-computer-163100.jpeg?auto=compress&cs=tinysrgb&w=800",
+    icon: <Wifi className="w-6 h-6" />,
+    status: "In Progress",
+    isFeatured: true,
+    links: {
+      github: "https://github.com/Abigael-Sila/Symphion",
+      live: "https://abigael-sila.github.io/Symphion/"
+    }
+  },
+  {
+    title: "Chrispus Kiptoo Portfolio",
+    category: "Web Development",
+    description: "A dynamic portfolio highlighting web development projects for Chrispus Kiptoo, with a focus on clean code and user experience.",
+    technologies: ["Next.js", "TypeScript", "SCSS", "GSAP"],
+    features: [
+      "Smooth animations",
+      "Blog section",
+      "Optimized for performance",
+      "Case studies"
+    ],
+    image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800",
+    icon: <Globe className="w-6 h-6" />,
     status: "Completed",
     isFeatured: true,
     links: {
-      github: "https://github.com/Abigael-Sila/Smart-Home-Hub",
-      live: "https://example.com/smarthome-demo"
+      github: "https://github.com/chrispus-kiptoo/portfolio",
+      live: "https://chrispus-kiptoo.netlify.app/"
     }
   },
   {
-    title: "Robot Arm Controller",
-    category: "Robotics & Control Systems",
-    description: "Developed a GUI to control a 6-axis robot arm, simulating movements and performing pick-and-place tasks.",
-    technologies: ["Python", "PyQt5", "ROS", "Microcontrollers"],
+    title: "Lucas Kunkuru Portfolio",
+    category: "Web Development",
+    description: "A creative and minimalist portfolio site for Lucas Kunkuru, showcasing design sensibilities and front-end development skills.",
+    technologies: ["Vue.js", "Nuxt.js", "CSS Modules", "Firebase"],
     features: [
-      "Graphical User Interface",
-      "Real-time joint angle feedback",
-      "Inverse kinematics solver",
-      "Task-based programming"
+      "Unique design",
+      "Interactive gallery",
+      "Client testimonials",
+      "Contact integration"
     ],
     image: "https://images.pexels.com/photos/1036647/pexels-photo-1036647.jpeg?auto=compress&cs=tinysrgb&w=800",
-    icon: <HardHat className="w-6 h-6" />,
-    status: "Completed",
-    isFeatured: false,
+    icon: <Smartphone className="w-6 h-6" />,
+    status: "In Progress",
+    isFeatured: true,
     links: {
-      github: "https://github.com/Abigael-Sila/Robot-Arm-Controller",
+      github: "https://github.com/lucas-kunkuru/portfolio-v2",
+      live: "https://lucas-kunkuru.vercel.app/"
     }
   },
   {
-    title: "E-commerce Web App",
+    title: "Emmanuel Ngetich Portfolio",
     category: "Full-stack Development",
-    description: "A full-featured e-commerce platform with user authentication, product management, and a secure payment gateway.",
-    technologies: ["MERN Stack", "Stripe API", "Redux"],
+    description: "A robust portfolio demonstrating expertise in full-stack applications for Emmanuel Ngetich, with an emphasis on scalability and backend logic.",
+    technologies: ["Django", "React", "PostgreSQL", "Docker", "AWS"],
     features: [
-      "Secure user authentication",
-      "Shopping cart functionality",
-      "Admin dashboard",
-      "Payment processing"
+      "User authentication",
+      "API integration",
+      "Deployment showcases",
+      "Technical blog posts"
     ],
     image: "https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=800",
     icon: <Globe className="w-6 h-6" />,
     status: "In Progress",
-    isFeatured: false,
+    isFeatured: true,
     links: {
-      github: "https://github.com/Abigael-Sila/Ecommerce-Web-App",
-      live: "https://example.com/ecommerce-demo"
+      github: "https://github.com/emmanuel-ngetich/fullstack-portfolio",
+      live: "https://emmanuel-ngetich.herokuapp.com/"
     }
   },
   {
-    title: "Mobile Fitness Tracker",
+    title: "James Ngene Portfolio",
     category: "Mobile Development",
-    description: "A mobile application that tracks user fitness activities, including steps, distance, and calories burned.",
-    technologies: ["Flutter", "Dart", "Firebase"],
+    description: "A mobile-first portfolio for James Ngene, optimized to showcase projects and skills on smaller devices.",
+    technologies: ["React Native", "Expo", "Firebase", "Redux"],
     features: [
-      "Real-time activity tracking",
-      "User progress charts",
-      "Goal setting and achievements",
-      "Social sharing"
+      "Mobile-first design",
+      "Smooth UI animations",
+      "Integrated blog",
+      "API consumption"
     ],
     image: "https://images.pexels.com/photos/2247179/pexels-photo-2247179.jpeg?auto=compress&cs=tinysrgb&w=800",
     icon: <Smartphone className="w-6 h-6" />,
     status: "In Progress",
     isFeatured: false,
     links: {
-      github: "https://github.com/Abigael-Sila/Mobile-Fitness-Tracker",
+      github: "https://github.com/james-ngene/portfolio-app",
+      live: "https://example.com/james-ngene-demo"
     }
-  },
+  }
 ];
