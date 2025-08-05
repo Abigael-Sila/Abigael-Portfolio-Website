@@ -9,6 +9,7 @@ import {
   FaCertificate,
   FaTimes,
   FaBars,
+  FaEllipsisV // Importing the vertical ellipsis (kebab) icon
 } from 'react-icons/fa';
 import AbigaelLogo from '../assets/abigael_logo.png'; // Assuming your logo is in this path
 
@@ -121,7 +122,7 @@ const Header = () => {
             {/* Mobile hamburger icon */}
             <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white" aria-label="Toggle navigation menu">
-                {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                {isMenuOpen ? <FaTimes size={24} /> : <FaEllipsisV size={24} />}
               </button>
             </div>
           </div>
