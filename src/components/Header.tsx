@@ -8,23 +8,23 @@ import {
   FaEnvelope,
   FaCertificate,
   FaTimes,
-  FaBars,
-  FaEllipsisV // Importing the vertical ellipsis (kebab) icon
+  FaEllipsisV,
 } from 'react-icons/fa';
 import AbigaelLogo from '../assets/abigael_logo.png'; // Assuming your logo is in this path
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
 
   const navigation = [
-    { name: 'Home', href: '/', icon: <FaHome /> },
-    { name: 'About', href: '#about', icon: <FaUser /> },
-    { name: 'Projects', href: '#projects', icon: <FaFolderOpen /> },
-    { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher /> },
-    { name: 'Skills', href: '#skills', icon: <FaLaptopCode /> },
-    { name: 'Certificates', href: '#certificates', icon: <FaCertificate /> },
-    { name: 'Contact', href: '#contact', icon: <FaEnvelope /> }
+    { name: 'Home', href: '/', icon: <FaHome className="w-5 h-5" /> },
+    { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
+    { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
+    { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
+    { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
+    { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
+    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> }
   ];
 
   const floatingIcons = [
@@ -34,7 +34,6 @@ const Header = () => {
     { label: 'Contact', href: '#contact', icon: <FaEnvelope /> },
   ];
 
-  // Scroll effect from the old Header component
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -44,12 +43,27 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      setActiveLink(window.location.hash);
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    // Set initial active link
+    if (window.location.hash) {
+      setActiveLink(window.location.hash);
+    } else {
+      setActiveLink('/');
+    }
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     } else {
-      // Handle the root path or other non-anchor links
       window.location.href = href;
     }
     setIsMenuOpen(false); // Close menu on click
@@ -59,28 +73,44 @@ const Header = () => {
     <>
       {/* Off-canvas menu for mobile/small screens */}
       <div
-        className={`fixed inset-y-0 left-0 z-50 h-screen w-full transform bg-gray-900/90 backdrop-blur-sm transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed inset-y-0 left-0 z-50 h-screen w-72 transform bg-gray-900/90 backdrop-blur-md transition-transform duration-300 ease-in-out lg:hidden ${
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="flex justify-end p-4">
+        <div className="flex justify-between items-center p-4">
+          {/* Menu Title and Close button */}
+          <span className="text-xl font-bold text-white">Abigael Kalunde Sila</span>
           <button onClick={() => setIsMenuOpen(false)} className="text-white" aria-label="Close navigation menu">
             <FaTimes size={24} />
           </button>
         </div>
-        <nav className="flex h-full flex-col items-center justify-center space-y-8 text-white">
+        <nav className="flex flex-col p-4 space-y-2 text-white">
           {navigation.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => scrollToSection(link.href)}
-              className="text-2xl font-bold transition-colors hover:text-blue-400"
+              className={`flex items-center space-x-4 p-3 rounded-lg transition-colors duration-200 ${
+                activeLink === link.href || (activeLink === '' && link.href === '/')
+                  ? 'bg-blue-600/20 text-blue-400 font-semibold'
+                  : 'text-gray-300 hover:bg-gray-800 hover:text-blue-400'
+              }`}
             >
-              {link.name}
+              {link.icon}
+              <span className="text-lg">{link.name}</span>
             </a>
           ))}
         </nav>
       </div>
+       {/* Overlay to close menu on click outside */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
 
       {/* Main navigation bar for large screens */}
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -90,10 +120,10 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo from the original Header component */}
             <a href="/" className="flex items-center space-x-2">
-              <img 
-                src={AbigaelLogo} 
-                alt="Abigael Kalunde Sila Logo" 
-                className="w-10 h-10 rounded-full object-cover" 
+              <img
+                src={AbigaelLogo}
+                alt="Abigael Kalunde Sila Logo"
+                className="w-10 h-10 rounded-full object-cover"
               />
               <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Abigael Kalunde Sila
@@ -111,7 +141,11 @@ const Header = () => {
                       e.preventDefault();
                       scrollToSection(item.href);
                     }}
-                    className="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                    className={`text-sm font-medium transition-colors duration-200 px-3 py-2 ${
+                      activeLink === item.href || (activeLink === '' && item.href === '/')
+                        ? 'text-blue-400 border-b-2 border-blue-400'
+                        : 'text-gray-300 hover:text-blue-400'
+                    }`}
                   >
                     {item.name}
                   </a>
@@ -119,9 +153,9 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Mobile hamburger icon */}
+            {/* Mobile kebab icon */}
             <div className="lg:hidden">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white" aria-label="Toggle navigation menu">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white p-2" aria-label="Toggle navigation menu">
                 {isMenuOpen ? <FaTimes size={24} /> : <FaEllipsisV size={24} />}
               </button>
             </div>
