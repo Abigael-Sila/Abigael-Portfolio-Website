@@ -42,7 +42,7 @@ const Experience = () => {
       icon: <Wrench className="w-6 h-6" />
     },
     {
-      title: "Freelance Developer",
+      title: "Freelance",
       company: "Self-Employed",
       location: "Remote",
       duration: "2022 - Present",
