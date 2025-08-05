@@ -73,11 +73,11 @@ const Header = () => {
     <>
       {/* Off-canvas menu for mobile/small screens */}
       <div
-        className={`fixed inset-y-0 left-0 z-50 h-screen w-72 transform bg-gray-900/90 backdrop-blur-md transition-transform duration-300 ease-in-out lg:hidden ${
-          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed inset-y-0 right-0 z-50 h-screen w-72 transform bg-gray-900/80 backdrop-blur-md transition-transform duration-300 ease-in-out lg:hidden ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex justify-between items-center p-4">
+        <div className="flex flex-row-reverse justify-between items-center p-4">
           {/* Menu Title and Close button */}
           <span className="text-xl font-bold text-white">Abigael Kalunde Sila</span>
           <button onClick={() => setIsMenuOpen(false)} className="text-white" aria-label="Close navigation menu">
