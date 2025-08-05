@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { ExternalLink, Github, Play } from 'lucide-react'; // Remove Wifi, Smartphone, Globe as they are in data
-import { Link } from 'react-router-dom'; // Import Link
-import { allProjects } from '../data/projectsData.tsx'; // Import allProjects from new data file
+import { ExternalLink, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { allProjects } from '../data/projectsData.tsx';
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(0);
 
-  // Projects to display (first three) - Use slice on the imported allProjects
   const projectsToDisplay = allProjects.slice(0, 3);
 
   return (
@@ -46,43 +45,40 @@ const Projects = () => {
                   {project.status}
                 </div>
 
-                {/* Category Icon - Now directly from project.icon */}
+                {/* Category Icon */}
                 <div className="absolute top-4 left-4 bg-blue-500/20 backdrop-blur-sm p-2 rounded-lg text-blue-400">
                   {project.icon}
                 </div>
 
-                {/* Overlay on Hover */}
-                <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="flex gap-4">
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`View ${project.title} on GitHub`}
-                      className="text-gray-400 hover:text-white"
-                    >
-                      <Github size={20} />
-                    </a>
-                    {project.links.live && ( // Conditionally render live link if available
-                      <a
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Live Demo of ${project.title}`}
-                        className="text-gray-400 hover:text-white ml-3"
-                      >
-                        <ExternalLink size={20} />
-                      </a>
-                    )}
-                  </div>
-                </div>
+                {/* Live Demo Button - Highly visible, replaces hover overlay */}
+                {project.links.live && (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()} // Prevents the card from becoming the active project
+                    className="absolute bottom-4 left-4 px-4 py-2 bg-blue-500/80 hover:bg-blue-600/90 backdrop-blur-sm text-white rounded-full font-bold text-sm flex items-center gap-2 transition-all duration-300 transform scale-100 hover:scale-105 opacity-100 group-hover:opacity-100"
+                  >
+                    <ExternalLink size={16} />
+                    Live Demo
+                  </a>
+                )}
               </div>
 
               {/* Project Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-blue-400 font-medium">{project.category}</span>
-                  <Play className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()} // Prevents the card from becoming the active project
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label={`View ${project.title} on GitHub`}
+                  >
+                    <Github size={20} />
+                  </a>
                 </div>
 
                 <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
@@ -129,10 +125,10 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* View All Projects Button - Now uses Link */}
+        {/* View All Projects Button */}
         <div className="text-center mt-12">
           <Link
-            to="/all-projects" // This is the new route for your All Projects page
+            to="/all-projects"
             className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-block"
           >
             View All Projects
