@@ -1,5 +1,9 @@
 // src/data/projectsData.ts
 
+// Import the local images
+import AbigaelPortfolioImage from '../assets/Abigael_Portfolio.png';
+import SymphionScreenshot from '../assets/Symphion_Screenshot.png';
+
 import { Wifi, Globe, Smartphone } from 'lucide-react';
 
 interface Project {
@@ -30,7 +34,7 @@ export const allProjects: Project[] = [
       "Dark mode support",
       "Project showcase"
     ],
-    image: "../assets/Abigael_Portfolio.png",
+    image: AbigaelPortfolioImage, // Use the imported variable here
     icon: <Globe className="w-6 h-6" />,
     status: "Completed",
     isFeatured: true,
@@ -51,7 +55,7 @@ export const allProjects: Project[] = [
       "Wearable form factor",
       "Mobile app integration"
     ],
-    image: "../assets/Symphion_Screenshot.png",
+    image: SymphionScreenshot, // Use the imported variable here
     icon: <Wifi className="w-6 h-6" />,
     status: "In Progress",
     isFeatured: true,
