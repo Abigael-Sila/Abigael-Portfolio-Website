@@ -139,7 +139,22 @@ const Skills = () => {
             modules={[Pagination, Navigation, A11y]}
             spaceBetween={30}
             slidesPerView={1}
-            pagination={{ clickable: true }}
+            pagination={{
+              clickable: true,
+              el: '.swiper-pagination',
+              type: 'custom',
+              renderCustom: function (_swiper: any, current: number, total: number) {
+              let paginationHtml = '';
+                for (let i = 1; i <= total; i++) {
+                if (i === current) {
+                  paginationHtml += `<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>`;
+                } else {
+                  paginationHtml += `<span class="swiper-pagination-bullet"></span>`;
+                }
+              }
+            return paginationHtml;
+          },
+        }}
             navigation={{
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
