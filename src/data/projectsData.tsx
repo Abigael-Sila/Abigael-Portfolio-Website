@@ -20,7 +20,7 @@ interface Project {
 
 export const allProjects: Project[] = [
   {
-    title: "Portfolio Website",
+    title: "My Portfolio Website",
     category: "Web Development",
     description: "My personal portfolio highlighting a selection of my best projects, skills, and experience.",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
@@ -30,13 +30,13 @@ export const allProjects: Project[] = [
       "Dark mode support",
       "Project showcase"
     ],
-    image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "../assets/Abigael_Portfolio.png",
     icon: <Globe className="w-6 h-6" />,
     status: "Completed",
     isFeatured: true,
     links: {
-      github: "https://github.com/Abigael-Sila/Abigael-Sila-Portfolio-Website",
-      live: "https://abigael-sila.github.io/Abigael-Sila-Portfolio-Website/"
+      github: "https://github.com/Abigael-Sila/Abigael-Portfolio-Website",
+      live: "https://abigael-sila.github.io/Abigael-Portfolio-Website/"
     }
   },
   {
@@ -51,7 +51,7 @@ export const allProjects: Project[] = [
       "Wearable form factor",
       "Mobile app integration"
     ],
-    image: "https://images.pexels.com/photos/163100/circuit-circuit-board-resistor-computer-163100.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "../assets/Symphion_Screenshot.png",
     icon: <Wifi className="w-6 h-6" />,
     status: "In Progress",
     isFeatured: true,
