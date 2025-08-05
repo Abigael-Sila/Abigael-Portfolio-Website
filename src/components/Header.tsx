@@ -18,7 +18,7 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState('');
 
   const navigation = [
-    { name: 'Home', href: '/', icon: <FaHome className="w-5 h-5" /> },
+    { name: 'Home', href: '#hero', icon: <FaHome className="w-5 h-5" /> },
     { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
     { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
@@ -28,9 +28,12 @@ const Header = () => {
   ];
 
   const floatingIcons = [
-    { label: 'Home', href: '/', icon: <FaHome /> },
+    { label: 'Home', href: '#hero', icon: <FaHome /> },
     { label: 'About', href: '#about', icon: <FaUser /> },
     { label: 'Projects', href: '#projects', icon: <FaFolderOpen /> },
+    { label: 'Experience', href: '#experience', icon: <FaChalkboardTeacher /> },
+    { label: 'Skills', href: '#skills', icon: <FaLaptopCode /> },
+    { label: 'Certificates', href: '#certificates', icon: <FaCertificate /> },
     { label: 'Contact', href: '#contact', icon: <FaEnvelope /> },
   ];
 
@@ -163,16 +166,29 @@ const Header = () => {
         </nav>
       </header>
 
-      {/* Floating vertical icon bar for large screens */}
+      {/* Floating vertical icon bar with captions for large screens */}
       <div className="fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col space-y-4 lg:flex">
         {floatingIcons.map((item) => (
           <a
             key={item.label}
             href={item.href}
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-white shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-blue-500"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(item.href);
+            }}
+            className={`group flex items-center justify-center relative p-2 h-12 rounded-full text-white shadow-lg transition-transform duration-300 hover:scale-110
+              ${
+                activeLink === item.href || (activeLink === '' && item.href === '/')
+                  ? 'bg-blue-500'
+                  : 'bg-gray-800 hover:bg-blue-500'
+              }`
+            }
             title={item.label}
           >
             {item.icon}
+            <span className="absolute right-full mr-4 text-white p-2 rounded-md bg-gray-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100 min-w-max">
+              {item.label}
+            </span>
           </a>
         ))}
       </div>
