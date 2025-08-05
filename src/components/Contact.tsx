@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Github, Linkedin, Send, Download, MapPin, Phone, X, Instagram, MessageCircle, BookOpen } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,9 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -18,10 +22,32 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // EmailJS integration would go here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+    setStatus('');
+
+    const serviceId = 'service_opuoiab';
+    const templateId = 'template_ac1a5zb';
+    const publicKey = 'Dxq52kbbRczsrJ78J';
+
+    const templateParams = {
+      user_name: formData.name,
+      user_email: formData.email,
+      user_subject: formData.subject,
+      user_message: formData.message
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }, (error) => {
+        console.log('FAILED...', error);
+        setStatus('Failed to send message. Please try again.');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   const contactInfo = [
@@ -46,43 +72,43 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-  {
-    icon: <Github className="w-6 h-6" />,
-    label: "GitHub",
-    link: "https://github.com/Abigael-Sila",
-    color: "hover:text-gray-400"
-  },
-  {
-    icon: <Linkedin className="w-6 h-6" />,
-    label: "LinkedIn",
-    link: "https://www.linkedin.com/in/abigael-sila-542a36350/",
-    color: "hover:text-blue-400"
-  },
-  {
-    icon: <X className="w-6 h-6" />,
-    label: "Twitter",
-    link: "https://x.com/AbbieSila",
-    color: "hover:text-blue-400"
-  },
-  {
-    icon: <Instagram className="w-6 h-6" />,
-    label: "Instagram",
-    link: "https://www.instagram.com/abigael_sila/?hl=en",
-    color: "hover:text-pink-400"
-  },
-  {
-    icon: <MessageCircle className="w-6 h-6" />,
-    label: "WhatsApp",
-    link: "https://wa.me/254707321345", 
-    color: "hover:text-green-500"
-  },
-  {
-    icon: <BookOpen className="w-6 h-6" />,
-    label: "Blog",
-    link: "https://abbieunfiltered.blogspot.com/",
-    color: "hover:text-orange-400"
-  }
-];
+    {
+      icon: <Github className="w-6 h-6" />,
+      label: "GitHub",
+      link: "https://github.com/Abigael-Sila",
+      color: "hover:text-gray-400"
+    },
+    {
+      icon: <Linkedin className="w-6 h-6" />,
+      label: "LinkedIn",
+      link: "https://www.linkedin.com/in/abigael-sila-542a36350/",
+      color: "hover:text-blue-400"
+    },
+    {
+      icon: <X className="w-6 h-6" />,
+      label: "Twitter",
+      link: "https://x.com/AbbieSila",
+      color: "hover:text-blue-400"
+    },
+    {
+      icon: <Instagram className="w-6 h-6" />,
+      label: "Instagram",
+      link: "https://www.instagram.com/abigael_sila/?hl=en",
+      color: "hover:text-pink-400"
+    },
+    {
+      icon: <MessageCircle className="w-6 h-6" />,
+      label: "WhatsApp",
+      link: "https://wa.me/254707321345", 
+      color: "hover:text-green-500"
+    },
+    {
+      icon: <BookOpen className="w-6 h-6" />,
+      label: "Blog",
+      link: "https://abbieunfiltered.blogspot.com/",
+      color: "hover:text-orange-400"
+    }
+  ];
 
   return (
     <section id="contact" className="py-20 bg-gray-900">
@@ -96,7 +122,6 @@ const Contact = () => {
           </p>
         </div>
       
-
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
@@ -144,23 +169,23 @@ const Contact = () => {
               </div>
             </div>
 
-                {/* Resume View */}
-<div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
-  <h4 className="text-lg font-semibold mb-3 text-blue-400">Resume</h4>
-  <p className="text-gray-300 mb-4">
-    View my resume to learn more about my experience and qualifications.
-  </p>
-  <a
-    href="Abigael_Sila_Resume.pdf" // Correct path to the file in the public directory
-    target="_blank" // Opens the link in a new tab
-    rel="noopener noreferrer" // Recommended for security when using target="_blank"
-    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-  >
-    <Download size={18} />
-    View Resume
-  </a>
-</div>
-              </div>
+            {/* Resume View */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
+              <h4 className="text-lg font-semibold mb-3 text-blue-400">Resume</h4>
+              <p className="text-gray-300 mb-4">
+                View my resume to learn more about my experience and qualifications.
+              </p>
+              <a
+                href="Abigael_Sila_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+              >
+              <Download size={18} />
+                View Resume
+              </a>
+            </div>
+          </div>
 
           {/* Contact Form */}
           <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700/50">
@@ -233,12 +258,15 @@ const Contact = () => {
                 />
               </div>
 
+              {status && <p className="text-center mt-4 text-sm text-green-400">{status}</p>}
+
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={isSubmitting}
               >
                 <Send size={18} />
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
