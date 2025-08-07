@@ -1,6 +1,8 @@
+// src/components/Footer.tsx
+
 import {Heart, Github, Linkedin, Mail } from 'lucide-react';
 import AbigaelLogo from '../assets/abigael_logo.png';
-import ShareButton from './ShareButton'; // Import the new ShareButton component
+import ShareButton from './ShareButton';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,9 +30,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Abigael-Sila', label: 'GitHub' },
-    { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/abigael-sila-542a36350/', label: 'LinkedIn' },
-    { icon: <Mail className="w-5 h-5" />, href: 'mailto:abigaelkalundesila@gmail.com', label: 'Email' }
+    { icon: <Github className="w-5 h-5 md:w-4 md:h-4" />, href: 'https://github.com/Abigael-Sila', label: 'GitHub' },
+    { icon: <Linkedin className="w-5 h-5 md:w-4 md:h-4" />, href: 'https://www.linkedin.com/in/abigael-sila-542a36350/', label: 'LinkedIn' },
+    { icon: <Mail className="w-5 h-5 md:w-4 md:h-4" />, href: 'mailto:abigaelkalundesila@gmail.com', label: 'Email' }
   ];
 
   const scrollToSection = (href: string) => {
@@ -65,7 +67,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="bg-gray-800 hover:bg-blue-500 p-2 rounded-lg transition-colors duration-300"
+                  className="bg-gray-800 hover:bg-blue-500 p-2 rounded-lg transition-colors duration-300 md:p-1"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
@@ -73,7 +75,7 @@ const Footer = () => {
                   {social.icon}
                 </a>
               ))}
-              <div className="bg-gray-800 hover:bg-blue-500 p-2 rounded-lg transition-colors duration-300">
+              <div className="bg-gray-800 hover:bg-blue-500 p-2 rounded-lg transition-colors duration-300 md:p-1">
                 <ShareButton label="my portfolio" />
               </div>
             </div>

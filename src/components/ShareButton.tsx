@@ -10,8 +10,8 @@ import {
   FaTimes,
   FaCopy,
 } from 'react-icons/fa';
-import { Mail } from 'lucide-react'; 
-import { X } from 'lucide-react'; 
+import { Mail, X } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 
 interface ShareButtonProps {
   label: string;
@@ -27,7 +27,7 @@ const ShareButton = ({ label }: ShareButtonProps) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(portfolioUrl);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Reset copied message after 2 seconds
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -55,7 +55,7 @@ const ShareButton = ({ label }: ShareButtonProps) => {
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="text-gray-400 hover:text-white"
-                aria-label="Close share modal" // Added aria-label for accessibility
+                aria-label="Close share modal"
               >
                 <FaTimes size={24} />
               </button>
@@ -101,7 +101,6 @@ const ShareButton = ({ label }: ShareButtonProps) => {
             </div>
 
             <div className="mt-4 space-y-4">
-              {/* Copy Link Section */}
               <div className="flex items-center space-x-2">
                 <FaLink className="text-blue-400" />
                 <input
@@ -109,27 +108,25 @@ const ShareButton = ({ label }: ShareButtonProps) => {
                   value={portfolioUrl}
                   readOnly
                   className="flex-grow p-2 text-sm bg-gray-700 text-white rounded-md"
-                  aria-label="Portfolio URL" // Added aria-label for accessibility
+                  aria-label="Portfolio URL"
                 />
                 <button
                   onClick={handleCopy}
                   className={`p-2 rounded-md transition-colors duration-200 ${
                     copied ? 'bg-green-500' : 'bg-blue-500 hover:bg-blue-600'
                   }`}
-                  aria-label="Copy URL to clipboard" // Added aria-label for accessibility
+                  aria-label="Copy URL to clipboard"
                 >
                   <FaCopy size={20} />
                 </button>
               </div>
               {copied && <p className="text-center text-green-500 text-sm">Link copied to clipboard!</p>}
 
-              {/* QR Code Section */}
               <div className="flex flex-col items-center justify-center space-y-2">
                 <FaQrcode className="text-blue-400" size={24} />
                 <span className="text-sm font-medium text-white">Scan QR Code</span>
-                {/* You'll need to install a QR code library like `qrcode.react` to render this */}
-                <div className="w-32 h-32 bg-white flex items-center justify-center rounded-lg">
-                  <p className="text-xs text-gray-800">QR Code Here</p>
+                <div className="w-32 h-32 bg-white flex items-center justify-center rounded-lg p-2">
+                  <QRCodeSVG value={portfolioUrl} size={112} />
                 </div>
               </div>
             </div>
