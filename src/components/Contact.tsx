@@ -171,7 +171,7 @@ const Contact = () => {
 
             {/* Resume View */}
             <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
-              <h4 className="text-lg font-semibold mb-3 text-blue-400">Resume</h4>
+              <h4 className="text-lg font-semibold mb-3 text-blue-400">Curriculum Vitae</h4>
               <p className="text-gray-300 mb-4">
                 View my CV to learn more about my experience and qualifications.
               </p>
