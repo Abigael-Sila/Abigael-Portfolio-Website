@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    
     
     <title>Abigael Kalunde Sila - Electrical and Electronics Engineer | Web & Mobile App Developer | UI/UX Designer | Embedded Systems & IoT Innovator </title>
     <meta name="description" content="Electrical & Electronics Engineer with extra skills in embedded systems, IoT solutions, web and mobile app development and ui/ux design. Creator of innovative projects like Symphion wearable SOS device." />
@@ -29,7 +29,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="manifest" href="/manifest.json" />
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -88,5 +89,20 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script> 
+
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(err => {
+          console.log('Service Worker registration failed:', err);
+        });
+    });
+  }
+</script>
+
   </body>
 </html>
