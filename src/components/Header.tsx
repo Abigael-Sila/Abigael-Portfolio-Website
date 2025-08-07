@@ -9,8 +9,9 @@ import {
   FaCertificate,
   FaTimes,
   FaEllipsisV,
+  FaTools,
 } from 'react-icons/fa';
-import AbigaelLogo from '../assets/abigael_logo.png'; // Assuming your logo is in this path
+import AbigaelLogo from '../assets/abigael_logo.png'; 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,22 +19,24 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState('');
 
   const navigation = [
-    { name: 'Home', href: '#hero', icon: <FaHome className="w-5 h-5" /> },
+    { name: 'Home', href: '#home', icon: <FaHome className="w-5 h-5" /> },
     { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
     { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
     { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
     { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
+    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
     { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> }
   ];
 
   const floatingIcons = [
-    { label: 'Home', href: '#hero', icon: <FaHome /> },
+    { label: 'Home', href: '#home', icon: <FaHome /> },
     { label: 'About', href: '#about', icon: <FaUser /> },
     { label: 'Projects', href: '#projects', icon: <FaFolderOpen /> },
     { label: 'Experience', href: '#experience', icon: <FaChalkboardTeacher /> },
     { label: 'Skills', href: '#skills', icon: <FaLaptopCode /> },
     { label: 'Certificates', href: '#certificates', icon: <FaCertificate /> },
+    { label: 'Services', href: '#services', icon: <FaTools /> },
     { label: 'Contact', href: '#contact', icon: <FaEnvelope /> },
   ];
 
