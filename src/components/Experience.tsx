@@ -8,6 +8,25 @@ const Experience = () => {
 
   const experiences = [
     {
+      title: "Freelance",
+      company: "Self-Employed",
+      location: "Remote",
+      duration: "2022 - Present",
+      type: "Freelance",
+      description: "Developing web applications and embedded systems solutions for various clients. I also offer home electrification and solar panel installation services.",
+      responsibilities: [
+        "Built responsive web applications using React and modern frameworks",
+        "Developed mobile applications using React Native and Flutter",
+        "Created IoT solutions and embedded systems for smart devices",
+        "Provided technical consulting for hardware-software integration projects",
+        "Maintained and updated existing client applications",
+        "Performed electrical installations for residential and commercial properties",
+        "Installed and maintained solar panel systems for homes and businesses"
+      ],
+      skills: ["React", "React Native", "IoT Development", "Client Management", "Electrification", "Solar Panel Installation"],
+      icon: <Users className="w-6 h-6" />
+    },
+    {
       "title": "Electrical Engineering Intern",
       "company": "Kenya Space Agency",
       "location": "Nairobi, Kenya",
@@ -40,25 +59,6 @@ const Experience = () => {
       ],
       skills: ["Industrial Control Systems", "Electrical Maintenance", "Technical Documentation", "Team Collaboration"],
       icon: <Wrench className="w-6 h-6" />
-    },
-    {
-      title: "Freelance",
-      company: "Self-Employed",
-      location: "Remote",
-      duration: "2022 - Present",
-      type: "Freelance",
-      description: "Developing web applications and embedded systems solutions for various clients. I also offer home electrification and solar panel installation services.",
-      responsibilities: [
-        "Built responsive web applications using React and modern frameworks",
-        "Developed mobile applications using React Native and Flutter",
-        "Created IoT solutions and embedded systems for smart devices",
-        "Provided technical consulting for hardware-software integration projects",
-        "Maintained and updated existing client applications",
-        "Performed electrical installations for residential and commercial properties",
-        "Installed and maintained solar panel systems for homes and businesses"
-      ],
-      skills: ["React", "React Native", "IoT Development", "Client Management", "Electrification", "Solar Panel Installation"],
-      icon: <Users className="w-6 h-6" />
     }
   ];
 

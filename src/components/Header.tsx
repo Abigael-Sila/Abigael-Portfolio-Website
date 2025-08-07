@@ -109,7 +109,7 @@ const Header = () => {
             </a>
           ))}
           <div className="mt-4">
-            <ShareButton label="my portfolio" />
+            <ShareButton label=" my portfolio" />
           </div>
         </nav>
       </div>
@@ -160,7 +160,7 @@ const Header = () => {
                   </a>
                 ))}
                 <div className="relative">
-                  <ShareButton label="my portfolio" />
+                  <ShareButton label="." />
                 </div>
               </div>
             </div>

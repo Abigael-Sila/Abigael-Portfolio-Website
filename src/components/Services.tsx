@@ -5,7 +5,7 @@ const Services = () => {
   const services = [
     {
       title: 'Web & Mobile Design and Development',
-      description: 'Building and design modern, responsive web applications and creating cross-platform mobile apps.',
+      description: 'Designing, building and maintaining modern, responsive web applications and creating cross-platform mobile apps.',
       icon: <Code className="w-6 h-6" />,
       color: 'text-blue-400'
     },
