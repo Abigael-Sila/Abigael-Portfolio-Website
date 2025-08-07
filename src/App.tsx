@@ -11,6 +11,7 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Certificates from './components/Certificates';
+import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
@@ -71,6 +72,7 @@ function App() {
               <Experience />
               <Skills />
               <Certificates />
+              <Services />
               <Contact />
               {/* Visitors Counter - typically on the main landing page */}
               <VisitorsCounter />
