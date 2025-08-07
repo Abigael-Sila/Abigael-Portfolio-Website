@@ -1,3 +1,5 @@
+// src/components/Header.tsx
+
 import { useState, useEffect } from 'react';
 import {
   FaHome,
@@ -10,8 +12,10 @@ import {
   FaTimes,
   FaEllipsisV,
   FaTools,
+  // Removed FaShareAlt as it's not used directly
 } from 'react-icons/fa';
-import AbigaelLogo from '../assets/abigael_logo.png'; 
+import AbigaelLogo from '../assets/abigael_logo.png';
+import ShareButton from './ShareButton';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,24 +23,24 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState('');
 
   const navigation = [
-    { name: 'Home', href: '#home', icon: <FaHome className="w-5 h-5" /> },
+    { name: 'Home', href: '#hero', icon: <FaHome className="w-5 h-5" /> },
     { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
     { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
+    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
     { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
     { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
-    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
     { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> }
   ];
 
   const floatingIcons = [
-    { label: 'Home', href: '#home', icon: <FaHome /> },
+    { label: 'Home', href: '#hero', icon: <FaHome /> },
     { label: 'About', href: '#about', icon: <FaUser /> },
     { label: 'Projects', href: '#projects', icon: <FaFolderOpen /> },
+    { label: 'Services', href: '#services', icon: <FaTools /> },
     { label: 'Experience', href: '#experience', icon: <FaChalkboardTeacher /> },
     { label: 'Skills', href: '#skills', icon: <FaLaptopCode /> },
     { label: 'Certificates', href: '#certificates', icon: <FaCertificate /> },
-    { label: 'Services', href: '#services', icon: <FaTools /> },
     { label: 'Contact', href: '#contact', icon: <FaEnvelope /> },
   ];
 
@@ -55,7 +59,6 @@ const Header = () => {
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    // Set initial active link
     if (window.location.hash) {
       setActiveLink(window.location.hash);
     } else {
@@ -72,7 +75,7 @@ const Header = () => {
     } else {
       window.location.href = href;
     }
-    setIsMenuOpen(false); // Close menu on click
+    setIsMenuOpen(false);
   };
 
   return (
@@ -84,7 +87,6 @@ const Header = () => {
         }`}
       >
         <div className="flex flex-row-reverse justify-between items-center p-4">
-          {/* Menu Title and Close button */}
           <span className="text-xl font-bold text-white">Abigael Kalunde Sila</span>
           <button onClick={() => setIsMenuOpen(false)} className="text-white" aria-label="Close navigation menu">
             <FaTimes size={24} />
@@ -106,9 +108,12 @@ const Header = () => {
               <span className="text-lg">{link.name}</span>
             </a>
           ))}
+          <div className="mt-4">
+            <ShareButton label="my portfolio" />
+          </div>
         </nav>
       </div>
-       {/* Overlay to close menu on click outside */}
+
       {isMenuOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/50 lg:hidden"
@@ -117,14 +122,12 @@ const Header = () => {
         />
       )}
 
-
       {/* Main navigation bar for large screens */}
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}>
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo from the original Header component */}
             <a href="/" className="flex items-center space-x-2">
               <img
                 src={AbigaelLogo}
@@ -156,6 +159,9 @@ const Header = () => {
                     {item.name}
                   </a>
                 ))}
+                <div className="relative">
+                  <ShareButton label="my portfolio" />
+                </div>
               </div>
             </div>
 

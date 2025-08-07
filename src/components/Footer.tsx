@@ -1,5 +1,6 @@
 import {Heart, Github, Linkedin, Mail } from 'lucide-react';
 import AbigaelLogo from '../assets/abigael_logo.png';
+import ShareButton from './ShareButton'; // Import the new ShareButton component
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -47,11 +48,10 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              {/* Removed the wrapping div with blue background and padding */}
               <img 
                   src={AbigaelLogo} 
                   alt="Abigael Kalunde Sila Logo" 
-                  className="w-10 h-10 rounded-full object-cover" // Adjusted size here
+                  className="w-10 h-10 rounded-full object-cover"
                 />
               <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Abigael Kalunde Sila
@@ -73,6 +73,9 @@ const Footer = () => {
                   {social.icon}
                 </a>
               ))}
+              <div className="bg-gray-800 hover:bg-blue-500 p-2 rounded-lg transition-colors duration-300">
+                <ShareButton label="my portfolio" />
+              </div>
             </div>
           </div>
 

@@ -4,8 +4,8 @@ import { Code, Lightbulb, Zap, Sun } from 'lucide-react';
 const Services = () => {
   const services = [
     {
-      title: 'Web & Mobile Development',
-      description: 'Building modern, responsive web applications using frameworks like React and creating cross-platform mobile apps with React Native or Flutter.',
+      title: 'Web & Mobile Design and Development',
+      description: 'Building and design modern, responsive web applications and creating cross-platform mobile apps.',
       icon: <Code className="w-6 h-6" />,
       color: 'text-blue-400'
     },
@@ -18,7 +18,7 @@ const Services = () => {
     {
       title: 'Solar Panel Installation',
       description: 'Offering complete solar energy solutions, from system design to installation, for residential and commercial properties to help you transition to renewable energy.',
-      icon: <Sun className="w-6 h-6" />, // Changed from SolarPanel to Sun
+      icon: <Sun className="w-6 h-6" />, 
       color: 'text-green-400'
     },
     {
