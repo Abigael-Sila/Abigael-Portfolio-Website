@@ -18,7 +18,7 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState('');
 
   const navigation = [
-    { name: 'Home', href: '/', icon: <FaHome className="w-5 h-5" /> },
+    { name: 'Home', href: '#hero', icon: <FaHome className="w-5 h-5" /> },
     { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
     { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
@@ -28,7 +28,7 @@ const Header = () => {
   ];
 
   const floatingIcons = [
-    { label: 'Home', href: '/', icon: <FaHome /> },
+    { label: 'Home', href: '#hero', icon: <FaHome /> },
     { label: 'About', href: '#about', icon: <FaUser /> },
     { label: 'Projects', href: '#projects', icon: <FaFolderOpen /> },
     { label: 'Experience', href: '#experience', icon: <FaChalkboardTeacher /> },
