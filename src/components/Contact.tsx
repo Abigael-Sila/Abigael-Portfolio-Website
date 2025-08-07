@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Github, Linkedin, Send, Download, MapPin, Phone, X, Instagram, MessageCircle, BookOpen } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, Download, MapPin, Phone, X, Instagram, BookOpen } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -97,7 +98,7 @@ const Contact = () => {
       color: "hover:text-pink-400"
     },
     {
-      icon: <MessageCircle className="w-6 h-6" />,
+      icon: <FaWhatsapp className="w-6 h-6" />,
       label: "WhatsApp",
       link: "https://wa.me/254707321345", 
       color: "hover:text-green-500"

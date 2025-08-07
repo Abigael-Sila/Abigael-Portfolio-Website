@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import {
   FaShareAlt,
-  FaTwitter,
   FaLinkedin,
   FaWhatsapp,
   FaLink,
@@ -11,7 +10,8 @@ import {
   FaTimes,
   FaCopy,
 } from 'react-icons/fa';
-import { Mail } from 'lucide-react'; // Added import for Mail icon
+import { Mail } from 'lucide-react'; 
+import { X } from 'lucide-react'; 
 
 interface ShareButtonProps {
   label: string;
@@ -69,7 +69,7 @@ const ShareButton = ({ label }: ShareButtonProps) => {
                 className="text-blue-400 hover:text-blue-500 transition-colors duration-200"
                 aria-label="Share on Twitter"
               >
-                <FaTwitter size={32} />
+                <X size={32} />
               </a>
               <a
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${portfolioUrl}`}

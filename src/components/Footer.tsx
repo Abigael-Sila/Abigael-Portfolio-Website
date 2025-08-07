@@ -9,27 +9,27 @@ const Footer = () => {
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Services', href: '#services' },
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Certificates', href: '#certificates' },
+    { name: 'Services', href: '#services' },
     { name: 'Contact', href: '#contact' }
   ];
 
   const services = [
     'Web Application Development',
     'Mobile App Development',
-    'Embedded Systems Development',
-    'IoT Solutions',
-    'Technical Consulting',
     'Electrification & Solar Panel Installation',
+    'Technical Consulting',
     'UI/UX Design',
-    'PCB Design'
+    'PCB Design',
+    'Embedded Systems Development',
+    'IoT Solutions'
   ];
 
   const socialLinks = [
     { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Abigael-Sila', label: 'GitHub' },
-    { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/abigael-sila', label: 'LinkedIn' },
+    { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/abigael-sila-542a36350/', label: 'LinkedIn' },
     { icon: <Mail className="w-5 h-5" />, href: 'mailto:abigaelkalundesila@gmail.com', label: 'Email' }
   ];
 

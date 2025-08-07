@@ -23,25 +23,25 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState('');
 
   const navigation = [
-    { name: 'Home', href: '#hero', icon: <FaHome className="w-5 h-5" /> },
+    { name: 'Home', href: '#home', icon: <FaHome className="w-5 h-5" /> },
     { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
     { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
-    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
     { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
     { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
+    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
     { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> }
   ];
 
   const floatingIcons = [
-    { label: 'Home', href: '#hero', icon: <FaHome /> },
+    { label: 'Home', href: '#home', icon: <FaHome /> },
     { label: 'About', href: '#about', icon: <FaUser /> },
     { label: 'Projects', href: '#projects', icon: <FaFolderOpen /> },
-    { label: 'Services', href: '#services', icon: <FaTools /> },
     { label: 'Experience', href: '#experience', icon: <FaChalkboardTeacher /> },
     { label: 'Skills', href: '#skills', icon: <FaLaptopCode /> },
     { label: 'Certificates', href: '#certificates', icon: <FaCertificate /> },
     { label: 'Contact', href: '#contact', icon: <FaEnvelope /> },
+    { label: 'Services', href: '#services', icon: <FaTools /> },
   ];
 
   useEffect(() => {
@@ -82,7 +82,7 @@ const Header = () => {
     <>
       {/* Off-canvas menu for mobile/small screens */}
       <div
-        className={`fixed inset-y-0 right-0 z-50 h-screen w-72 transform bg-gray-900/80 backdrop-blur-md transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed inset-y-0 right-0 z-50 h-screen w-85 transform bg-gray-900/80 backdrop-blur-md transition-transform duration-300 ease-in-out lg:hidden ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
