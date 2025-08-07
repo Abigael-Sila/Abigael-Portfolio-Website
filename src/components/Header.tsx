@@ -160,7 +160,7 @@ const Header = () => {
                   </a>
                 ))}
                 <div className="relative">
-                  <ShareButton label="." />
+                  <ShareButton label="" />
                 </div>
               </div>
             </div>

@@ -76,7 +76,7 @@ const Footer = () => {
                 </a>
               ))}
               <div className="bg-gray-800 hover:bg-blue-500 p-2 rounded-lg transition-colors duration-300 md:p-1">
-                <ShareButton label="my portfolio" />
+                <ShareButton label=" my portfolio " />
               </div>
             </div>
           </div>
