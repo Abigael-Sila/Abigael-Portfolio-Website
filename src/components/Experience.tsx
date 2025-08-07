@@ -238,12 +238,7 @@ const Experience = () => {
         </div>
 
         {/* Resume View */}
-        <div className="mt-16 text-center max-w-3xl mx-auto">
-          <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
-            <h4 className="text-lg font-semibold mb-3 text-blue-400">Resume</h4>
-            <p className="text-gray-300 mb-4">
-              View my CV to learn more about my experience and qualifications.
-            </p>
+        <div className="mt-16 text-center max-w-3xl mx-auto">       
             <a
               href="Abigael_Sila_Resume.pdf"
               target="_blank"
@@ -253,7 +248,6 @@ const Experience = () => {
               <Download size={18} />
               View CV
             </a>
-          </div>
         </div>
       </div>
     </section>
