@@ -173,7 +173,7 @@ const Contact = () => {
             <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
               <h4 className="text-lg font-semibold mb-3 text-blue-400">Resume</h4>
               <p className="text-gray-300 mb-4">
-                View my resume to learn more about my experience and qualifications.
+                View my CV to learn more about my experience and qualifications.
               </p>
               <a
                 href="Abigael_Sila_Resume.pdf"
@@ -182,7 +182,7 @@ const Contact = () => {
                 className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
               >
               <Download size={18} />
-                View Resume
+                View CV
               </a>
             </div>
           </div>
