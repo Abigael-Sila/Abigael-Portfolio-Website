@@ -75,12 +75,12 @@ const About = () => {
                 Hi, I’m Abigael Kalunde Sila an <span className="text-blue-400 font-semibold">Engineer and Digital Creative</span> shaping the future through both circuitry and code. My academic foundation spans control systems, power systems, electrical machines, digital and analogue electronics, power distribution and transmission, energy audits, and renewable energy.
               </p>
               
-              <p className="leading-relaxed">
+              <p className="leading-relaxed mt-6">
                 Beyond the classroom, I’ve cultivated self-taught skills in <span className="text-purple-400 font-semibold">Front-End Web Development</span>, <span className="text-green-400 font-semibold">Mobile App Development</span>, <span className="text-yellow-400 font-semibold">UI/UX Design</span>, and <span className="text-blue-400 font-semibold">Embedded Systems and IoT</span>. My work is rooted in solving real-world problems with creativity and technical precision. I invite you to explore my projects and connect with me to discover how we can turn your ideas into a reality.
               </p>
               
-              <p className="leading-relaxed">
-                Outside of tech, I’m either vibing to amapiano, afrobeats, Kenyan hits, or throwing in some pop and nostalgic 80s and 90s classics. I’m all about road trips, coffee and cake dates, and saying yes to new adventures, from archery and golf to hitting the shooting range. You’ll probably catch me at a tech meet-up, a sip and paint night, or singing my heart out to karaoke classics. When I’m not watching a good comedy, action, or romance film, I’m keeping the energy up with fitness and running clubs, and hanging out in social circles that spark great conversations.
+              <p className="leading-relaxed mt-6">
+                Outside of tech, I’m tuned into creativity and fresh perspectives, whether I’m vibing to <span className="text-pink-400 font-semibold">amapiano</span>, <span className="text-pink-400 font-semibold">afrobeats</span>, Kenyan hits, or mixing in <span className="text-indigo-400 font-semibold">pop and nostalgic 80s-90s classics</span>. I thrive on experiences that challenge and inspire me, from road trips and coffee-and-cake dates to trying out <span className="text-orange-400 font-semibold">archery</span>, <span className="text-orange-400 font-semibold">golf</span>, and even the <span className="text-orange-400 font-semibold">shooting range</span>. You can find me networking at <span className="text-blue-400 font-semibold">tech meet-ups</span>, <span className="text-green-400 font-semibold">sip and paint sessions</span>, or singing my heart out to <span className="text-purple-400 font-semibold">karaoke classics</span>. When I’m not watching a good <span className="text-yellow-400 font-semibold">comedy, action, or romance film</span>, I’m keeping the energy up with <span className="text-red-400 font-semibold">fitness and running clubs</span>, and hanging out in social circles that spark great conversations and even greater ideas.
               </p>
             </div>
           </div>
