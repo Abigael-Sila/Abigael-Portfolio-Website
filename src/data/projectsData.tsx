@@ -65,26 +65,6 @@ export const allProjects: Project[] = [
     }
   },
   {
-    title: "Chrispus Kiptoo Portfolio",
-    category: "Web Development",
-    description: "A dynamic portfolio highlighting web development projects for Chrispus Kiptoo, with a focus on clean code and user experience.",
-    technologies: ["Next.js", "TypeScript", "SCSS", "GSAP"],
-    features: [
-      "Smooth animations",
-      "Blog section",
-      "Optimized for performance",
-      "Case studies"
-    ],
-    image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800",
-    icon: <Globe className="w-6 h-6" />,
-    status: "Completed",
-    isFeatured: true,
-    links: {
-      github: "https://github.com/chrispus-kiptoo/portfolio",
-      live: "https://chrispus-kiptoo.netlify.app/"
-    }
-  },
-  {
     title: "Lucas Kunkuru Portfolio",
     category: "Web Development",
     description: "A creative and minimalist portfolio site for Lucas Kunkuru, showcasing design sensibilities and front-end development skills.",

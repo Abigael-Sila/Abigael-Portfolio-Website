@@ -44,8 +44,8 @@ const About = () => {
               <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg">
                 <img
                   src={myProfilePic}
-                  alt="Abigael Kalunde Sila" // Important for accessibility
-                  className="w-full object-cover rounded-2xl" // TailWind CSS for styling
+                  alt="Abigael Kalunde Sila"
+                  className="w-full object-cover rounded-2xl"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-4 rounded-lg shadow-xl">
@@ -72,40 +72,16 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg text-gray-300">
               <p className="text-md leading-relaxed">
-                Hi, I’m Abigael Kalunde Sila an  <span className="text-blue-400 font-semibold">Engineer and Digital Creative</span> shaping the future through both circuitry and code. My academic foundation spans control systems, power systems, electrical machines, digital and analogue electronics, power distribution and transmission, energy audits, and renewable energy.
+                Hi, I’m Abigael Kalunde Sila an <span className="text-blue-400 font-semibold">Engineer and Digital Creative</span> shaping the future through both circuitry and code. My academic foundation spans control systems, power systems, electrical machines, digital and analogue electronics, power distribution and transmission, energy audits, and renewable energy.
               </p>
               
               <p className="leading-relaxed">
                 Beyond the classroom, I’ve cultivated self-taught skills in <span className="text-purple-400 font-semibold">Front-End Web Development</span>, <span className="text-green-400 font-semibold">Mobile App Development</span>, <span className="text-yellow-400 font-semibold">UI/UX Design</span>, and <span className="text-blue-400 font-semibold">Embedded Systems and IoT</span>. My work is rooted in solving real-world problems with creativity and technical precision. I invite you to explore my projects and connect with me to discover how we can turn your ideas into a reality.
               </p>
-
-              <div className="bg-gray-700/30 p-6 rounded-lg border-l-4 border-blue-500 my-6">
-                <h3 className="text-xl font-semibold text-blue-400 mb-3">Capstone Project: Symphion</h3>
-                <p className="text-gray-300">
-                  Developed a wearable SOS Prototype using <span className="text-blue-400">ESP32</span> and <span className="text-green-400">A9G GSM/GPS modules</span>. This life-saving device provides real-time location tracking and emergency communication capabilities, showcasing my ability to integrate hardware and software for practical applications.
-                </p>
-              </div>
-
-              <div className="bg-gray-700/30 p-6 rounded-lg border-l-4 border-purple-500">
-                <h3 className="text-xl font-semibold text-purple-400 mb-3">Professional Experience</h3>
-                <p className="text-gray-300">
-                  During my internship at <span className="text-purple-400 font-semibold">Kenya Railways Corporation</span>, I gained hands-on experience in:
-                </p>
-                <ul className="mt-3 space-y-2 text-gray-300">
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    Railway signaling systems and automation
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    Industrial control systems and maintenance
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                    Technical documentation and project management
-                  </li>
-                </ul>
-              </div>
+              
+              <p className="leading-relaxed">
+                Outside of tech, I’m either vibing to amapiano, afrobeats, Kenyan hits, or throwing in some pop and nostalgic 80s and 90s classics. I’m all about road trips, coffee and cake dates, and saying yes to new adventures, from archery and golf to hitting the shooting range. You’ll probably catch me at a tech meet-up, a sip and paint night, or singing my heart out to karaoke classics. When I’m not watching a good comedy, action, or romance film, I’m keeping the energy up with fitness and running clubs, and hanging out in social circles that spark great conversations.
+              </p>
             </div>
           </div>
         </div>
