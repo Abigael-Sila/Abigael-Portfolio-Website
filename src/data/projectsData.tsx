@@ -1,8 +1,6 @@
-// src/data/projectsData.ts
-
-// Import the local images
 import AbigaelPortfolioImage from '../assets/Abigael_Portfolio.png';
 import SymphionScreenshot from '../assets/Symphion_Screenshot.png';
+import LucasScreenshot from '../assets/Lucas_Screenshot.png';
 
 import { Wifi, Globe, Smartphone } from 'lucide-react';
 
@@ -34,7 +32,7 @@ export const allProjects: Project[] = [
       "Dark mode support",
       "Project showcase"
     ],
-    image: AbigaelPortfolioImage, // Use the imported variable here
+    image: AbigaelPortfolioImage, 
     icon: <Globe className="w-6 h-6" />,
     status: "Completed",
     isFeatured: true,
@@ -53,9 +51,9 @@ export const allProjects: Project[] = [
       "Emergency SOS communication",
       "Low power consumption design",
       "Wearable form factor",
-      "Mobile app integration"
+      "Web app integration"
     ],
-    image: SymphionScreenshot, // Use the imported variable here
+    image: SymphionScreenshot, 
     icon: <Wifi className="w-6 h-6" />,
     status: "In Progress",
     isFeatured: true,
@@ -68,19 +66,19 @@ export const allProjects: Project[] = [
     title: "Lucas Kunkuru Portfolio",
     category: "Web Development",
     description: "A creative and minimalist portfolio site for Lucas Kunkuru, showcasing design sensibilities and front-end development skills.",
-    technologies: ["Vue.js", "Nuxt.js", "CSS Modules", "Firebase"],
+    technologies: ["Html", "Javascript", "CSS Modules"],
     features: [
       "Unique design",
       "Interactive gallery",
       "Client testimonials",
       "Contact integration"
     ],
-    image: "https://images.pexels.com/photos/1036647/pexels-photo-1036647.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: LucasScreenshot,
     icon: <Smartphone className="w-6 h-6" />,
     status: "In Progress",
     isFeatured: true,
     links: {
-      github: "https://github.com/lucas-kunkuru/portfolio-v2",
+      github: "https://github.com/Abigael-Sila/Lucas-Kunkuru.git",
       live: "https://lucas-kunkuru.vercel.app/"
     }
   },
