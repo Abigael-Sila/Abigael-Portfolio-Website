@@ -1,6 +1,7 @@
 import AbigaelPortfolioImage from '../assets/Abigael_Portfolio.png';
 import SymphionScreenshot from '../assets/Symphion_Screenshot.png';
 import LucasScreenshot from '../assets/Lucas_Screenshot.png';
+import ManuScreenshot from '../assets/Manu_Screenshot.png';
 
 import { Wifi, Globe, Smartphone } from 'lucide-react';
 
@@ -66,11 +67,11 @@ export const allProjects: Project[] = [
     title: "Lucas Kunkuru Portfolio",
     category: "Web Development",
     description: "A creative and minimalist portfolio site for Lucas Kunkuru, showcasing design sensibilities and front-end development skills.",
-    technologies: ["Html", "Javascript", "CSS Modules"],
+    technologies: ["React", "Typescript", "Tailwind CSS"],
     features: [
       "Unique design",
-      "Interactive gallery",
-      "Client testimonials",
+      "Responsive design",
+      "EmailJS for contact form",
       "Contact integration"
     ],
     image: LucasScreenshot,
@@ -84,22 +85,22 @@ export const allProjects: Project[] = [
   },
   {
     title: "Emmanuel Ngetich Portfolio",
-    category: "Full-stack Development",
-    description: "A robust portfolio demonstrating expertise in full-stack applications for Emmanuel Ngetich, with an emphasis on scalability and backend logic.",
-    technologies: ["Django", "React", "PostgreSQL", "Docker", "AWS"],
+    category: "Web Development",
+    description: "A portfolio  for Emmanuel Ngetich, with an emphasis on scalability and responsiveness.",
+    technologies: ["React", "Typescript", "Tailwind CSS"],
     features: [
       "User authentication",
       "API integration",
       "Deployment showcases",
       "Technical blog posts"
     ],
-    image: "https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: ManuScreenshot,
     icon: <Globe className="w-6 h-6" />,
     status: "In Progress",
     isFeatured: true,
     links: {
-      github: "https://github.com/emmanuel-ngetich/fullstack-portfolio",
-      live: "https://emmanuel-ngetich.herokuapp.com/"
+      github: "https://github.com/Abigael-Sila/Emmanuel-Ngetich.git",
+      live: "https://emmanuel-ngetich.vercel.app/"
     }
   },
   {
