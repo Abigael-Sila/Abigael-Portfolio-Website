@@ -3,8 +3,14 @@ import { motion, Variants } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { allCertificates } from '../data/certificatesData.tsx';
+import { useEffect } from 'react';
 
 const AllCertificatesPage = () => {
+
+  // Scrolls the page to the top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
     
   const containerVariants: Variants = {
     hidden: { opacity: 0 },

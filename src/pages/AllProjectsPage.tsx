@@ -1,42 +1,41 @@
-// src/pages/AllProjectsPage.tsx
-
-import { Github, ExternalLink, Play } from 'lucide-react';
-import { motion, Variants } from 'framer-motion'; // Removed 'type' keyword, directly import Variants
-import { allProjects } from '../data/projectsData.tsx'; // Ensure .tsx extension for JSX content
+import { Github, Play } from 'lucide-react';
+import { motion, Variants } from 'framer-motion';
+import { allProjects } from '../data/projectsData.tsx';
+import { useEffect } from 'react';
 
 const AllProjectsPage = () => {
+  // Scrolls the page to the top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Variants for the main container to orchestrate staggered entry of cards
-  const containerVariants: Variants = { // Explicitly type containerVariants
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Delay between each child's animation
-        delayChildren: 0.2 // Delay before the first child starts animating
+        staggerChildren: 0.1,
+        delayChildren: 0.2
       }
     }
   };
 
   // Variants for each individual project card
-  const itemVariants: Variants = { // Explicitly type itemVariants
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     show: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.5,
-        // Reverting to "easeOut" string. If this still fails, your framer-motion or TypeScript
-        // installation might need a refresh or specific tsconfig.json adjustment for library types.
         ease: "easeOut"
       }
     }
   };
 
-  // Variants for the hover effect on each card
-
   // Variants for the play icon appearing on hover
-  const playIconVariants: Variants = { // Explicitly type playIconVariants
+  const playIconVariants: Variants = {
     initial: { opacity: 0, x: 10 },
     hover: { opacity: 1, x: 0, transition: { duration: 0.3 } }
   };
@@ -66,12 +65,12 @@ const AllProjectsPage = () => {
         {allProjects.map((project, index) => (
           <motion.div
             key={index}
-            variants={itemVariants} // For page entry animation (hidden to show)
-            initial="hidden" // Start from hidden state defined in itemVariants
-            animate="show"   // Animate to show state defined in itemVariants
-            whileHover="hover" // Use the 'hover' state from cardHoverVariants
-            whileTap="tap" // Optional: Add a tap state for mobile or click feedback
-            className="group relative bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 cursor-pointer"
+            variants={itemVariants}
+            initial="hidden"
+            animate="show"
+            whileHover="hover"
+            whileTap="tap"
+            className="group relative bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500"
           >
             {/* Project Image */}
             <div className="relative h-48 overflow-hidden">
@@ -93,38 +92,6 @@ const AllProjectsPage = () => {
               <div className="absolute top-4 left-4 bg-blue-500/20 backdrop-blur-sm p-2 rounded-lg text-blue-400">
                 {project.icon}
               </div>
-
-              {/* Overlay on Hover */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                className="absolute inset-0 bg-blue-500/20 flex items-center justify-center"
-              >
-                <div className="flex gap-4">
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.title} on GitHub`}
-                    className="text-gray-200 hover:text-white transition-colors"
-                  >
-                    <Github size={24} />
-                  </a>
-                  {project.links.live && (
-                    <a
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Live Demo of ${project.title}`}
-                      className="text-gray-200 hover:text-white ml-3 transition-colors"
-                    >
-                      <ExternalLink size={24} />
-                    </a>
-                  )}
-                </div>
-              </motion.div>
             </div>
 
             {/* Project Content */}
@@ -132,10 +99,9 @@ const AllProjectsPage = () => {
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm text-blue-400 font-medium">{project.category}</span>
                 <motion.div
-                  variants={playIconVariants} // Apply play icon specific variants
-                  initial="initial" // Start with initial state for the icon
-                  whileHover="hover" // Animate to hover state when parent card is hovered
-                  // Tailwind `group-hover` ensures the `motion.div` is present in DOM to be animated
+                  variants={playIconVariants}
+                  initial="initial"
+                  whileHover="hover"
                   className="hidden group-hover:block"
                 >
                   <Play className="w-5 h-5 text-gray-400" />
@@ -162,8 +128,30 @@ const AllProjectsPage = () => {
                 ))}
               </div>
 
+              {/* Live Demo and GitHub Links */}
+              <div className="flex gap-4 mt-6">
+                {project.links.live && (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center bg-blue-500/80 hover:bg-blue-600/90 text-white py-2 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105"
+                  >
+                    Live Demo
+                  </a>
+                )}
+                <a
+                  href={project.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex-1 text-center bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 hover:text-white py-2 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 ${!project.links.live && 'flex-1'}`}
+                >
+                  <Github size={16} /> GitHub
+                </a>
+              </div>
+
               {/* Features */}
-              <div className="space-y-2">
+              <div className="space-y-2 mt-6">
                 <h4 className="text-sm font-semibold text-blue-400">Key Features:</h4>
                 <ul className="text-xs text-gray-400 space-y-1">
                   {project.features.map((feature, featureIndex) => (
