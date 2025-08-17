@@ -2,8 +2,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-// Import all your components
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,7 +15,11 @@ import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
 import VisitorsCounter from './components/VisitorsCounter';
 import AllProjectsPage from './pages/AllProjectsPage';
-import AllCertificatesPage from './pages/AllCertificatesPage'; // Import the new Certificates page
+import AllCertificatesPage from './pages/AllCertificatesPage';
+import TestimonialsSection from './components/TestimonialsSection';
+import GallerySection from './components/GallerySection';
+import RateCardSection from './components/RateCardSection';
+import BlogSection from './components/BlogSection';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -69,11 +71,15 @@ function App() {
               <Hero />
               <About />
               <Projects />
+              <TestimonialsSection />
               <Experience />
               <Skills />
               <Certificates />
+              <GallerySection />
               <Services />
+              <RateCardSection />
               <Contact />
+              <BlogSection />
               {/* Visitors Counter - typically on the main landing page */}
               <VisitorsCounter />
             </main>
