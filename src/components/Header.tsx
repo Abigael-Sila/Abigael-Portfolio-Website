@@ -17,6 +17,7 @@ import {
   FaDollarSign,
   FaBlog,
   FaGraduationCap,
+  FaChevronDown, // New icon for the collapsible menu
 } from 'react-icons/fa';
 import AbigaelLogo from '../assets/abigael_logo.png';
 import ShareButton from './ShareButton';
@@ -26,6 +27,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('');
+  const [isMoreOpen, setIsMoreOpen] = useState(false); // State for mobile "More" section
 
   // Main navigation links for the desktop header
   const mainNavigation = [
@@ -48,21 +50,19 @@ const Header = () => {
     { name: 'Blog', href: '#blog', icon: <FaBlog className="w-5 h-5" /> },
   ];
 
-  // Combine both lists for the mobile menu
-  const navigation = [...mainNavigation, ...moreNavigation];
-
   // Floating icons, now with logical grouping for visual clarity
-  const floatingIcons = [
+  const floatingIconsGroup1 = [
     { label: 'Home', href: '#home', icon: <FaHome /> },
     { label: 'About', href: '#about', icon: <FaUser /> },
     { label: 'Projects', href: '#projects', icon: <FaFolderOpen /> },
     { label: 'Contact', href: '#contact', icon: <FaEnvelope /> },
-    // A divider or visual break could go here
+  ];
+
+  const floatingIconsGroup2 = [
     { label: 'Experience', href: '#experience', icon: <FaChalkboardTeacher /> },
     { label: 'Skills', href: '#skills', icon: <FaLaptopCode /> },
     { label: 'Certificates', href: '#certificates', icon: <FaCertificate /> },
     { label: 'Education', href: '#education', icon: <FaGraduationCap /> },
-    // A second divider
     { label: 'Testimonials', href: '#testimonials', icon: <FaQuoteRight /> },
     { label: 'Gallery', href: '#gallery', icon: <FaImages /> },
     { label: 'Services', href: '#services', icon: <FaTools /> },
@@ -119,7 +119,7 @@ const Header = () => {
           </button>
         </div>
         <nav className="flex flex-col p-4 space-y-2 text-white">
-          {navigation.map((link) => (
+          {mainNavigation.map((link) => (
             <a
               key={link.name}
               href={link.href}
@@ -134,6 +134,35 @@ const Header = () => {
               <span className="text-lg">{link.name}</span>
             </a>
           ))}
+
+          {/* More section for mobile */}
+          <div className="border-t border-gray-700 mt-4 pt-4">
+            <button
+              onClick={() => setIsMoreOpen(!isMoreOpen)}
+              className="flex items-center justify-between w-full p-3 text-lg font-semibold text-gray-300 hover:text-blue-400 transition-colors duration-200"
+            >
+              <span>More</span>
+              <FaChevronDown className={`transform transition-transform duration-200 ${isMoreOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMoreOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="pl-4 pt-2 space-y-2">
+                {moreNavigation.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => scrollToSection(link.href)}
+                    className={`flex items-center space-x-4 p-3 rounded-lg transition-colors duration-200 ${
+                      activeLink === link.href ? 'bg-blue-600/20 text-blue-400 font-semibold' : 'text-gray-300 hover:bg-gray-800 hover:text-blue-400'
+                    }`}
+                  >
+                    {link.icon}
+                    <span className="text-lg">{link.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="mt-4">
             <ShareButton label=" my portfolio" />
           </div>
@@ -208,7 +237,31 @@ const Header = () => {
 
       {/* Floating vertical icon bar with transparent captions for large screens */}
       <div className="fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col space-y-4 lg:flex">
-        {floatingIcons.map((item) => (
+        {floatingIconsGroup1.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(item.href);
+            }}
+            className={`group flex items-center justify-center relative p-2 h-12 rounded-full text-white shadow-lg transition-transform duration-300 hover:scale-110
+              ${
+                activeLink === item.href || (activeLink === '' && item.href === '#home')
+                  ? 'bg-blue-500'
+                  : 'bg-gray-800 hover:bg-blue-500'
+              }`}
+            title={item.label}
+          >
+            {item.icon}
+            <span className="absolute right-full mr-4 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 min-w-max">
+              {item.label}
+            </span>
+          </a>
+        ))}
+        {/* Visual separator */}
+        <div className="h-4"></div>
+        {floatingIconsGroup2.map((item) => (
           <a
             key={item.label}
             href={item.href}
