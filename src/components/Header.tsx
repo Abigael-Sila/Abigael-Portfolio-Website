@@ -12,7 +12,11 @@ import {
   FaTimes,
   FaEllipsisV,
   FaTools,
-  // Removed FaShareAlt as it's not used directly
+  FaQuoteRight,
+  FaImages,
+  FaDollarSign,
+  FaBlog,
+  FaGraduationCap,
 } from 'react-icons/fa';
 import AbigaelLogo from '../assets/abigael_logo.png';
 import ShareButton from './ShareButton';
@@ -22,26 +26,38 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('');
 
+  
   const navigation = [
     { name: 'Home', href: '#home', icon: <FaHome className="w-5 h-5" /> },
     { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
+    { name: 'Education', href: '#education', icon: <FaGraduationCap className="w-5 h-5" /> },
     { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
+    { name: 'Testimonials', href: '#testimonials', icon: <FaQuoteRight className="w-5 h-5" /> },
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
     { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
     { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
+    { name: 'Gallery', href: '#gallery', icon: <FaImages className="w-5 h-5" /> },
     { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
-    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> }
+    { name: 'Rate Card', href: '#rate-card', icon: <FaDollarSign className="w-5 h-5" /> },
+    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
+    { name: 'Blog', href: '#blog', icon: <FaBlog className="w-5 h-5" /> },
   ];
+
 
   const floatingIcons = [
     { label: 'Home', href: '#home', icon: <FaHome /> },
     { label: 'About', href: '#about', icon: <FaUser /> },
+    { label: 'Education', href: '#education', icon: <FaGraduationCap /> },
     { label: 'Projects', href: '#projects', icon: <FaFolderOpen /> },
+    { label: 'Testimonials', href: '#testimonials', icon: <FaQuoteRight /> },
     { label: 'Experience', href: '#experience', icon: <FaChalkboardTeacher /> },
     { label: 'Skills', href: '#skills', icon: <FaLaptopCode /> },
     { label: 'Certificates', href: '#certificates', icon: <FaCertificate /> },
+    { label: 'Gallery', href: '#gallery', icon: <FaImages /> },
     { label: 'Services', href: '#services', icon: <FaTools /> },
+    { label: 'Rate Card', href: '#rate-card', icon: <FaDollarSign /> },
     { label: 'Contact', href: '#contact', icon: <FaEnvelope /> },
+    { label: 'Blog', href: '#blog', icon: <FaBlog /> },
   ];
 
   useEffect(() => {
@@ -99,7 +115,7 @@ const Header = () => {
               href={link.href}
               onClick={() => scrollToSection(link.href)}
               className={`flex items-center space-x-4 p-3 rounded-lg transition-colors duration-200 ${
-                activeLink === link.href || (activeLink === '' && link.href === '/')
+                activeLink === link.href || (activeLink === '' && link.href === '#home')
                   ? 'bg-blue-600/20 text-blue-400 font-semibold'
                   : 'text-gray-300 hover:bg-gray-800 hover:text-blue-400'
               }`}
@@ -151,7 +167,7 @@ const Header = () => {
                       scrollToSection(item.href);
                     }}
                     className={`text-sm font-medium transition-colors duration-200 px-3 py-2 ${
-                      activeLink === item.href || (activeLink === '' && item.href === '/')
+                      activeLink === item.href || (activeLink === '' && item.href === '#home')
                         ? 'text-blue-400 border-b-2 border-blue-400'
                         : 'text-gray-300 hover:text-blue-400'
                     }`}
@@ -187,11 +203,10 @@ const Header = () => {
             }}
             className={`group flex items-center justify-center relative p-2 h-12 rounded-full text-white shadow-lg transition-transform duration-300 hover:scale-110
               ${
-                activeLink === item.href || (activeLink === '' && item.href === '/')
+                activeLink === item.href || (activeLink === '' && item.href === '#home')
                   ? 'bg-blue-500'
                   : 'bg-gray-800 hover:bg-blue-500'
-              }`
-            }
+              }`}
             title={item.label}
           >
             {item.icon}

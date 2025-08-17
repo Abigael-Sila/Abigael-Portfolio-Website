@@ -20,6 +20,7 @@ import TestimonialsSection from './components/TestimonialsSection';
 import GallerySection from './components/GallerySection';
 import RateCardSection from './components/RateCardSection';
 import BlogSection from './components/BlogSection';
+import EducationSection from './components/EducationSection';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -70,6 +71,7 @@ function App() {
             <main>
               <Hero />
               <About />
+              <EducationSection />
               <Projects />
               <TestimonialsSection />
               <Experience />

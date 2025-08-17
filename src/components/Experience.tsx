@@ -248,7 +248,7 @@ const Experience = () => {
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
           >
             <Download size={18} />
-            View Resume
+            View CV
           </a>
         </div>
       </div>
