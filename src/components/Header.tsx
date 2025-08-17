@@ -17,8 +17,6 @@ import {
   FaDollarSign,
   FaBlog,
   FaGraduationCap,
-  FaEllipsisH,
-  FaChevronDown,
 } from 'react-icons/fa';
 import AbigaelLogo from '../assets/abigael_logo.png';
 import ShareButton from './ShareButton';
@@ -31,15 +29,15 @@ const Header = () => {
 
   // Priority links for mobile menu and floating icons
   const priorityNavigation = [
-    { name: 'Home', href: '#home', icon: <FaHome className="w-5 h-5" /> },
-    { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
-    { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
-    { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
-    { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
-    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
-    { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
-    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
-    { name: 'Blog', href: '#blog', icon: <FaBlog className="w-5 h-5" /> },
+    { name: 'Home', href: '#home', icon: <FaHome className="w-6 h-6" /> },
+    { name: 'About', href: '#about', icon: <FaUser className="w-6 h-6" /> },
+    { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-6 h-6" /> },
+    { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-6 h-6" /> },
+    { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-6 h-6" /> },
+    { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-6 h-6" /> },
+    { name: 'Services', href: '#services', icon: <FaTools className="w-6 h-6" /> },
+    { name: 'Blog', href: '#blog', icon: <FaBlog className="w-6 h-6" /> },
+    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-6 h-6" /> },
   ];
 
   // Main navigation links for the desktop header
@@ -163,7 +161,7 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:block">
-              <div className="flex items-baseline space-x-8">
+              <div className="flex items-baseline space-x-6">
                 {mainNavigation.map((item) => (
                   <a
                     key={item.name}
@@ -206,23 +204,23 @@ const Header = () => {
       <div className="fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col space-y-2 lg:flex">
         {floatingIcons.map((item) => (
           <a
-            key={item.label}
+            key={item.name}
             href={item.href}
             onClick={(e) => {
               e.preventDefault();
               scrollToSection(item.href);
             }}
-            className={`group flex items-center justify-center relative p-1.5 w-10 h-10 rounded-full text-white shadow-lg transition-transform duration-300 hover:scale-110
+            className={`group flex items-center justify-center relative p-1.5 w-12 h-12 rounded-full text-white shadow-lg transition-transform duration-300 hover:scale-110
               ${
                 activeLink === item.href || (activeLink === '' && item.href === '#home')
                   ? 'bg-blue-500'
                   : 'bg-gray-800 hover:bg-blue-500'
               }`}
-            title={item.label}
+            title={item.name}
           >
-            <span className="w-5 h-5">{item.icon}</span>
+            <span className="w-6 h-6">{item.icon}</span>
             <span className="absolute right-full mr-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 min-w-max text-sm">
-              {item.label}
+              {item.name}
             </span>
           </a>
         ))}
