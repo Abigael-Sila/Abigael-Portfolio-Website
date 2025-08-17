@@ -201,7 +201,7 @@ const Header = () => {
       </header>
 
       {/* Floating vertical icon bar with transparent captions for large screens */}
-      <div className="fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col space-y-2 lg:flex">
+      <div className="fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col space-y-4 lg:flex">
         {floatingIcons.map((item) => (
           <a
             key={item.name}
@@ -210,7 +210,7 @@ const Header = () => {
               e.preventDefault();
               scrollToSection(item.href);
             }}
-            className={`group flex items-center justify-center relative p-1.5 w-10 h-10 rounded-md text-white shadow-lg transition-transform duration-300 hover:scale-110
+            className={`group flex items-center justify-center relative p-2 h-12 rounded-full text-white shadow-lg transition-transform duration-300 hover:scale-110
               ${
                 activeLink === item.href || (activeLink === '' && item.href === '#home')
                   ? 'bg-blue-500'
@@ -218,8 +218,8 @@ const Header = () => {
               }`}
             title={item.name}
           >
-            <span className="w-5 h-5">{item.icon}</span>
-            <span className="absolute right-full mr-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 min-w-max text-sm">
+            {item.icon}
+            <span className="absolute right-full mr-4 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 min-w-max">
               {item.name}
             </span>
           </a>

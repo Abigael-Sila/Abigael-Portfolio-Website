@@ -154,8 +154,8 @@ const Hero = () => {
         {/* Floating Stats */}
         <div className={`mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 transform transition-all duration-1000 delay-1300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           {[
-            { number: '3+', label: 'Projects', color: 'text-blue-400' },
-            { number: '2+', label: 'Years Experience', color: 'text-purple-400' },
+            { number: '5', label: 'Projects', color: 'text-blue-400' },
+            { number: '3', label: 'Years Experience', color: 'text-purple-400' },
             { number: '10+', label: 'Technologies', color: 'text-green-400' },
             { number: '1', label: 'Innovation ', color: 'text-yellow-400' }
           ].map((stat, index) => (
