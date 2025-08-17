@@ -20,18 +20,24 @@ import {
 } from 'react-icons/fa';
 import AbigaelLogo from '../assets/abigael_logo.png';
 import ShareButton from './ShareButton';
+import MoreDropdown from './MoreDropdown'; // Import the new component
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('');
 
-  
-  const navigation = [
+  // Main navigation links for the desktop header
+  const mainNavigation = [
     { name: 'Home', href: '#home', icon: <FaHome className="w-5 h-5" /> },
     { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
-    { name: 'Education', href: '#education', icon: <FaGraduationCap className="w-5 h-5" /> },
     { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
+    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
+  ];
+
+  // Links for the "More" dropdown and mobile menu
+  const moreNavigation = [
+    { name: 'Education', href: '#education', icon: <FaGraduationCap className="w-5 h-5" /> },
     { name: 'Testimonials', href: '#testimonials', icon: <FaQuoteRight className="w-5 h-5" /> },
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
     { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
@@ -39,24 +45,28 @@ const Header = () => {
     { name: 'Gallery', href: '#gallery', icon: <FaImages className="w-5 h-5" /> },
     { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
     { name: 'Rate Card', href: '#rate-card', icon: <FaDollarSign className="w-5 h-5" /> },
-    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
     { name: 'Blog', href: '#blog', icon: <FaBlog className="w-5 h-5" /> },
   ];
 
+  // Combine both lists for the mobile menu
+  const navigation = [...mainNavigation, ...moreNavigation];
 
+  // Floating icons, now with logical grouping for visual clarity
   const floatingIcons = [
     { label: 'Home', href: '#home', icon: <FaHome /> },
     { label: 'About', href: '#about', icon: <FaUser /> },
-    { label: 'Education', href: '#education', icon: <FaGraduationCap /> },
     { label: 'Projects', href: '#projects', icon: <FaFolderOpen /> },
-    { label: 'Testimonials', href: '#testimonials', icon: <FaQuoteRight /> },
+    { label: 'Contact', href: '#contact', icon: <FaEnvelope /> },
+    // A divider or visual break could go here
     { label: 'Experience', href: '#experience', icon: <FaChalkboardTeacher /> },
     { label: 'Skills', href: '#skills', icon: <FaLaptopCode /> },
     { label: 'Certificates', href: '#certificates', icon: <FaCertificate /> },
+    { label: 'Education', href: '#education', icon: <FaGraduationCap /> },
+    // A second divider
+    { label: 'Testimonials', href: '#testimonials', icon: <FaQuoteRight /> },
     { label: 'Gallery', href: '#gallery', icon: <FaImages /> },
     { label: 'Services', href: '#services', icon: <FaTools /> },
     { label: 'Rate Card', href: '#rate-card', icon: <FaDollarSign /> },
-    { label: 'Contact', href: '#contact', icon: <FaEnvelope /> },
     { label: 'Blog', href: '#blog', icon: <FaBlog /> },
   ];
 
@@ -78,7 +88,7 @@ const Header = () => {
     if (window.location.hash) {
       setActiveLink(window.location.hash);
     } else {
-      setActiveLink('/');
+      setActiveLink('#home');
     }
 
     return () => window.removeEventListener('hashchange', handleHashChange);
@@ -158,7 +168,7 @@ const Header = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:block">
               <div className="flex items-baseline space-x-8">
-                {navigation.map((item) => (
+                {mainNavigation.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
@@ -175,6 +185,11 @@ const Header = () => {
                     {item.name}
                   </a>
                 ))}
+                <MoreDropdown
+                  links={moreNavigation}
+                  scrollToSection={scrollToSection}
+                  activeLink={activeLink}
+                />
                 <div className="relative">
                   <ShareButton label="" />
                 </div>
