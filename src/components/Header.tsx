@@ -28,46 +28,44 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('');
-  const [isMoreOpen, setIsMoreOpen] = useState(false); // State for mobile "More" section
 
-  // Main navigation links for the desktop header and top of mobile menu
+  // Priority links for mobile menu and floating icons
+  const priorityNavigation = [
+    { name: 'Home', href: '#home', icon: <FaHome className="w-5 h-5" /> },
+    { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
+    { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
+    { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
+    { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
+    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
+    { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
+    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
+    { name: 'Blog', href: '#blog', icon: <FaBlog className="w-5 h-5" /> },
+  ];
+
+  // Main navigation links for the desktop header
   const mainNavigation = [
     { name: 'Home', href: '#home', icon: <FaHome className="w-5 h-5" /> },
     { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
     { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
+    { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
+    { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
     { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
+    { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
+    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
   ];
 
-  // Links for the "More" dropdown and mobile menu
+  // Links for the "More" dropdown
   const moreNavigation = [
     { name: 'Education', href: '#education', icon: <FaGraduationCap className="w-5 h-5" /> },
     { name: 'Testimonials', href: '#testimonials', icon: <FaQuoteRight className="w-5 h-5" /> },
-    { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
-    { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
-    { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
     { name: 'Gallery', href: '#gallery', icon: <FaImages className="w-5 h-5" /> },
-    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
     { name: 'Rate Card', href: '#rate-card', icon: <FaDollarSign className="w-5 h-5" /> },
     { name: 'Blog', href: '#blog', icon: <FaBlog className="w-5 h-5" /> },
   ];
-  
-  // Combine all floating icons into a single array
-  const floatingIcons = [
-    { label: 'Home', href: '#home', icon: <FaHome /> },
-    { label: 'About', href: '#about', icon: <FaUser /> },
-    { label: 'Projects', href: '#projects', icon: <FaFolderOpen /> },
-    { label: 'Contact', href: '#contact', icon: <FaEnvelope /> },
-    { label: 'Experience', href: '#experience', icon: <FaChalkboardTeacher /> },
-    { label: 'Skills', href: '#skills', icon: <FaLaptopCode /> },
-    { label: 'Certificates', href: '#certificates', icon: <FaCertificate /> },
-    { label: 'Education', href: '#education', icon: <FaGraduationCap /> },
-    { label: 'Testimonials', href: '#testimonials', icon: <FaQuoteRight /> },
-    { label: 'Gallery', href: '#gallery', icon: <FaImages /> },
-    { label: 'Services', href: '#services', icon: <FaTools /> },
-    { label: 'Rate Card', href: '#rate-card', icon: <FaDollarSign /> },
-    { label: 'Blog', href: '#blog', icon: <FaBlog /> },
-  ];
 
+  // Floating icons are the same as priority links
+  const floatingIcons = priorityNavigation;
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -117,7 +115,7 @@ const Header = () => {
           </button>
         </div>
         <nav className="flex flex-col p-4 space-y-2 text-white overflow-y-auto">
-          {mainNavigation.map((link) => (
+          {priorityNavigation.map((link) => (
             <a
               key={link.name}
               href={link.href}
@@ -132,36 +130,6 @@ const Header = () => {
               <span className="text-lg">{link.name}</span>
             </a>
           ))}
-
-          {/* "More" section for mobile */}
-          <button
-            onClick={() => setIsMoreOpen(!isMoreOpen)}
-            className="flex items-center justify-between w-full p-3 text-lg font-semibold text-gray-300 hover:text-blue-400 transition-colors duration-200"
-          >
-            <div className="flex items-center space-x-4">
-              <FaEllipsisV className="w-5 h-5" />
-              <span>More</span>
-            </div>
-            <FaChevronDown className={`transform transition-transform duration-200 ${isMoreOpen ? 'rotate-180' : ''}`} />
-          </button>
-          <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMoreOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-            <div className="pl-4 pt-2 space-y-2">
-              {moreNavigation.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className={`flex items-center space-x-4 p-3 rounded-lg transition-colors duration-200 ${
-                    activeLink === link.href ? 'bg-blue-600/20 text-blue-400 font-semibold' : 'text-gray-300 hover:bg-gray-800 hover:text-blue-400'
-                  }`}
-                >
-                  {link.icon}
-                  <span className="text-lg">{link.name}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-
           <div className="mt-4">
             <ShareButton label=" my portfolio" />
           </div>
