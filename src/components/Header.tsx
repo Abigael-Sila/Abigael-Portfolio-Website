@@ -29,15 +29,15 @@ const Header = () => {
 
   // Priority links for mobile menu and floating icons
   const priorityNavigation = [
-    { name: 'Home', href: '#home', icon: <FaHome className="w-6 h-6" /> },
-    { name: 'About', href: '#about', icon: <FaUser className="w-6 h-6" /> },
-    { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-6 h-6" /> },
-    { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-6 h-6" /> },
-    { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-6 h-6" /> },
-    { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-6 h-6" /> },
-    { name: 'Services', href: '#services', icon: <FaTools className="w-6 h-6" /> },
-    { name: 'Blog', href: '#blog', icon: <FaBlog className="w-6 h-6" /> },
-    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-6 h-6" /> },
+    { name: 'Home', href: '#home', icon: <FaHome className="w-5 h-5" /> },
+    { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
+    { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
+    { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
+    { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
+    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
+    { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
+    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
+    { name: 'Blog', href: '#blog', icon: <FaBlog className="w-5 h-5" /> },
   ];
 
   // Main navigation links for the desktop header
@@ -47,9 +47,9 @@ const Header = () => {
     { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
     { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
-    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
     { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
     { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
+    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
   ];
 
   // Links for the "More" dropdown
@@ -129,7 +129,7 @@ const Header = () => {
             </a>
           ))}
           <div className="mt-4">
-            <ShareButton label=" my portfolio" />
+            <ShareButton label="Share my portfolio" />
           </div>
         </nav>
       </div>
@@ -161,7 +161,7 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:block">
-              <div className="flex items-baseline space-x-6">
+              <div className="flex items-baseline space-x-4">
                 {mainNavigation.map((item) => (
                   <a
                     key={item.name}
@@ -210,7 +210,7 @@ const Header = () => {
               e.preventDefault();
               scrollToSection(item.href);
             }}
-            className={`group flex items-center justify-center relative p-1.5 w-12 h-12 rounded-full text-white shadow-lg transition-transform duration-300 hover:scale-110
+            className={`group flex items-center justify-center relative p-1.5 w-10 h-10 rounded-md text-white shadow-lg transition-transform duration-300 hover:scale-110
               ${
                 activeLink === item.href || (activeLink === '' && item.href === '#home')
                   ? 'bg-blue-500'
@@ -218,7 +218,7 @@ const Header = () => {
               }`}
             title={item.name}
           >
-            <span className="w-6 h-6">{item.icon}</span>
+            <span className="w-5 h-5">{item.icon}</span>
             <span className="absolute right-full mr-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 min-w-max text-sm">
               {item.name}
             </span>
