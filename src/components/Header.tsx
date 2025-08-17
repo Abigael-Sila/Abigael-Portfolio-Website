@@ -17,7 +17,7 @@ import {
   FaDollarSign,
   FaBlog,
   FaGraduationCap,
-  FaChevronDown, // New icon for the collapsible menu
+  FaEllipsisH,
 } from 'react-icons/fa';
 import AbigaelLogo from '../assets/abigael_logo.png';
 import ShareButton from './ShareButton';
@@ -27,9 +27,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('');
-  const [isMoreOpen, setIsMoreOpen] = useState(false); // State for mobile "More" section
+  const [isFloatingMoreOpen, setIsFloatingMoreOpen] = useState(false);
 
-  // Main navigation links for the desktop header
+  // Main navigation links for the desktop header and top of mobile menu
   const mainNavigation = [
     { name: 'Home', href: '#home', icon: <FaHome className="w-5 h-5" /> },
     { name: 'About', href: '#about', icon: <FaUser className="w-5 h-5" /> },
@@ -49,6 +49,9 @@ const Header = () => {
     { name: 'Rate Card', href: '#rate-card', icon: <FaDollarSign className="w-5 h-5" /> },
     { name: 'Blog', href: '#blog', icon: <FaBlog className="w-5 h-5" /> },
   ];
+  
+  // Combine all links for the mobile menu
+  const navigation = [...mainNavigation, ...moreNavigation];
 
   // Floating icons, now with logical grouping for visual clarity
   const floatingIconsGroup1 = [
@@ -118,8 +121,8 @@ const Header = () => {
             <FaTimes size={24} />
           </button>
         </div>
-        <nav className="flex flex-col p-4 space-y-2 text-white">
-          {mainNavigation.map((link) => (
+        <nav className="flex flex-col p-4 space-y-2 text-white overflow-y-auto">
+          {navigation.map((link) => (
             <a
               key={link.name}
               href={link.href}
@@ -134,34 +137,6 @@ const Header = () => {
               <span className="text-lg">{link.name}</span>
             </a>
           ))}
-
-          {/* More section for mobile */}
-          <div className="border-t border-gray-700 mt-4 pt-4">
-            <button
-              onClick={() => setIsMoreOpen(!isMoreOpen)}
-              className="flex items-center justify-between w-full p-3 text-lg font-semibold text-gray-300 hover:text-blue-400 transition-colors duration-200"
-            >
-              <span>More</span>
-              <FaChevronDown className={`transform transition-transform duration-200 ${isMoreOpen ? 'rotate-180' : ''}`} />
-            </button>
-            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMoreOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-              <div className="pl-4 pt-2 space-y-2">
-                {moreNavigation.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => scrollToSection(link.href)}
-                    className={`flex items-center space-x-4 p-3 rounded-lg transition-colors duration-200 ${
-                      activeLink === link.href ? 'bg-blue-600/20 text-blue-400 font-semibold' : 'text-gray-300 hover:bg-gray-800 hover:text-blue-400'
-                    }`}
-                  >
-                    {link.icon}
-                    <span className="text-lg">{link.name}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
 
           <div className="mt-4">
             <ShareButton label=" my portfolio" />
@@ -259,30 +234,40 @@ const Header = () => {
             </span>
           </a>
         ))}
-        {/* Visual separator */}
-        <div className="h-4"></div>
-        {floatingIconsGroup2.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection(item.href);
-            }}
-            className={`group flex items-center justify-center relative p-2 h-12 rounded-full text-white shadow-lg transition-transform duration-300 hover:scale-110
-              ${
-                activeLink === item.href || (activeLink === '' && item.href === '#home')
-                  ? 'bg-blue-500'
-                  : 'bg-gray-800 hover:bg-blue-500'
-              }`}
-            title={item.label}
-          >
-            {item.icon}
-            <span className="absolute right-full mr-4 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 min-w-max">
-              {item.label}
-            </span>
-          </a>
-        ))}
+
+        {isFloatingMoreOpen && (
+          <div className="flex flex-col space-y-4">
+            {floatingIconsGroup2.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
+                className={`group flex items-center justify-center relative p-2 h-12 rounded-full text-white shadow-lg transition-transform duration-300 hover:scale-110
+                  ${
+                    activeLink === item.href ? 'bg-blue-500' : 'bg-gray-800 hover:bg-blue-500'
+                  }`}
+                title={item.label}
+              >
+                {item.icon}
+                <span className="absolute right-full mr-4 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 min-w-max">
+                  {item.label}
+                </span>
+              </a>
+            ))}
+          </div>
+        )}
+        <button
+          onClick={() => setIsFloatingMoreOpen(!isFloatingMoreOpen)}
+          className={`relative p-2 h-12 rounded-full text-white shadow-lg transition-all duration-300 ${
+            isFloatingMoreOpen ? 'bg-blue-500 rotate-180' : 'bg-gray-800 hover:bg-blue-500'
+          }`}
+          aria-label="Toggle more icons"
+        >
+          <FaEllipsisH className="h-full w-full" />
+        </button>
       </div>
     </>
   );
