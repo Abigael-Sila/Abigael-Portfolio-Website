@@ -94,31 +94,43 @@ const EducationSection = () => {
                 index % 2 === 0 ? 'md:justify-start' : 'md:flex-row-reverse'
               }`}
             >
-              {/* Vertical line for small screens, aligned left */}
-              {index < educationData.length - 1 && (
-                <div className="absolute left-6 w-0.5 h-full bg-gray-700 top-1/2 md:hidden"></div>
-              )}
-
-              {/* Timeline content and icon container */}
-              <div className="flex flex-grow items-start md:w-5/12">
-                {/* Icon for all screens */}
-                <div className="relative z-10 flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white shadow-lg mx-auto md:mx-0">
+              {/* Timeline content and icon container for small screens */}
+              <div className="flex flex-col md:flex-row items-center w-full my-8 md:my-0">
+                {/* Icon and vertical line for mobile */}
+                <div className="relative z-10 flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white shadow-lg md:hidden mb-4">
                   {item.icon}
+                  {index < educationData.length - 1 && (
+                    <div className="absolute top-1/2 left-1/2 w-0.5 h-[150%] bg-gray-700 -translate-x-1/2 translate-y-1/2"></div>
+                  )}
                 </div>
-
-                {/* Content for all screens */}
-                <div className="ml-4 md:ml-0 md:w-full md:flex-grow">
-                  <div className={`md:w-full ${index % 2 === 0 ? 'md:text-right md:pr-16' : 'md:text-left md:pl-16'}`}>
-                    <h3 className="text-xl font-bold text-white mb-1 md:mb-0">{item.institution}</h3>
-                    <p className="text-gray-300 italic">{item.degree}</p>
-                    <p className="text-sm text-gray-400 mb-2 md:mb-0">{item.date}</p>
-                    <p className="mt-2 text-gray-400">{item.description}</p>
-                  </div>
+                
+                {/* Content for mobile */}
+                <div className="text-center md:hidden">
+                  <h3 className="text-xl font-bold text-white mb-1">{item.institution}</h3>
+                  <p className="text-gray-300 italic">{item.degree}</p>
+                  <p className="text-sm text-gray-400 mb-2">{item.date}</p>
+                  <p className="mt-2 text-gray-400">{item.description}</p>
                 </div>
               </div>
 
-              {/* Empty div to keep the large screen layout */}
-              <div className={`hidden md:block md:w-5/12 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}></div>
+              {/* Timeline content and icon container for large screens */}
+              <div className="hidden md:flex flex-row items-center w-full md:my-0">
+                {/* Content for large screens */}
+                <div className={`w-5/12 flex-grow ${index % 2 === 0 ? 'text-right pr-16' : 'text-left pl-16'}`}>
+                  <h3 className="text-xl font-bold text-white mb-1">{item.institution}</h3>
+                  <p className="text-gray-300 italic">{item.degree}</p>
+                  <p className="text-sm text-gray-400 mb-2">{item.date}</p>
+                  <p className="mt-2 text-gray-400">{item.description}</p>
+                </div>
+
+                {/* Icon for large screens */}
+                <div className="z-10 flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white shadow-lg">
+                  {item.icon}
+                </div>
+
+                {/* Empty div for spacing */}
+                <div className={`w-5/12 ${index % 2 === 0 ? 'text-left' : 'text-right'}`}></div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
