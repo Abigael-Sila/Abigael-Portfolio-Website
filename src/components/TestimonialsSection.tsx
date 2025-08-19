@@ -101,32 +101,6 @@ const TestimonialsSection = () => {
       </motion.div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Navigation buttons and "See All Reviews" button */}
-        <div className="absolute top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 px-4 z-20">
-          <button
-            onClick={handlePrev}
-            aria-label="Previous Testimonial"
-            title="Previous Testimonial"
-            className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition"
-          >
-            <ArrowLeft size={24} />
-          </button>
-          <a
-            href="#"
-            className="text-white text-sm uppercase font-semibold tracking-wider hover:text-blue-400 transition"
-          >
-            See All Reviews
-          </a>
-          <button
-            onClick={handleNext}
-            aria-label="Next Testimonial"
-            title="Next Testimonial"
-            className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition"
-          >
-            <ArrowRight size={24} />
-          </button>
-        </div>
-
         <div className="relative overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
@@ -173,6 +147,34 @@ const TestimonialsSection = () => {
               </div>
             </motion.div>
           </AnimatePresence>
+        </div>
+
+        {/* Navigation buttons and "See All Reviews" button */}
+        <div className="flex flex-col md:flex-row justify-center items-center mt-12 md:space-x-8">
+          <div className="flex justify-between items-center w-full max-w-xs md:max-w-none md:w-auto">
+            <button
+              onClick={handlePrev}
+              aria-label="Previous Testimonial"
+              title="Previous Testimonial"
+              className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition"
+            >
+              <ArrowLeft size={24} />
+            </button>
+            <a
+              href="#"
+              className="text-white text-sm uppercase font-semibold tracking-wider hover:text-blue-400 transition"
+            >
+              See All Reviews
+            </a>
+            <button
+              onClick={handleNext}
+              aria-label="Next Testimonial"
+              title="Next Testimonial"
+              className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition"
+            >
+              <ArrowRight size={24} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

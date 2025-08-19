@@ -1,6 +1,6 @@
 // src/components/GallerySection.tsx
 
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
@@ -55,10 +55,10 @@ const GallerySection = () => {
 
   useEffect(() => {
     if (carouselRef.current) {
-      const cardWidth = carouselRef.current.children[0].clientWidth;
-      carouselRef.current.scrollTo({
-        left: currentSlide * cardWidth,
+      const targetElement = carouselRef.current.children[currentSlide] as HTMLElement;
+      targetElement.scrollIntoView({
         behavior: 'smooth',
+        inline: 'center',
       });
     }
   }, [currentSlide]);
@@ -104,7 +104,7 @@ const GallerySection = () => {
         {/* Carousel Container */}
         <div
           ref={carouselRef}
-          className="flex space-x-8 overflow-x-auto snap-x snap-mandatory scroll-p-4 md:scroll-p-8 pb-4"
+          className="flex space-x-8 overflow-x-auto pb-4"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           <style>
@@ -117,7 +117,7 @@ const GallerySection = () => {
           {galleryItems.map((item, index) => (
             <div
               key={index}
-              className="flex-none w-[90%] md:w-1/2 lg:w-1/3 snap-center group relative bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500"
+              className="flex-none w-[90%] md:w-1/2 lg:w-1/3 group relative bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500"
             >
               <div className="relative h-64 overflow-hidden">
                 <img
