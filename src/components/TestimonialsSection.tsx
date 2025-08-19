@@ -123,15 +123,6 @@ const TestimonialsSection = () => {
                     <Quote size={16} />
                   </div>
                 </div>
-                {/* Mobile Navigation */}
-                <div className="flex justify-center mt-6 md:hidden">
-                  <button onClick={handlePrev} className="p-2 text-gray-400 hover:text-blue-400" title="Previous Testimonial">
-                    <ArrowLeft size={24} />
-                  </button>
-                  <button onClick={handleNext} className="p-2 text-gray-400 hover:text-blue-400" title="Next Testimonial">
-                    <ArrowRight size={24} />
-                  </button>
-                </div>
               </div>
 
               {/* Testimonial Content (Now below image on mobile) */}
@@ -144,37 +135,34 @@ const TestimonialsSection = () => {
                   <h3 className="text-lg font-bold text-white">{testimonial.name}</h3>
                   <p className="text-sm text-gray-400">{testimonial.title}</p>
                 </div>
+                 {/* Navigation buttons and "See All Reviews" button moved inside the card */}
+                <div className="flex justify-between items-center w-full max-w-xs md:max-w-none md:w-auto mt-6">
+                  <button
+                    onClick={handlePrev}
+                    aria-label="Previous Testimonial"
+                    title="Previous Testimonial"
+                    className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition"
+                  >
+                    <ArrowLeft size={24} />
+                  </button>
+                  <a
+                    href="#"
+                    className="text-white text-sm uppercase font-semibold tracking-wider hover:text-blue-400 transition"
+                  >
+                    See All Reviews
+                  </a>
+                  <button
+                    onClick={handleNext}
+                    aria-label="Next Testimonial"
+                    title="Next Testimonial"
+                    className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition"
+                  >
+                    <ArrowRight size={24} />
+                  </button>
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>
-        </div>
-
-        {/* Navigation buttons and "See All Reviews" button */}
-        <div className="flex flex-col md:flex-row justify-center items-center mt-12 md:space-x-8">
-          <div className="flex justify-between items-center w-full max-w-xs md:max-w-none md:w-auto">
-            <button
-              onClick={handlePrev}
-              aria-label="Previous Testimonial"
-              title="Previous Testimonial"
-              className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition"
-            >
-              <ArrowLeft size={24} />
-            </button>
-            <a
-              href="#"
-              className="text-white text-sm uppercase font-semibold tracking-wider hover:text-blue-400 transition"
-            >
-              See All Reviews
-            </a>
-            <button
-              onClick={handleNext}
-              aria-label="Next Testimonial"
-              title="Next Testimonial"
-              className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition"
-            >
-              <ArrowRight size={24} />
-            </button>
-          </div>
         </div>
       </div>
     </section>

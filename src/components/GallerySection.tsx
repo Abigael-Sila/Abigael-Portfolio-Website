@@ -27,6 +27,7 @@ const GallerySection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<number | null>(null);
+  const isInitialMount = useRef(true);
 
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % galleryItems.length);
@@ -54,6 +55,11 @@ const GallerySection = () => {
   }, [currentSlide]);
 
   useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
     if (carouselRef.current) {
       const targetElement = carouselRef.current.children[currentSlide] as HTMLElement;
       targetElement.scrollIntoView({
