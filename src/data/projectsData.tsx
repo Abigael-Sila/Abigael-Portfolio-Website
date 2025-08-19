@@ -30,7 +30,7 @@ export const allProjects: Project[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     features: [
       "Responsive design",
-      "EmailJS for contact form",
+      "SEO optimized",
       "Dark mode support",
       "Project showcase"
     ],
@@ -62,6 +62,27 @@ export const allProjects: Project[] = [
     links: {
       github: "https://github.com/Abigael-Sila/Symphion",
       live: "https://abigael-sila.github.io/Symphion/"
+    }
+  },
+  {
+    title: "James Ngene Portfolio",
+    category: "Web Development",
+    description: "A portfolio for James Ngene, built to showcase projects and skills.",
+    technologies: ["React", "Typescript", "Tailwind CSS"],
+    features: [
+      "Mobile-first design",
+      "Smooth UI animations",
+      "User-friendly navigation",
+      "Project highlights"
+
+    ],
+    image: NgeneScreenshot,
+    icon: <Smartphone className="w-6 h-6" />,
+    status: "In Progress",
+    isFeatured: false,
+    links: {
+      github: "https://github.com/Abigael-Sila/James-Ngene.git",
+      live: "https://james-ngene.vercel.app/"
     }
   },
   {
@@ -102,26 +123,6 @@ export const allProjects: Project[] = [
     links: {
       github: "https://github.com/Abigael-Sila/Emmanuel-Ngetich.git",
       live: "https://emmanuel-ngetich.vercel.app/"
-    }
-  },
-  {
-    title: "James Ngene Portfolio",
-    category: "Mobile Development",
-    description: "A mobile-first portfolio for James Ngene, optimized to showcase projects and skills on smaller devices.",
-    technologies: ["React Native", "Expo", "Firebase", "Redux"],
-    features: [
-      "Mobile-first design",
-      "Smooth UI animations",
-      "Integrated blog",
-      "API consumption"
-    ],
-    image: NgeneScreenshot,
-    icon: <Smartphone className="w-6 h-6" />,
-    status: "In Progress",
-    isFeatured: false,
-    links: {
-      github: "https://github.com/Abigael-Sila/James-Ngene.git",
-      live: "https://james-ngene.vercel.app/"
     }
   }
 ];
