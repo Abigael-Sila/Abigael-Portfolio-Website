@@ -90,31 +90,35 @@ const EducationSection = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className={`flex flex-col md:flex-row items-center w-full my-8 md:my-16 ${
+              className={`relative flex items-center w-full my-8 md:my-16 ${
                 index % 2 === 0 ? 'md:justify-start' : 'md:flex-row-reverse'
               }`}
             >
-              {/* Timeline content for both screen sizes */}
-              <div className={`w-full md:w-5/12 flex-grow ${index % 2 === 0 ? 'md:text-right md:pr-16' : 'md:text-left md:pl-16'}`}>
-                <h3 className="text-xl font-bold text-white mb-1 md:mb-0">{item.institution}</h3>
-                <p className="text-gray-300 italic">{item.degree}</p>
-                <p className="text-sm text-gray-400 mb-2 md:mb-0">{item.date}</p>
-                <p className="mt-2 text-gray-400">{item.description}</p>
-              </div>
+              {/* Vertical line for small screens, aligned left */}
+              {index < educationData.length - 1 && (
+                <div className="absolute left-6 w-0.5 h-full bg-gray-700 top-1/2 md:hidden"></div>
+              )}
 
-              {/* Timeline icon with connecting line for mobile */}
-              <div className="order-2 md:w-2/12 relative flex justify-center items-center h-full">
-                {/* Vertical line for small screens */}
-                {index < educationData.length - 1 && (
-                  <div className="absolute h-full w-px bg-gray-700 left-1/2 transform -translate-x-1/2 top-1/2 -mt-6 -mb-6 md:hidden"></div>
-                )}
-                <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white shadow-lg">
+              {/* Timeline content and icon container */}
+              <div className="flex flex-grow items-start md:w-5/12">
+                {/* Icon for all screens */}
+                <div className="relative z-10 flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white shadow-lg mx-auto md:mx-0">
                   {item.icon}
+                </div>
+
+                {/* Content for all screens */}
+                <div className="ml-4 md:ml-0 md:w-full md:flex-grow">
+                  <div className={`md:w-full ${index % 2 === 0 ? 'md:text-right md:pr-16' : 'md:text-left md:pl-16'}`}>
+                    <h3 className="text-xl font-bold text-white mb-1 md:mb-0">{item.institution}</h3>
+                    <p className="text-gray-300 italic">{item.degree}</p>
+                    <p className="text-sm text-gray-400 mb-2 md:mb-0">{item.date}</p>
+                    <p className="mt-2 text-gray-400">{item.description}</p>
+                  </div>
                 </div>
               </div>
 
               {/* Empty div to keep the large screen layout */}
-              <div className={`order-1 md:w-5/12 hidden md:block ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}></div>
+              <div className={`hidden md:block md:w-5/12 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}></div>
             </motion.div>
           ))}
         </motion.div>
