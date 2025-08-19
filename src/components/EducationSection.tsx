@@ -77,7 +77,7 @@ const EducationSection = () => {
       </motion.div>
 
       <div className="relative max-w-4xl mx-auto">
-        {/* Vertical line for the timeline - centered on large screens */}
+        {/* Vertical line for the timeline - hidden on small screens, centered on large screens */}
         <div className="absolute left-1/2 -ml-0.5 w-1 h-full bg-gray-700 hidden md:block"></div>
 
         <motion.div
@@ -90,27 +90,27 @@ const EducationSection = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className={`flex items-start my-8 md:my-16 ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              className={`relative flex items-center my-8 md:my-16 ${
+                index % 2 === 0 ? 'md:justify-start' : 'md:flex-row-reverse'
               }`}
             >
-              {/* Timeline content block and icon */}
-              <div className="relative flex flex-grow items-start md:w-5/12">
+              {/* Content block */}
+              <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                <h3 className="text-xl font-bold text-white mb-1 md:mb-0">{item.institution}</h3>
+                <p className="text-gray-300 italic">{item.degree}</p>
+                <p className="text-sm text-gray-400 mb-2 md:mb-0">{item.date}</p>
+                <p className="mt-2 text-gray-400">{item.description}</p>
+              </div>
+
+              {/* Icon with connecting line for both mobile and desktop */}
+              <div className="md:w-2/12 relative flex justify-center items-center">
                 {/* Vertical line for small screens, aligned left with the icon */}
                 {index < educationData.length - 1 && (
-                  <div className="absolute w-0.5 h-full bg-gray-700 left-6 top-1/2 -mt-6 md:hidden"></div>
+                  <div className="absolute w-0.5 h-full bg-gray-700 left-1/2 transform -translate-x-1/2 top-1/2 md:hidden"></div>
                 )}
                 {/* Icon for all screens */}
-                <div className="z-10 flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white shadow-lg">
+                <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white shadow-lg mx-auto">
                   {item.icon}
-                </div>
-
-                {/* Content for all screens */}
-                <div className="flex-grow ml-4">
-                  <h3 className="text-xl font-bold text-white mb-1">{item.institution}</h3>
-                  <p className="text-gray-300 italic">{item.degree}</p>
-                  <p className="text-sm text-gray-400 mb-2">{item.date}</p>
-                  <p className="mt-2 text-gray-400">{item.description}</p>
                 </div>
               </div>
 
