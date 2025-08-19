@@ -106,7 +106,7 @@ const EducationSection = () => {
               <div className="md:w-2/12 relative flex justify-center items-center">
                 {/* Vertical line for small screens, aligned left with the icon */}
                 {index < educationData.length - 1 && (
-                  <div className="absolute w-0.5 h-full bg-gray-700 left-1/2 transform -translate-x-1/2 top-1/2 md:hidden"></div>
+                  <div className="absolute w-0.5 h-full bg-gray-700 right-1/2 transform -translate-x-1/2 top-1/2 md:hidden"></div>
                 )}
                 {/* Icon for all screens */}
                 <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white shadow-lg mx-auto">

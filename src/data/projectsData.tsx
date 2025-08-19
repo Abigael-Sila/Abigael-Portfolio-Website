@@ -2,6 +2,7 @@ import AbigaelPortfolioImage from '../assets/Abigael_Portfolio.png';
 import SymphionScreenshot from '../assets/Symphion_Screenshot.png';
 import LucasScreenshot from '../assets/Lucas_Screenshot.png';
 import ManuScreenshot from '../assets/Manu_Screenshot.png';
+import NgeneScreenshot from '../assets/Ngene_Screenshot.png';
 
 import { Wifi, Globe, Smartphone } from 'lucide-react';
 
@@ -114,13 +115,13 @@ export const allProjects: Project[] = [
       "Integrated blog",
       "API consumption"
     ],
-    image: "https://images.pexels.com/photos/2247179/pexels-photo-2247179.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: NgeneScreenshot,
     icon: <Smartphone className="w-6 h-6" />,
     status: "In Progress",
     isFeatured: false,
     links: {
-      github: "https://github.com/james-ngene/portfolio-app",
-      live: "https://example.com/james-ngene-demo"
+      github: "https://github.com/Abigael-Sila/James-Ngene.git",
+      live: "https://james-ngene.vercel.app/"
     }
   }
 ];
