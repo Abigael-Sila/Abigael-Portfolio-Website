@@ -29,7 +29,7 @@ const educationData = [
   {
     institution: "One Hill's Academy",
     degree: "Primary School Education",
-    date: "Completed February 2016",
+    date: "Completed November 2015",
     icon: <School />,
     description: "Completed primary school education.",
   },

@@ -101,21 +101,27 @@ const TestimonialsSection = () => {
       </motion.div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Navigation buttons */}
-        <div className="absolute top-1/2 left-0 right-0 flex justify-between transform -translate-y-1/2 px-4 z-20">
+        {/* Navigation buttons and "See All Reviews" button */}
+        <div className="absolute top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 px-4 z-20">
           <button
             onClick={handlePrev}
             aria-label="Previous Testimonial"
             title="Previous Testimonial"
-            className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition hidden md:block"
+            className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition"
           >
             <ArrowLeft size={24} />
           </button>
+          <a
+            href="#"
+            className="text-white text-sm uppercase font-semibold tracking-wider hover:text-blue-400 transition"
+          >
+            See All Reviews
+          </a>
           <button
             onClick={handleNext}
             aria-label="Next Testimonial"
             title="Next Testimonial"
-            className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition hidden md:block"
+            className="p-3 bg-gray-800/50 rounded-full text-white hover:bg-gray-700 transition"
           >
             <ArrowRight size={24} />
           </button>
@@ -131,20 +137,8 @@ const TestimonialsSection = () => {
               exit="exit"
               className="bg-gray-800/50 rounded-xl border border-gray-700/50 p-8 min-h-[400px] flex flex-col justify-center items-center md:flex-row md:justify-between md:items-center"
             >
-              {/* Testimonial Content (Left for large, Top for small) */}
-              <div className="flex flex-col items-center md:items-start md:w-2/3 md:pr-12">
-                <div className="md:hidden">
-                  <Quote size={48} className="text-blue-500 mb-4" />
-                </div>
-                <p className="text-gray-300 italic text-center text-xl font-serif leading-relaxed mb-6 md:text-left">"{testimonial.quote}"</p>
-                <div className="text-center md:text-left">
-                  <h3 className="text-lg font-bold text-white">{testimonial.name}</h3>
-                  <p className="text-sm text-gray-400">{testimonial.title}</p>
-                </div>
-              </div>
-
-              {/* Person's Image (Right for large, bottom for small) */}
-              <div className="flex flex-col items-center mt-8 md:mt-0 md:w-1/3">
+              {/* Person's Image (Now on top on mobile) */}
+              <div className="flex flex-col items-center mt-8 md:mt-0 md:w-1/3 order-1 md:order-2">
                 <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-gray-700 shadow-lg">
                   <img
                     src={testimonial.image}
@@ -165,21 +159,20 @@ const TestimonialsSection = () => {
                   </button>
                 </div>
               </div>
+
+              {/* Testimonial Content (Now below image on mobile) */}
+              <div className="flex flex-col items-center md:items-start md:w-2/3 md:pr-12 order-2 md:order-1">
+                <div className="md:hidden">
+                  <Quote size={48} className="text-blue-500 mb-4" />
+                </div>
+                <p className="text-gray-300 italic text-center text-xl font-serif leading-relaxed mb-6 md:text-left">"{testimonial.quote}"</p>
+                <div className="text-center md:text-left">
+                  <h3 className="text-lg font-bold text-white">{testimonial.name}</h3>
+                  <p className="text-sm text-gray-400">{testimonial.title}</p>
+                </div>
+              </div>
             </motion.div>
           </AnimatePresence>
-        </div>
-
-        {/* See All Reviews Button and Counter */}
-        <div className="flex flex-col md:flex-row justify-center items-center mt-12 md:space-x-8">
-          <a
-            href="#"
-            className="text-white text-sm uppercase font-semibold tracking-wider hover:text-blue-400 transition"
-          >
-            See All Reviews
-          </a>
-          <p className="text-gray-500 text-sm mt-4 md:mt-0 hidden md:block">
-            <span className="text-white font-bold">{currentTestimonial + 1}</span> / {allTestimonials.length}
-          </p>
         </div>
       </div>
     </section>
