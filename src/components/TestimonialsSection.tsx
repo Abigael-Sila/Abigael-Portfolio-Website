@@ -109,7 +109,7 @@ const TestimonialsSection = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              className="bg-gray-800/50 rounded-xl border border-gray-700/50 p-8 min-h-[400px] flex flex-col justify-center items-center md:flex-row md:justify-between md:items-center"
+              className="group relative bg-gray-800/50 rounded-xl border border-gray-700/50 p-8 min-h-[400px] flex flex-col justify-center items-center md:flex-row md:justify-between md:items-center"
             >
               {/* Person's Image (Now on top on mobile) */}
               <div className="flex flex-col items-center mt-8 md:mt-0 md:w-1/3 order-1 md:order-2">
@@ -135,8 +135,8 @@ const TestimonialsSection = () => {
                   <h3 className="text-lg font-bold text-white">{testimonial.name}</h3>
                   <p className="text-sm text-gray-400">{testimonial.title}</p>
                 </div>
-                 {/* Navigation buttons and "See All Reviews" button moved inside the card */}
-                <div className="flex justify-between items-center w-full max-w-xs md:max-w-none md:w-auto mt-6">
+                {/* Navigation buttons and "See All Reviews" button moved inside the card and centered */}
+                <div className="flex justify-center items-center space-x-4 mt-8 md:mt-12 w-full">
                   <button
                     onClick={handlePrev}
                     aria-label="Previous Testimonial"
@@ -147,7 +147,7 @@ const TestimonialsSection = () => {
                   </button>
                   <a
                     href="#"
-                    className="text-white text-sm uppercase font-semibold tracking-wider hover:text-blue-400 transition"
+                    className="text-white text-sm uppercase font-semibold tracking-wider px-6 py-3 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50"
                   >
                     See All Reviews
                   </a>

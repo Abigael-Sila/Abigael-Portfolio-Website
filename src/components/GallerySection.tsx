@@ -27,7 +27,6 @@ const GallerySection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<number | null>(null);
-  const isInitialMount = useRef(true);
 
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % galleryItems.length);
@@ -55,16 +54,13 @@ const GallerySection = () => {
   }, [currentSlide]);
 
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-      return;
-    }
-
     if (carouselRef.current) {
-      const targetElement = carouselRef.current.children[currentSlide] as HTMLElement;
-      targetElement.scrollIntoView({
+      const cardElement = carouselRef.current.children[currentSlide] as HTMLElement;
+      const cardWidth = cardElement.clientWidth;
+      const cardMargin = 32; // This is the space-x-8 from Tailwind CSS, which is 32px
+      carouselRef.current.scrollTo({
+        left: currentSlide * (cardWidth + cardMargin),
         behavior: 'smooth',
-        inline: 'center',
       });
     }
   }, [currentSlide]);
