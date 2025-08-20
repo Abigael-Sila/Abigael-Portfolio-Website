@@ -36,7 +36,7 @@ const BlogSection = () => {
 
   // Replace with your actual EmailJS credentials
   const serviceId = 'service_opuoiab';
-  const templateId = 'template_2s9ultc';
+  const templateId = 'template_ac1a5zb';
   const publicKey = 'Dxq52kbbRczsrJ78J';
 
   const handleNext = () => {
