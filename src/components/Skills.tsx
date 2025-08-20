@@ -119,7 +119,7 @@ const Skills = () => {
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 10, transition: { repeat: Infinity, repeatType: "reverse", duration: 1 } }}
-          className="absolute top-0 left-4 text-sm text-gray-400 italic pointer-events-none sm:hidden"
+          className="absolute top-0 right-4 text-sm text-gray-400 italic pointer-events-none sm:hidden"
         >
           Swipe →
         </motion.div>
