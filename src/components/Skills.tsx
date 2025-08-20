@@ -117,13 +117,6 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 10, transition: { repeat: Infinity, repeatType: "reverse", duration: 1 } }}
-          className="absolute top-0 right-4 text-sm text-gray-400 italic pointer-events-none sm:hidden"
-        >
-          Swipe →
-        </motion.div>
-        <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -136,6 +129,14 @@ const Skills = () => {
           <p className="text-gray-400 max-w-2xl mx-auto mb-8">
             A comprehensive overview of my technical expertise and capabilities
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 10, transition: { repeat: Infinity, repeatType: "reverse", duration: 1 } }}
+          className="absolute top-0 right-4 text-sm text-gray-400 italic pointer-events-none sm:hidden"
+        >
+          Swipe →
         </motion.div>
 
         {/* Carousel container with relative positioning for navigation buttons */}

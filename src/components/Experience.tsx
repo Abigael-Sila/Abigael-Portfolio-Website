@@ -27,21 +27,21 @@ const Experience = () => {
       icon: <Users className="w-6 h-6" />
     },
     {
-      "title": "Electrical Engineering Intern",
-      "company": "Kenya Space Agency",
-      "location": "Nairobi, Kenya",
-      "duration": "August 2025 - Present",
-      "type": "Internship",
-      "description": "Engaged in projects related to satellite systems, ground station operations, and power systems for space technology. Gained exposure to the technical infrastructure supporting space science and Earth observation.",
-      "responsibilities": [
-        "Assisted in the maintenance and testing of ground station electrical systems",
-        "Participated in data acquisition from satellite monitoring systems",
-        "Conducted routine inspections of power supply infrastructure for mission-critical equipment",
-        "Collaborated with senior engineers on telecommunications and satellite technology projects",
-        "Documented system specifications and contributed to technical reports on ongoing missions"
+      title: "Electrical Engineering Intern",
+      company: "Kenya Airports Authority",
+      location: "Nairobi, Kenya",
+      duration: "August 2025 - Present",
+      type: "Internship",
+      description: "Contributed to the maintenance and operation of electrical systems, including airfield lighting, power distribution, and building management systems. Gained hands-on experience with critical infrastructure in a high-stakes operational environment.",
+      responsibilities: [
+        "Assisted in the maintenance of airfield lighting and navigation systems to ensure flight safety",
+        "Participated in routine inspections and troubleshooting of power distribution networks across airport facilities",
+        "Supported senior engineers in the management of building electrical systems and emergency power generators",
+        "Aided in the documentation of technical specifications and maintenance procedures",
+        "Collaborated with the airport's operations and maintenance teams to ensure seamless electrical functionality"
       ],
-      "skills": ["Satellite Systems", "Ground Station Operations", "Power Systems", "Technical Documentation", "Team Collaboration"],
-      "icon": <Wrench className="w-6 h-6" />
+      skills: ["Airfield Lighting", "Power Distribution", "Building Management Systems", "Technical Troubleshooting", "Operational Safety"],
+      icon: <Wrench className="w-6 h-6" />
     },
     {
       title: "Electrical Engineering Intern",
