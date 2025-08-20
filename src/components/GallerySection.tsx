@@ -138,7 +138,8 @@ const GallerySection = () => {
               key={index}
               className="flex-none w-[90%] md:w-1/2 lg:w-1/3 group relative bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500"
             >
-              <div className="relative h-64 overflow-hidden">
+              {/* Increased the height of the image container to h-[400px] */}
+              <div className="relative h-[400px] overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
