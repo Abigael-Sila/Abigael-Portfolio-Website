@@ -4,22 +4,39 @@ import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-// Placeholder data for gallery items
+// Import your new images with the correct .jpg file extensions
+import Abbie1 from './src/assets/Abbie1.jpg';
+import Abbie2 from './src/assets/Abbie2.jpg';
+import Abbie3 from './src/assets/Abbie3.jpg';
+import Abbie4 from './src/assets/Abbie4.jpg';
+import Abbie5 from './src/assets/Abbie5.jpg';
+
+// Updated data for gallery items with new images and descriptions
 const galleryItems = [
   {
-    image: "https://images.pexels.com/photos/1739503/pexels-photo-1739503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    title: "UI/UX Design Mockup",
-    description: "A clean and modern interface for a mobile application.",
+    image: Abbie1,
+    title: "Engineering on Site",
+    description: "Inspecting an electrical panel during a field project.",
   },
   {
-    image: "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    title: "Hardware Prototype",
-    description: "The initial prototype of a connected device.",
+    image: Abbie2,
+    title: "Project Progress",
+    description: "Documenting progress on a complex engineering installation.",
   },
   {
-    image: "https://images.pexels.com/photos/1036814/pexels-photo-1036814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    title: "Project Workflow",
-    description: "Visualizing the development process from ideation to completion.",
+    image: Abbie3,
+    title: "The Engineer's Climb",
+    description: "Taking a moment on a locomotive at Kenya Railways.",
+  },
+  {
+    image: Abbie4,
+    title: "Railway Signaling",
+    description: "Hands-on experience with railway signaling and control systems.",
+  },
+  {
+    image: Abbie5,
+    title: "Overlooking the Tracks",
+    description: "At the end of a long day of work, taking a break on the tracks.",
   },
 ];
 
