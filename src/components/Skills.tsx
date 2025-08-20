@@ -115,7 +115,14 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 10, transition: { repeat: Infinity, repeatType: "reverse", duration: 1 } }}
+          className="absolute top-0 left-4 text-sm text-gray-400 italic pointer-events-none sm:hidden"
+        >
+          Swipe →
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +207,7 @@ const Skills = () => {
           </Swiper>
 
           {/* New navigation buttons for larger screens */}
-          <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between z-10 sm:flex">
+          <div className="absolute inset-y-0 left-0 right-0 items-center justify-between z-10 hidden sm:flex">
             <button className="swiper-button-prev p-3 rounded-full bg-gray-800/50 text-white hover:bg-gray-700 transition" aria-label="Previous Slide">
               <ArrowLeft size={24} />
             </button>
@@ -208,17 +215,6 @@ const Skills = () => {
               <ArrowRight size={24} />
             </button>
           </div>
-        </div>
-
-        {/* Swipe text hint for mobile */}
-        <div className="text-center mt-8 sm:hidden">
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 10, transition: { repeat: Infinity, repeatType: "reverse", duration: 1 } }}
-            className="text-sm text-gray-400 italic"
-          >
-            Swipe →
-          </motion.div>
         </div>
       </div>
     </section>
