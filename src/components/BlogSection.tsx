@@ -81,14 +81,15 @@ const BlogSection = () => {
     const form = e.currentTarget;
     const emailInput = form.email.value;
 
-    emailjs.send(serviceId, templateId, { email: emailInput }, publicKey)
+    // Correct the payload to use the variable name the template expects
+    emailjs.send(serviceId, templateId, { user_email: emailInput }, publicKey)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         setShowPopup(true);
         form.reset(); // Clear the form input
         setTimeout(() => {
           setShowPopup(false);
-        }, 9000); // Hide the pop-up after 5 seconds
+        }, 9000);
       }, (err) => {
         console.log('FAILED...', err);
         alert('Failed to subscribe. Please try again later.');
