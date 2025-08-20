@@ -5,11 +5,11 @@ import { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 // Import your new images with the correct .jpg file extensions
-import Abbie1 from './src/assets/Abbie1.jpg';
-import Abbie2 from './src/assets/Abbie2.jpg';
-import Abbie3 from './src/assets/Abbie3.jpg';
-import Abbie4 from './src/assets/Abbie4.jpg';
-import Abbie5 from './src/assets/Abbie5.jpg';
+import Abbie1 from '../assets/Abbie1.jpg';
+import Abbie2 from '../assets/Abbie2.jpg';
+import Abbie3 from '../assets/Abbie3.jpg';
+import Abbie4 from '../assets/Abbie4.jpg';
+import Abbie5 from '../assets/Abbie5.jpg';
 
 // Updated data for gallery items with new images and descriptions
 const galleryItems = [
