@@ -129,14 +129,13 @@ const Skills = () => {
           <p className="text-gray-400 max-w-2xl mx-auto mb-8">
             A comprehensive overview of my technical expertise and capabilities
           </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 10, transition: { repeat: Infinity, repeatType: "reverse", duration: 1 } }}
-          className="absolute top-0 right-4 text-sm text-gray-400 italic pointer-events-none sm:hidden"
-        >
-          Swipe →
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 10, transition: { repeat: Infinity, repeatType: "reverse", duration: 1 } }}
+            className="text-sm text-gray-400 italic sm:hidden"
+          >
+            Swipe →
+          </motion.div>
         </motion.div>
 
         {/* Carousel container with relative positioning for navigation buttons */}
@@ -196,8 +195,8 @@ const Skills = () => {
                               className={`h-2 rounded-full ${getProgressColor(category.color)} transition-all duration-1000 ease-out`}
                               style={{ width: `${skill.level}%` }}
                             ></div>
+                            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
                           </div>
-                          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
                         </div>
                       </div>
                     ))}
