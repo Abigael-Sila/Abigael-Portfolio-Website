@@ -3,26 +3,29 @@
 import { motion, Variants, AnimatePresence } from 'framer-motion';
 import { Quote, ArrowLeft, ArrowRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import Ngene from '../assets/Ngene.png';
+import Manu from '../assets/Manu.jpg';
+import Lucas from '../assets/Lucas.png';
 
 // Factual data for testimonials
 const allTestimonials = [
   {
-    quote: "Working with Abigael was an absolute pleasure. Her attention to detail and creative approach made our portfolio a standout project.",
-    name: "James Ngene",
-    title: "Satisfied Client",
-    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop", // Replace with actual image
-  },
-  {
-    quote: "Abigael's expertise in web development and design is top-notch. She delivered a beautiful and highly functional website that exceeded all our expectations.",
+    quote: "Working with Abigael has been an absolute pleasure. She’s dedicated and innovative. Her passion for technology and problem-solving truly sets her apart, and she always delivers solutions",
     name: "Emmanuel Ngetich",
     title: "Satisfied Client",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop", // Replace with actual image
+    image: Manu,
   },
   {
-    quote: "Abigael's work on Lucas Kunkuru's portfolio perfectly captures his professional brand. The clean and modern design is a testament to her skills.",
+    quote: "Abbie is an absolute rockstar! Her hard work and dedication are truly inspiring. She got a strong work ethic and character that shines through in everything she does. Keep shining, Abbie!",
     name: "Lucas Kunkuru",
     title: "Satisfied Client",
-    image: "https://images.unsplash.com/photo-1544725176-7c40e6a71c5e?q=80&w=1740&auto=format&fit=crop", // Replace with actual image
+    image: Lucas,
+  },
+  {
+    quote: "Working with Abigael was an absolute pleasure. Her attention to detail and creative approach made my portfolio a standout project.",
+    name: "James Ngene",
+    title: "Satisfied Client",
+    image: Ngene,
   },
 ];
 
