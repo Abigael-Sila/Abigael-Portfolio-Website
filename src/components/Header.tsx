@@ -34,9 +34,9 @@ const Header = () => {
     { name: 'Projects', href: '#projects', icon: <FaFolderOpen className="w-5 h-5" /> },
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
     { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
-    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
     { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
     { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
+    { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
     { name: 'Blog', href: '#blog', icon: <FaBlog className="w-5 h-5" /> },
   ];
 

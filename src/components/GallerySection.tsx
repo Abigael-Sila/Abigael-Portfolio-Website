@@ -10,9 +10,15 @@ import Abbie2 from '../assets/Abbie2.jpg';
 import Abbie3 from '../assets/Abbie3.jpg';
 import Abbie4 from '../assets/Abbie4.jpg';
 import Abbie5 from '../assets/Abbie5.jpg';
+import Abbie6 from '../assets/Abbie6.jpg';
 
 // Updated data for gallery items with new images and descriptions
 const galleryItems = [
+    {
+    image: Abbie6,
+    title: "Engineering on Site",
+    description: "Inspecting an electrical panel during a field project.",
+  },
   {
     image: Abbie1,
     title: "Engineering on Site",
