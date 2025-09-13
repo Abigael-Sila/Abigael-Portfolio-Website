@@ -1,5 +1,5 @@
 import AbigaelPortfolioImage from '../assets/Abigael_Portfolio.png';
-import SymphionScreenshot from '../assets/Symphion_Screenshot.png';
+import SymphionScreenshot from '../assets/Symphion_Screenshot.jpg';
 import LucasScreenshot from '../assets/Lucas_Screenshot.png';
 import ManuScreenshot from '../assets/Manu_Screenshot.png';
 import NgeneScreenshot from '../assets/Ngene_Screenshot.png';
