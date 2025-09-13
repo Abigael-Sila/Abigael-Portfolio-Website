@@ -18,8 +18,6 @@ import AllProjectsPage from './pages/AllProjectsPage';
 import AllCertificatesPage from './pages/AllCertificatesPage';
 import TestimonialsSection from './components/TestimonialsSection';
 import GallerySection from './components/GallerySection';
-import RateCardSection from './components/RateCardSection';
-import BlogSection from './components/BlogSection';
 import EducationSection from './components/EducationSection';
 
 function App() {
@@ -79,9 +77,9 @@ function App() {
               <Certificates />
               <GallerySection />
               <Services />
-              <RateCardSection />
+              
               <Contact />
-              <BlogSection />
+             
               {/* Visitors Counter - typically on the main landing page */}
               <VisitorsCounter />
             </main>
