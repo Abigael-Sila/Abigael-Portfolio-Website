@@ -33,7 +33,7 @@ const About = () => {
             About <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Me</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Passionate about bridging the gap between hardware and software to create innovative solutions
+            Aspiring Power Systems Design Engineer.
           </p>
         </div>
 
@@ -49,8 +49,8 @@ const About = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-4 rounded-lg shadow-xl">
-                <div className="text-2xl font-bold">Aspiring Power Systems</div>
-                <div className="text-sm">Design Engineer</div>
+                <div className="text-2xl font-bold">Inspired!</div>
+                <div className="text-sm"></div>
               </div>
             </div>
 
@@ -72,11 +72,11 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg text-gray-300">
               <p className="text-md leading-relaxed">
-                Hi, I’m Abigael Kalunde Sila an <span className="text-blue-400 font-semibold">Engineer and Digital Creative</span> shaping the future through both circuitry and code. My academic foundation spans control systems, power systems, electrical machines, digital and analogue electronics, power distribution and transmission, energy audits, and renewable energy.
+               Hi, I’m Abigael Kalunde Sila a <span className="text-blue-400 font-semibold">Graduate Electrical and Electronics Engineer</span> focused on <span className="text-purple-400 font-semibold">Power Systems Design</span>. Experienced in the <span className="text-green-400 font-semibold">operation and maintenance of power distribution systems, substations, backup power solutions, and electrical infrastructure</span>within critical facilities. Proven exposure to <span className="text-yellow-400 font-semibold">railway power infrastructure, airport electrical systems, and hyperscale data center environments</span>.
               </p>
               
               <p className="leading-relaxed mt-6">
-                Beyond the classroom, I’ve cultivated self-taught skills in <span className="text-purple-400 font-semibold">Front-End Web Development</span>, <span className="text-green-400 font-semibold">Mobile App Development</span>, <span className="text-yellow-400 font-semibold">UI/UX Design</span>, and <span className="text-blue-400 font-semibold">Embedded Systems and IoT</span>. My work is rooted in solving real-world problems with creativity and technical precision. I invite you to explore my projects and connect with me to discover how we can turn your ideas into a reality.
+                Passionate about designing <span className="text-blue-400 font-semibold">reliable, efficient, and resilient</span> power systems that support large-scale industrial and digital infrastructure. Complementary technical expertise includes, <span className="text-purple-400 font-semibold">Front-End Web Development</span>, <span className="text-green-400 font-semibold">Mobile App Development</span>, <span className="text-yellow-400 font-semibold">UI/UX Design</span>, and <span className="text-blue-400 font-semibold">Embedded Systems and IoT Solutions</span>. My work is rooted in solving real-world problems with creativity and technical precision. I invite you to explore my projects and connect with me to discover how we can turn your ideas into a reality.
               </p>
               
               <p className="leading-relaxed mt-6">
