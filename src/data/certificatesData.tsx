@@ -12,6 +12,33 @@ interface Certificate {
 }
 
 export const allCertificates: Certificate[] = [
+   {
+    name: "META Android Developer Proffesional Certificate",
+    issuer: "Coursera | Meta",
+    date: "December 2025",
+    link: "public/Meta Android Developer Proffesional Certificate.pdf",
+    image: "/assets/meta-react-advanced.png",
+    description: "A 9-course professional certification from Meta focused on end-to-end Mobile Android Development.",
+    icon: <Code className="w-6 h-6" />
+  },
+   {
+    name: "META Front-End Proffesional Certificate",
+    issuer: "Coursera | Meta",
+    date: "July 2024",
+    link: "public/Meta Front End Proffesional certificate.pdf",
+    image: "/assets/meta-react-advanced.png",
+    description: "A 9-course professional certification from Meta focused on end-to-end front-end Development.",
+    icon: <Code className="w-6 h-6" />
+  },
+  {
+    name: "Business Modelling for Entrepreneurs",
+    issuer: "Open University of Kenya",
+    date: "December 2025",
+    link: "public/Business Modelling for entrepreneurs.pdf",
+    image: "/assets/meta-react-advanced.png",
+    description: "A professional development certificate from the Open University of Kenya focused on design and analysis of business models..",
+    icon: <Code className="w-6 h-6" />
+  },
   {
     name: "Advanced React",
     issuer: "Coursera | Meta",
