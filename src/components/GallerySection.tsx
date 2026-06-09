@@ -5,6 +5,13 @@ import { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 // Import your new images with the correct .jpg file extensions
+import EHU from '../assets/EHU.jpeg';
+import MWC from '../assets/MWC.jpeg';
+import WED from '../assets/WED.jpeg';
+import GenSet from '../assets/GenSet.jpeg';
+import Pole from '../assets/Pole.jpeg';
+import Runway from '../assets/runway lights.jpeg';
+import BMS from '../assets/BMS.jpeg';
 import Abbie1 from '../assets/Abbie1.jpg';
 import Abbie2 from '../assets/Abbie2.jpg';
 import Abbie3 from '../assets/Abbie3.jpg';
@@ -14,6 +21,41 @@ import Abbie6 from '../assets/Abbie6.jpg';
 
 // Updated data for gallery items with new images and descriptions
 const galleryItems = [
+  {
+    image: EHU,
+    title: "Electrical Housing Units",
+    description: "Conducting a routine inspection and maintenance check on an Environment Handling Unit (EHU).",
+  },
+  {
+    image: MWC,
+    title: "Main Wiring & Control",
+    description: "Attending the Safaricom & Huawei Mini MWC, exploring the latest telecommunications innovations.",
+  },
+  {
+    image: WED,
+    title: "Electrical Distribution",
+    description: "Analysis and maintenance of complex wiring and electrical distribution networks.",
+  },
+  {
+    image: GenSet,
+    title: "Backup Power Solutions",
+    description: "Operation and maintenance of industrial generator sets ensuring high availability for critical facilities.",
+  },
+  {
+    image: Pole,
+    title: "Overhead Infrastructure",
+    description: "Field inspection and maintenance of utility poles and overhead power distribution lines.",
+  },
+  {
+    image: Runway,
+    title: "Airfield Ground Lighting",
+    description: "Maintenance and operation of critical runway lighting and specialized aviation electrical systems.",
+  },
+  {
+    image: BMS,
+    title: "System Management",
+    description: "Monitoring automated Building and Battery Management Systems (BMS) for optimal power efficiency.",
+  },
     {
     image: Abbie6,
     title: "Engineering on Site",
