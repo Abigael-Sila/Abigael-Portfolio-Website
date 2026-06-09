@@ -14,20 +14,17 @@ const Footer = () => {
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Certificates', href: '#certificates' },
-    { name: 'Services', href: '#services' },
     { name: 'Contact', href: '#contact' }
   ];
 
-  const services = [
-    'Web Application Development',
-    'Mobile App Development',
-    'Electrification & Solar Panel Installation',
-    'Technical Consulting',
-    'UI/UX Design',
-    'PCB Design',
-    'Embedded Systems Development',
-    'IoT Solutions'
-  ];
+const services = [
+  'Power Systems Design',
+  'Solar PV & Backup Power Systems',
+  'Electrical Site Surveys & Assessments',
+  'Energy Audits & Load Analysis',
+  'Embedded Systems & IoT Solutions',
+  'Technical Engineering Consulting'
+];
 
   const socialLinks = [
     { icon: <Github className="w-5 h-5 md:w-4 md:h-4" />, href: 'https://github.com/Abigael-Sila', label: 'GitHub' },
@@ -60,7 +57,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Electrical & Electronics Engineer with extra skills in embedded systems, IoT solutions, web and mobile app development and ui/ux design. Creator of innovative projects like Symphion wearable SOS device.
+              Graduate Electrical & Electronics Engineer focused on power systems design, with complementary expertise in embedded systems and digital technologies.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
