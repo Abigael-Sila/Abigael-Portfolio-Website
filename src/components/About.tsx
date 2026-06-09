@@ -41,14 +41,14 @@ const About = () => {
           {/* Left Side - Image and Stats */}
           <div className="space-y-8">
             <div className="relative">
-              <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg">
-                <img
-                  src={myProfilePic}
-                  alt="Abigael Kalunde Sila"
-                  className="w-full object-cover rounded-2xl"
-                />
-              </div>
-            </div>
+  <div className="w-full h-80 lg:h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg p-4">
+    <img
+      src={myProfilePic}
+      alt="Abigael Kalunde Sila"
+      className="w-full h-full object-contain rounded-xl"
+    />
+  </div>
+</div>
 
             {/* Highlights Grid */}
             <div className="grid grid-cols-2 gap-4">
