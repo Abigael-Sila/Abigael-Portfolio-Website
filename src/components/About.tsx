@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: <Users className="w-8 h-8 text-green-500" />,
       title: "Experience",
-      description: "Internships at Kenya Railways Corporation, Kenya Space Agency" 
+      description: "Internships at Kenya Railways Corporation, Kenya Space Agency, Kenya Airports Authority, Safaricom PLC" 
     },
     {
       icon: <Award className="w-8 h-8 text-purple-500" />,
@@ -20,7 +20,7 @@ const About = () => {
     },
     {
       icon: <Code className="w-8 h-8 text-yellow-500" />,
-      title: "Development",
+      title: "Product Development",
       description: "Web Development, Mobile App Development & UI/UX Design"
     }
   ];
@@ -49,8 +49,8 @@ const About = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-4 rounded-lg shadow-xl">
-                <div className="text-2xl font-bold">Available</div>
-                <div className="text-sm">for hire</div>
+                <div className="text-2xl font-bold">Aspiring Power Systems</div>
+                <div className="text-sm">Design Engineer</div>
               </div>
             </div>
 
@@ -80,7 +80,7 @@ const About = () => {
               </p>
               
               <p className="leading-relaxed mt-6">
-                Outside of tech, I’m tuned into creativity and fresh perspectives, whether I’m vibing to amapiano, afrobeats, Kenyan hits, or mixing in pop and nostalgic 80s-90s classics. I thrive on experiences that challenge and inspire me, from road trips and coffee-and-cake dates to trying out archery, golf, and even the shooting range. You can find me networking at tech meet-ups, sip and paint sessions, or singing my heart out to karaoke classics. When I’m not watching a good comedy, action, or romance film, I’m keeping the energy up with fitness and running clubs, and hanging out in social circles that spark great conversations and even greater ideas.
+                Outside of tech, I’m tuned into creativity and fresh perspectives. I thrive on experiences that challenge and inspire me. You can find me networking at tech meet-ups and hanging out in social circles that spark great conversations and even greater ideas.
               </p>
             </div>
           </div>
