@@ -11,8 +11,6 @@ import {
   FaCertificate,
   FaTimes,
   FaEllipsisV,
-  FaTools,
-  FaQuoteRight,
   FaImages,
 
   
@@ -35,7 +33,6 @@ const Header = () => {
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
     { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
     { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
-    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
     { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
 
   ];
@@ -48,14 +45,12 @@ const Header = () => {
     { name: 'Experience', href: '#experience', icon: <FaChalkboardTeacher className="w-5 h-5" /> },
     { name: 'Skills', href: '#skills', icon: <FaLaptopCode className="w-5 h-5" /> },
     { name: 'Certificates', href: '#certificates', icon: <FaCertificate className="w-5 h-5" /> },
-    { name: 'Services', href: '#services', icon: <FaTools className="w-5 h-5" /> },
     { name: 'Contact', href: '#contact', icon: <FaEnvelope className="w-5 h-5" /> },
   ];
 
   // Links for the "More" dropdown
   const moreNavigation = [
     { name: 'Education', href: '#education', icon: <FaGraduationCap className="w-5 h-5" /> },
-    { name: 'Testimonials', href: '#testimonials', icon: <FaQuoteRight className="w-5 h-5" /> },
     { name: 'Gallery', href: '#gallery', icon: <FaImages className="w-5 h-5" /> },
 
 

@@ -48,10 +48,6 @@ const About = () => {
                   className="w-full object-cover rounded-2xl"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-4 rounded-lg shadow-xl">
-                <div className="text-2xl font-bold">Inspired!</div>
-                <div className="text-sm"></div>
-              </div>
             </div>
 
             {/* Highlights Grid */}
@@ -76,7 +72,7 @@ const About = () => {
               </p>
               
               <p className="leading-relaxed mt-6">
-                Passionate about designing <span className="text-blue-400 font-semibold">reliable, efficient, and resilient</span> power systems that support large-scale industrial and digital infrastructure. Complementary technical expertise includes, <span className="text-purple-400 font-semibold">Front-End Web Development</span>, <span className="text-green-400 font-semibold">Mobile App Development</span>, <span className="text-yellow-400 font-semibold">UI/UX Design</span>, and <span className="text-blue-400 font-semibold">Embedded Systems and IoT Solutions</span>. My work is rooted in solving real-world problems with creativity and technical precision. I invite you to explore my projects and connect with me to discover how we can turn your ideas into a reality.
+                Passionate about designing <span className="text-blue-400 font-semibold">reliable, efficient, and resilient</span> power systems that support large-scale industrial and digital infrastructure. Complementary technical expertise includes, <span className="text-purple-400 font-semibold">Front-End Web Development</span>, <span className="text-green-400 font-semibold">Mobile App Development</span>, <span className="text-yellow-400 font-semibold">UI/UX Design</span>, and <span className="text-blue-400 font-semibold">Embedded Systems and IoT </span>.
               </p>
               
               <p className="leading-relaxed mt-6">
