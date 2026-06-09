@@ -1,5 +1,5 @@
 import { GraduationCap, Award, Users, Code } from 'lucide-react';
-import myProfilePic from '../assets/beautifulme.jpg'; 
+import myProfilePic from '../assets/GradPic.jpg'; 
 
 const About = () => {
   const highlights = [
