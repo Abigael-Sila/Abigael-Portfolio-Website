@@ -9,14 +9,12 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Certificates from './components/Certificates';
-import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
 import VisitorsCounter from './components/VisitorsCounter';
 import AllProjectsPage from './pages/AllProjectsPage';
 import AllCertificatesPage from './pages/AllCertificatesPage';
-import TestimonialsSection from './components/TestimonialsSection';
 import GallerySection from './components/GallerySection';
 import EducationSection from './components/EducationSection';
 
@@ -71,12 +69,12 @@ function App() {
               <About />
               <EducationSection />
               <Projects />
-              <TestimonialsSection />
+              
               <Experience />
               <Skills />
               <Certificates />
               <GallerySection />
-              <Services />
+              
               
               <Contact />
              
