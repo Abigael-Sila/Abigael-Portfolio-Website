@@ -41,7 +41,7 @@ const About = () => {
           {/* Left Side - Image and Stats */}
           <div className="space-y-8">
             <div className="relative">
-              <div className="w-full h-auto bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg">
+              <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg">
                 <img
                   src={myProfilePic}
                   alt="Abigael Kalunde Sila"
