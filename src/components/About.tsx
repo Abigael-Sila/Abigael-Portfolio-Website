@@ -1,25 +1,26 @@
-import { GraduationCap, Award, Users, Code } from 'lucide-react';
+// src/components/About.tsx
+import { GraduationCap, Award, Users, Code, Quote } from 'lucide-react';
 import myProfilePic from '../assets/GradPic.jpg'; 
 
 const About = () => {
   const highlights = [
     {
-      icon: <GraduationCap className="w-8 h-8 text-blue-500" />,
+      icon: <GraduationCap className="w-8 h-8 visually-distinguished-color-1" />,
       title: "Education",
       description: "Bachelors of Engineering, Electrical & Electronics Engineering at Moi University"
     },
     {
-      icon: <Users className="w-8 h-8 text-green-500" />,
+      icon: <Users className="w-8 h-8 visually-distinguished-color-2" />,
       title: "Experience",
       description: "Internships at Kenya Railways Corporation, Kenya Space Agency, Kenya Airports Authority, Safaricom PLC" 
     },
     {
-      icon: <Award className="w-8 h-8 text-purple-500" />,
+      icon: <Award className="w-8 h-8 visually-distinguished-color-3" />,
       title: "Innovation",
       description: "Creator of Symphion - Wearable SOS Device"
     },
     {
-      icon: <Code className="w-8 h-8 text-yellow-500" />,
+      icon: <Code className="w-8 h-8 visually-distinguished-color-4" />,
       title: "Product Development",
       description: "Web Development, Mobile App Development & UI/UX Design"
     }
@@ -41,17 +42,21 @@ const About = () => {
           {/* Left Side - Image and Stats */}
           <div className="space-y-8">
             <div className="relative">
-              <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg">
+              {/* Image is now contained and formatted for a round look without cropping */}
+              <div className="w-full aspect-square rounded-full flex items-center justify-center overflow-hidden shadow-lg border-4 border-gray-700">
                 <img
                   src={myProfilePic}
                   alt="Abigael Kalunde Sila"
-                  className="w-full object-cover rounded-2xl"
+                  className="w-full h-full object-contain rounded-full"
                 />
+                <div className="absolute bottom-2 right-2 p-2 visually-distinguished-color-5 rounded-full">
+                  <Quote size={16} />
+                </div>
               </div>
             </div>
 
-            {/* Highlights Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Highlights Grid - Corrected to stack on mobile */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {highlights.map((item, index) => (
                 <div key={index} className="bg-gray-700/50 p-4 rounded-lg border border-gray-600/50 hover:border-blue-500/50 transition-all duration-300">
                   <div className="flex flex-col items-center text-center space-y-2">
@@ -72,7 +77,7 @@ const About = () => {
               </p>
               
               <p className="leading-relaxed mt-6">
-                Passionate about designing <span className="text-blue-400 font-semibold">reliable, efficient, and resilient</span> power systems that support large-scale industrial and digital infrastructure. Complementary technical expertise includes, <span className="text-purple-400 font-semibold">Front-End Web Development</span>, <span className="text-green-400 font-semibold">Mobile App Development</span>, <span className="text-yellow-400 font-semibold">UI/UX Design</span>, and <span className="text-blue-400 font-semibold">Embedded Systems and IoT </span>.
+                 Passionate about designing <span className="text-blue-400 font-semibold">reliable, efficient, and resilient</span> power systems that support large-scale industrial and digital infrastructure. Complementary technical expertise includes, <span className="text-purple-400 font-semibold">Front-End Web Development</span>, <span className="text-green-400 font-semibold">Mobile App Development</span>, <span className="text-yellow-400 font-semibold">UI/UX Design</span>, and <span className="text-blue-400 font-semibold">Embedded Systems and IoT </span>.
               </p>
               
               <p className="leading-relaxed mt-6">
