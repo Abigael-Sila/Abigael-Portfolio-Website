@@ -23,12 +23,12 @@ import Abbie6 from '../assets/Abbie6.jpg';
 const galleryItems = [
   {
     image: EHU,
-    title: "Electrical Housing Units",
+    title: "Environment Handling Units",
     description: "Conducting a routine inspection and maintenance check on an Environment Handling Unit (EHU).",
   },
   {
     image: MWC,
-    title: "Main Wiring & Control",
+    title: "Mini MWC 2026",
     description: "Attending the Safaricom & Huawei Mini MWC, exploring the latest telecommunications innovations.",
   },
   {
