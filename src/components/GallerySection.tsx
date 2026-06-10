@@ -12,11 +12,8 @@ import GenSet from '../assets/GenSet.jpeg';
 import Pole from '../assets/Pole.jpeg';
 import Runway from '../assets/runway lights.jpeg';
 import BMS from '../assets/BMS.jpeg';
-import Abbie1 from '../assets/Abbie1.jpg';
 import Abbie2 from '../assets/Abbie2.jpg';
 import Abbie3 from '../assets/Abbie3.jpg';
-import Abbie4 from '../assets/Abbie4.jpg';
-import Abbie5 from '../assets/Abbie5.jpg';
 import Abbie6 from '../assets/Abbie6.jpg';
 
 // Updated data for gallery items with new images and descriptions
@@ -33,13 +30,13 @@ const galleryItems = [
   },
   {
     image: WED,
-    title: "Electrical Distribution",
-    description: "Analysis and maintenance of complex wiring and electrical distribution networks.",
+    title: "World Engineering Day 2026",
+    description: "Celebrating engineering innovation and sustainable development solutions alongside fellow industry professionals.",
   },
   {
     image: GenSet,
     title: "Backup Power Solutions",
-    description: "Operation and maintenance of industrial generator sets ensuring high availability for critical facilities.",
+    description: "Maintenance of industrial generator sets ensuring high availability.",
   },
   {
     image: Pole,
@@ -53,19 +50,14 @@ const galleryItems = [
   },
   {
     image: BMS,
-    title: "System Management",
-    description: "Monitoring automated Building and Battery Management Systems (BMS) for optimal power efficiency.",
+    title: "Building Management",
+    description: "Relamping operation to restore nominal illuminance levels and improve energy efficiency across facility infrastructure.",
   },
     {
     image: Abbie6,
     title: "Engineering on Site",
     description: "Inspecting an electrical panel during a field project.",
-  },
-  {
-    image: Abbie1,
-    title: "Engineering on Site",
-    description: "Inspecting an electrical panel during a field project.",
-  },
+  },   
   {
     image: Abbie2,
     title: "Project Progress",
@@ -75,16 +67,6 @@ const galleryItems = [
     image: Abbie3,
     title: "The Engineer's Climb",
     description: "Taking a moment on a locomotive at Kenya Railways.",
-  },
-  {
-    image: Abbie4,
-    title: "Railway Signaling",
-    description: "Hands-on experience with railway signaling and control systems.",
-  },
-  {
-    image: Abbie5,
-    title: "Overlooking the Tracks",
-    description: "At the end of a long day of work, taking a break on the tracks.",
   },
 ];
 
