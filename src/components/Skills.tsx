@@ -15,66 +15,43 @@ import './Skills.css';
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Electrical & Electronics Engineering",
-      icon: <Bolt className="w-6 h-6" />,
-      color: "orange",
-      skills: [
-        { name: "Residential & Commercial Electrification", level: 95, description: "Professional wiring, installation, and compliance for homes and businesses" },
-        { name: "Solar Panel Installation & Maintenance", level: 90, description: "Designing and implementing solar power systems for sustainable energy solutions" },
-        { name: "Circuit Analysis & Design", level: 90, description: "Comprehensive AC/DC circuit analysis and schematic design" },
-        { name: "Power Systems", level: 85, description: "Electrical power generation, distribution, and protection" },
-        { name: "Control Systems", level: 80, description: "Design and implementation of automatic control and feedback systems" },
-        { name: "Digital Electronics", level: 85, description: "Digital logic design, microprocessors, and embedded systems" },
-        { name: "Electrical Machines", level: 80, description: "Operating principles of motors, generators, and transformers" },
-        { name: "Renewable Energy Systems", level: 85, description: "Integration of clean energy sources like solar and wind power" }
-      ]
-    },
-    {
-      title: "Software Development & Design",
-      icon: <Code className="w-6 h-6" />,
-      color: "purple",
-      skills: [
-        { name: "React & Next.js", level: 90, description: "Building modern, scalable web applications and server-rendered sites" },
-        { name: "React Native & Kotlin", level: 85, description: "Developing cross-platform mobile apps for iOS and Android" },
-        { name: "Node.js", level: 80, description: "Backend development with Express.js for RESTful APIs" },
-        { name: "TypeScript", level: 75, description: "Enhancing code quality with type-safe JavaScript development" },
-        { name: "HTML/CSS/JavaScript", level: 90, description: "Semantic markup and responsive, utility-first styling" },
-        { name: "Figma", level: 80, description: "Creating professional UI/UX designs and interactive prototypes" },
-        { name: "Data Structures and Algorithms", level: 75, description: "Optimizing code for efficiency and performance" },
-        { name: "Python", level: 70, description: "Data analysis, automation, and backend scripting" },
-      ]
-    },
-    {
-      title: "Embedded Systems & IoT",
-      icon: <Cpu className="w-6 h-6" />,
-      color: "blue",
-      skills: [
-        { name: "Microcontrollers", level: 90, description: "Programming and interfacing with microcontrollers like ESP32 and Arduino" },
-        { name: "Firmware Development", level: 85, description: "Writing low-level code for embedded devices and microcontrollers" },
-        { name: "Embedded C/C++", level: 85, description: "Efficient programming for resource-constrained hardware" },
-        { name: "C/C++", level: 80, description: "Efficient, low-level programming for embedded optimization" },
-        { name: "PCB Design", level: 75, description: "Designing printed circuit boards for custom hardware" },
-        { name: "Wireless Communication Protocols", level: 80, description: "Interfacing with Wi-Fi, Bluetooth, and GSM for IoT connectivity" },
-        { name: "Sensors & Actuators", level: 85, description: "Integration and programming of various hardware components" },
-        { name: "Prototyping", level: 80, description: "Rapidly assembling and testing circuits" }
-      ]
-    },
-    {
-      title: "Tools & Platforms",
-      icon: <Wrench className="w-6 h-6" />,
-      color: "green",
-      skills: [
-        { name: "Git/GitHub", level: 90, description: "Collaborative version control and project management" },
-        { name: "VS Code", level: 90, description: "Configuring and utilizing a powerful integrated development environment" },
-        { name: "AWS/Firebase", level: 75, description: "Cloud services for backend hosting, databases, and authentication" },
-        { name: "Docker", level: 70, description: "Containerization for consistent development and deployment environments" },
-        { name: "AutoCAD", level: 70, description: "Computer-aided design for 2D and 3D electrical schematics" },
-        { name: "MATLAB", level: 75, description: "Data analysis and algorithm development for engineering applications" },
-        { name: "EasyEDA", level: 75, description: "Online tool for schematic capture, PCB design, and simulation" },
-        { name: "Android Studio", level: 80, description: "Official IDE for native Android application development" }
-      ]
-    },
-    {
+  title: "Electrical & Electronics Engineering",
+  icon: <Bolt className="w-6 h-6" />,
+  color: "orange",
+  skills: [
+    {
+      name: "Electrical Power Systems",
+      level: 84,
+      description: "Operation, maintenance, and analysis of power generation, distribution, and protection systems"
+    },
+    {
+      name: "Power Distribution & Protection",
+      level: 81,
+      description: "Working with transformers, switchgear, circuit breakers, protection devices, and distribution networks"
+    },
+    {
+      name: "Fault Diagnosis & Troubleshooting",
+      level: 63,
+      description: "Systematic identification and resolution of electrical and electromechanical faults"
+    },
+    {
+      name: "SCADA & DCIM Monitoring",
+      level: 52,
+      description: "Monitoring and control of electrical systems using SCADA and facility management platforms"
+    },
+    {
+      name: "Electrical Maintenance",
+      level: 83,
+      description: "Preventive, corrective, and condition-based maintenance of critical electrical equipment"
+    },
+    {
+      name: "Technical Documentation",
+      level: 81,
+      description: "Preparation of maintenance records, technical reports, procedures, and engineering documentation"
+    }
+  ]
+},
+ {
       title: "Soft Skills",
       icon: <Users className="w-6 h-6" />,
       color: "yellow",
@@ -83,10 +60,95 @@ const Skills = () => {
         { name: "Communication", level: 90, description: "Effective communication of complex technical information to diverse audiences" },
         { name: "Team Leadership", level: 85, description: "Guiding teams to achieve project goals and foster a collaborative environment" },
         { name: "Adaptability", level: 85, description: "Quickly learning new technologies and adapting to changing project requirements" },
-        { name: "Project Management", level: 80, description: "Organizing and executing projects from conception to completion" },
         { name: "Collaboration", level: 90, description: "Working effectively with interdisciplinary teams and stakeholders" },
-        { name: "Mentoring", level: 80, description: "Sharing knowledge and fostering growth within technical teams" },
         { name: "Critical Thinking", level: 95, description: "Evaluating information and ideas to make sound engineering decisions" }
+      ]
+    },
+   {
+  title: "Software Development & Design",
+  icon: <Code className="w-6 h-6" />,
+  color: "purple",
+  skills: [
+    {
+      name: "React",
+      level: 81,
+      description: "Building responsive web applications with modern frontend frameworks"
+    },
+    {
+      name: "React Native",
+      level: 59,
+      description: "Developing cross-platform mobile applications for Android and iOS"
+    },
+    {
+      name: "HTML, CSS & JavaScript",
+      level: 81,
+      description: "Creating responsive user interfaces and interactive web experiences"
+    },
+    {
+      name: "UI/UX Design (Figma)",
+      level: 70,
+      description: "Designing user-centered interfaces, wireframes, and interactive prototypes"
+    },
+    {
+      name: "TypeScript",
+      level: 75,
+      description: "Developing maintainable and type-safe frontend applications"
+    },
+    {
+      name: "Data Structures & Algorithms",
+      level: 63,
+      description: "Applying fundamental algorithmic and problem-solving techniques"
+    }
+  ]
+},
+   {
+  title: "Embedded Systems & IoT",
+  icon: <Cpu className="w-6 h-6" />,
+  color: "blue",
+  skills: [
+    {
+      name: "Microcontrollers (ESP32, Arduino)",
+      level: 40,
+      description: "Programming and interfacing with embedded microcontroller platforms"
+    },
+    {
+      name: "Embedded Systems Development",
+      level: 38,
+      description: "Designing and implementing basic embedded solutions and device logic"
+    },
+    {
+      name: "C/C++ Programming",
+      level: 37,
+      description: "Low-level programming for embedded and hardware-adjacent systems"
+    },
+    {
+      name: "IoT Communication (GSM, Wi-Fi, Bluetooth)",
+      level: 39,
+      description: "Enabling basic device connectivity using common wireless protocols"
+    },
+    {
+      name: "Sensor Integration",
+      level: 36,
+      description: "Interfacing sensors and basic hardware components with microcontrollers"
+    },
+    {
+      name: "Prototyping & Hardware Assembly",
+      level: 40,
+      description: "Building and testing early-stage embedded hardware prototypes"
+    }
+  ]
+},
+    {
+      title: "Tools & Platforms",
+      icon: <Wrench className="w-6 h-6" />,
+      color: "green",
+      skills: [
+        { name: "Git/GitHub", level: 70, description: "Collaborative version control and project management" },
+        { name: "VS Code", level: 80, description: "Configuring and utilizing a powerful integrated development environment" },
+        { name: "AutoCAD", level: 30, description: "Computer-aided design for 2D and 3D electrical schematics" },
+        { name: "MATLAB", level: 25, description: "Data analysis and algorithm development for engineering applications" },
+        { name: "EasyEDA", level: 45, description: "Online tool for schematic capture, PCB design, and simulation" },
+        { name: "Android Studio", level: 20, description: "Official IDE for native Android application development" }
       ]
     }
   ];
