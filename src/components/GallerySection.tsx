@@ -65,7 +65,7 @@ const galleryItems = [
   },
   {
     image: Abbie3,
-    title: "The Engineer's Climb",
+    title: "Enjoying the Job",
     description: "Taking a moment on a locomotive at Kenya Railways.",
   },
 ];
