@@ -1,78 +1,88 @@
 // src/components/Experience.tsx
 import { useState } from 'react';
-import { Award, Wrench, ChevronDown, ChevronUp, MapPin, Calendar, Download } from 'lucide-react';
+import { Award, Users, Wrench, ChevronDown, ChevronUp, MapPin, Calendar, Download } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Experience = () => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
 
   const experiences = [
-     {
+    {
       title: "Data Center Engineer",
       company: "Safaricom PLC",
-      location: "Nairobi, Kenya",
+      location: "On-Site",
       duration: "May 2026 - Present",
       type: "Internship",
-      description: "Supporting the operation, maintenance, and optimization of critical data center infrastructure, including power, cooling, monitoring, and facility systems. Gaining hands-on experience in data center operations, electrical systems, capacity planning, incident response, and infrastructure reliability while contributing to the delivery of highly available and resilient digital services.",
+      description: "Developing web applications and embedded systems solutions for various clients. I also offer home electrification and solar panel installation services.",
       responsibilities: [
         "Designing and implementing data center infrastructure and systems",
         "Monitoring system performance to ensure efficiency and system integrity",
-        "Carrying out routine maintenance and inspections of equipment and software",
-        "Testing and troubleshooting hardware and software issues",
-        "Assessing network and server architecture for potential improvements or upgrades",
-        "Ensuring the data center’s physical and digital security measures are up to standard",
-        "Creating and maintaining detailed documentation of the data center’s layout, systems, and processes",
-        "Responding promptly to emergencies or outages, and implementing disaster recovery protocols",
-        "Keeping up-to-date with advancements in data center technology and making recommendations for upgrades or new equipment",
-        "Working closely with IT staff, vendors, and other stakeholders to meet the data center’s operational goals"
+"Carrying out routine maintenance and inspections of equipment and software",
+"Testing and troubleshooting hardware and software issues",
+"Assessing network and server architecture for potential improvements or upgrades",
+"Ensuring the data center’s physical and digital security measures are up to standard",
+"Creating and maintaining detailed documentation of the data center’s layout, systems, and processes",
+"Responding promptly to emergencies or outages, and implementing disaster recovery protocols",
+"Keeping up-to-date with advancements in data center technology and making recommendations for upgrades or new equipment",
+"Working closely with IT staff, vendors, and other stakeholders to meet the data center’s operational goals"
       ],
       skills: ["Electrical Power Systems", "Power Distribution & Protection", "DCIM Systems", "Power System Maintenance", "Renewable Energy Systems", "Fault Diagnosis & Troubleshooting", "Electrical Design & Analysis", "Stakeholder Communication"],
-      icon: <Wrench className="w-6 h-6" />
+      icon: <Users className="w-6 h-6" />
     },
+    
     {
-      title: "Electrical Engineering Technician",
+      title: "Electrical Engineering Intern",
       company: "Kenya Airports Authority",
       location: "JKIA - Nairobi, Kenya",
       duration: "August 2025 - December 2025",
       type: "Attachment",
       description: "Contributed to the maintenance and operation of electrical systems, including airfield lighting, power distribution, and building management systems. Gained hands-on experience with critical infrastructure in a high-stakes operational environment.",
       responsibilities: [
-        "Maintaining and troubleshooting critical airport electrical infrastructure, including transformers, switchgears, distribution boards, and power networks",
-        "Diagnosing and resolving complex electrical faults, equipment failures, and power outages to ensure uninterrupted airport operations",
-        "Maintaining and testing standby power systems, including diesel generators, UPS systems, battery banks, and automatic transfer switches (ATS)",
-        "Calibrating and monitoring Constant Current Regulators (CCRs) to ensure reliable operation of airfield ground lighting circuits",
-        "Supporting the maintenance and reliability of airfield ground lighting systems, including runway, taxiway, and approach lighting infrastructure",
-        "Performing preventive maintenance, inspections, and performance testing on electrical and electromechanical systems",
-        "Maintaining and troubleshooting building electrical services, including lighting systems, power sockets, emergency lighting, and other terminal utility infrastructure",
-        "Inspecting and servicing passenger boarding bridge electrical systems",
-        "Ensuring compliance with aviation safety standards, electrical regulations, and ICAO Regulations.",
-        "Preparing technical documentation, maintenance records, test reports, and equipment performance logs for engineering review"
+        "Assisted in the maintenance of airfield lighting and navigation systems to ensure flight safety",
+        "Participated in routine inspections and troubleshooting of power distribution networks across airport facilities",
+        "Supported senior engineers in the management of building electrical systems and emergency power generators",
+        "Aided in the documentation of technical specifications and maintenance procedures",
+        "Collaborated with the airport's operations and maintenance teams to ensure seamless electrical functionality"
       ],
       skills: ["Airfield Lighting", "Power Distribution", "Building Management Systems", "Technical Troubleshooting", "Operational Safety"],
       icon: <Wrench className="w-6 h-6" />
     },
     {
-      title: "Electrical Engineering Technician",
+      title: "Electrical Engineering Intern",
       company: "Kenya Railways Corporation",
-      location: "SGR - Nairobi, Kenya",
-      duration: "May 2024 - December 2024",
-      type: "Attachment",
+      location: "Nairobi, Kenya",
+      duration: "May 2024 - August 2024",
+      type: "Internship",
       description: "Gained hands-on experience in railway signaling systems, industrial automation, and maintenance procedures.",
       responsibilities: [
-        "Monitored and operated SCADA systems to supervise power distribution across substations and passing stations along the SGR network",
-        "Participated in the maintenance, inspection, and troubleshooting of railway electrical power infrastructure, including transformers, circuit breakers, and distribution equipment",
-        "Performed fault diagnosis and corrective maintenance on power supply systems to ensure reliable railway operations",
-        "Assisted in power transfer and switching operations between substations while adhering to operational safety procedures",
-        "Conducted routine inspections of power lines, electrical installations, and station equipment to identify and resolve potential faults",
-        "Supported preventive maintenance activities on critical railway electrical systems to improve system reliability and availability",
-        "Interpreted electrical design drawings and equipment layouts for transformer cabinets and power infrastructure projects",
-        "Collaborated with engineers and technicians during field maintenance activities, equipment installations, and system restoration works",
-        "Prepared maintenance records, technical reports, fault logs, and operational documentation for engineering review",
-        "Participated in the planning, procurement, and management of electrical equipment and maintenance materials required for railway operations"
+        "Assisted in maintenance and troubleshooting of railway signaling systems",
+        "Participated in the installation and testing of electrical control systems",
+        "Conducted routine inspections of electrical equipment and infrastructure",
+        "Collaborated with senior engineers on system upgrade projects",
+        "Documented maintenance procedures and created technical reports"
       ],
-      skills: ["Power Distribution Systems", "Electrical Maintenance", "Technical Documentation", "Team Collaboration"],
+      skills: ["Industrial Control Systems", "Electrical Maintenance", "Technical Documentation", "Team Collaboration"],
       icon: <Wrench className="w-6 h-6" />
-    }
+    },
+    {
+      title: "Freelance",
+      company: "Self-Employed",
+      location: "Remote",
+      duration: "2022 - Present",
+      type: "Freelance",
+      description: "Developing web applications and embedded systems solutions for various clients. I also offer home electrification and solar panel installation services.",
+      responsibilities: [
+        "Built responsive web applications using React and modern frameworks",
+        "Developed mobile applications using React Native and Flutter",
+        "Created IoT solutions and embedded systems for smart devices",
+        "Provided technical consulting for hardware-software integration projects",
+        "Maintained and updated existing client applications",
+        "Performed electrical installations for residential and commercial properties",
+        "Installed and maintained solar panel systems for homes and businesses"
+      ],
+      skills: ["React", "React Native", "IoT Development", "Client Management", "Electrification", "Solar Panel Installation"],
+      icon: <Users className="w-6 h-6" />
+    },
   ];
 
   const toggleAccordion = (index: number) => {
