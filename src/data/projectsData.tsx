@@ -55,7 +55,7 @@ export const allProjects: Project[] = [
 {
 title: "Symphion - Intelligent Emergency Response Wearable",
 category: "Embedded Systems & IoT",
-description: "A wearable emergency response system designed to enhance personal safety through real-time location tracking, intelligent SOS alerting, and remote incident monitoring. Built from the ground up using ESP32 and A9G technologies, Symphion integrates GPS positioning, GSM/GPRS communication, cloud connectivity, and emergency response workflows into a compact, low-power device capable of delivering critical assistance when every second counts.",
+description: "A wearable emergency response system designed to enhance personal safety through real-time location tracking, intelligent SOS alerting, and remote incident monitoring. Symphion integrates GPS positioning, GSM/GPRS communication, cloud connectivity, and emergency response workflows into a compact, low-power device capable of delivering critical assistance when every second counts.",
 technologies: ["ESP32", "A9G GSM/GPS", "C++", "Arduino IDE", "GPS", "GSM/GPRS", "IoT", "Cloud Integration"],
 features: [
   "Multi-channel emergency response system with dedicated SOS triggers for different incident types",
