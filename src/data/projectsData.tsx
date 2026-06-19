@@ -36,21 +36,11 @@ export const allProjects: Project[] = [
     "Vite"
   ],
   features: [
-    "Engineering command center dashboard",
-    "Internship and career progress tracking",
-    "Health score and performance analytics",
-    "Task, assignment, and project management",
-    "Technical engineering journal and daily learning logs",
+    "Career progress tracking",
+    "Performance analytics",
     "Knowledge base and personal engineering wiki",
-    "Skills matrix and Personal Development Plan (PDP) tracking",
-    "Goals and KPI management",
-    "Blocker tracking and resolution logging",
-    "Time logging and productivity monitoring",
-    "Achievement and milestone tracking",
-    "Calendar and meeting management",
     "AI-assisted research workspace",
     "Engineering insights and reporting",
-    "Certification and learning progress management"
   ],
   image: PEOSImage,
   icon: <Cpu className="w-6 h-6" />,
